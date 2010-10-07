@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class
+    name="SampleUCDArchApp.Core.Domain.Order, SampleUCDArchApp.Core"
+    table="Orders" >
+    <id name="Id" column="OrderID" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+
+    <property name="OrderDate" />
+    <property name="ShipAddress" />
+
+    <many-to-one name="OrderedBy" column="CustomerID" class="SampleUCDArchApp.Core.Domain.Customer, SampleUCDArchApp.Core" outer-join="true"></many-to-one>
+    
+  </class>
+</hibernate-mapping>
