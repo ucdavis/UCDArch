@@ -63,10 +63,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bin\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.MicroKernel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Bin\Castle.MicroKernel.dll</HintPath>
-    </Reference>
     <Reference Include="Castle.Windsor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bin\Castle.Windsor.dll</HintPath>
@@ -98,10 +94,11 @@
     <Reference Include="System.Web.Abstractions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Routing">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -132,6 +129,8 @@
     <Compile Include="Helpers\ImageLinkExtensions.cs" />
     <Compile Include="Helpers\UrlConventionExtentions.cs" />
     <Compile Include="Helpers\ValidationHelpers.cs" />
+    <Compile Include="IoC\WindsorControllerFactory.cs" />
+    <Compile Include="IoC\WindsorExtensions.cs" />
     <Compile Include="IoC\WindsorServiceLocator.cs" />
     <Compile Include="ModelBinder\EntityCollectionValueBinder.cs" />
     <Compile Include="ModelBinder\EntityValueBinder.cs" />

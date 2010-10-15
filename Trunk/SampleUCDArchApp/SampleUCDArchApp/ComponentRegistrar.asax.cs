@@ -4,6 +4,7 @@ using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Data.NHibernate;
 using SampleUCDArchApp.Core;
+using Castle.MicroKernel.Registration;
 
 namespace SampleUCDArchApp
 {
@@ -13,25 +14,17 @@ namespace SampleUCDArchApp
         {
             AddGenericRepositoriesTo(container);
 
-            container.AddComponent("messageFactory", 
-                                    typeof (IMessageFactory), 
-                                    typeof (MessageFactory));
+            container.Register(Component.For<IMessageFactory>().ImplementedBy<MessageFactory>().Named("messageFactory"));
 
-            container.AddComponent("validator",
-                                   typeof(IValidator), typeof(Validator));
-            container.AddComponent("dbContext", typeof (IDbContext), typeof (DbContext));
-
+            container.Register(Component.For<IValidator>().ImplementedBy<Validator>().Named("validator"));
+            container.Register(Component.For<IDbContext>().ImplementedBy<DbContext>().Named("dbContext"));
         }
 
         private static void AddGenericRepositoriesTo(IWindsorContainer container)
         {
-            container.AddComponent("repositoryWithTypedId",
-                typeof(IRepositoryWithTypedId<,>), typeof(RepositoryWithTypedId<,>));
-            container.AddComponent("repositoryType",
-                                   typeof(IRepository<>), typeof(Repository<>));
-            container.AddComponent("repository",
-                                   typeof(IRepository), typeof(Repository));
-            
+            container.Register(Component.For(typeof(IRepositoryWithTypedId<,>)).ImplementedBy(typeof(RepositoryWithTypedId<,>)).Named("repositoryWithTypedId"));
+            container.Register(Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).Named("repositoryType"));
+            container.Register(Component.For<IRepository>().ImplementedBy<Repository>().Named("repository"));
         }
     }
 }

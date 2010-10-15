@@ -79,13 +79,8 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UCDArch.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Arch\UCDArch.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="UCDArch.Core.NHibernateValidator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Arch\UCDArch.Core.NHibernateValidator.dll</HintPath>
+    <Reference Include="UCDArch">
+      <HintPath>..\Arch\UCDArch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@ using UCDArch.Core;
 using UCDArch.Core.CommonValidator;
 using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
 using UCDArch.Web.IoC;
+using Castle.MicroKernel.Registration;
 
 namespace UCDArch.Tests.UCDArch.Core
 {
@@ -61,7 +62,8 @@ namespace UCDArch.Tests.UCDArch.Core
         public void CanReturnServiceIfInitializedAndRegistered()
         {
             IWindsorContainer container = new WindsorContainer();
-            container.AddComponent("validator", typeof(IValidator), typeof(Validator));
+            container.Register(Component.For<IValidator>().ImplementedBy<Validator>().Named("validator"));
+            
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
             IValidator validatorService = SmartServiceLocator<IValidator>.GetService();
