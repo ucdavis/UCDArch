@@ -10,6 +10,6 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
 
-[assembly: AssemblyVersion("5.4.3.2")]
+[assembly: AssemblyVersion("2.0.0.0")]
 
 [assembly: NeutralResourcesLanguage("en-US")]
