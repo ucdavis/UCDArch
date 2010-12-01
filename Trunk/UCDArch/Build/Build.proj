@@ -11,7 +11,7 @@
     <ItemGroup>
         <RegexTransform Include="$(UCDArchRoot)\Build\CommonAssemblyInfo.cs">
             <Find>(?&lt;major&gt;\d+)\.(?&lt;minor&gt;\d+)\.\d+\.(?&lt;revision&gt;\d+)</Find>
-            <ReplaceWith>$(BUILD_NUMBER)</ReplaceWith>/
+            <ReplaceWith>$(BUILD_NUMBER)</ReplaceWith>
             <!--<ReplaceWith>5.4.3.2</ReplaceWith>-->
         </RegexTransform>
     </ItemGroup>
