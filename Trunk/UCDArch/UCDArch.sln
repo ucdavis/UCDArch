@@ -51,6 +51,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.RegressionTests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.ReferenceLinker", "UCDArch.ReferenceLinker\UCDArch.ReferenceLinker.csproj", "{E96AA00D-2EB3-498F-8BAB-A00B449A7903}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{54A9ADB0-2E4C-4A09-8F9B-46D5B30E6DA3}"
+	ProjectSection(SolutionItems) = preProject
+		Build.cmd = Build.cmd
+		Build\Build.proj = Build\Build.proj
+		Build\Build.tasks = Build\Build.tasks
+		Build\CommonAssemblyInfo.cs = Build\CommonAssemblyInfo.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 10

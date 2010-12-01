@@ -81,6 +81,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Build\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="CommonValidator\IValidatable.cs" />
     <Compile Include="CommonValidator\IValidationResult.cs" />
     <Compile Include="CommonValidator\IValidator.cs" />
