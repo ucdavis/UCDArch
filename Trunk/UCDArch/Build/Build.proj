@@ -6,6 +6,9 @@
         <UCDArchRoot>$(MSBuildProjectDirectory)\..</UCDArchRoot>
         <ArtifactDropDirectory>$(UCDArchRoot)\artifacts</ArtifactDropDirectory>
         <AssemblyBuildDirectory>$(UCDArchRoot)\UCDArch.ReferenceLinker\bin\$(Configuration)</AssemblyBuildDirectory>
+        <ReferenceBinDirectory>$(UCDArchRoot)\Bin</ReferenceBinDirectory>
+        <ILMergeExe>$(UCDArchRoot)\Build\ILMerge\ILMerge.exe</ILMergeExe>
+        <ILMergeFileFinalName>UCDArch.dll</ILMergeFileFinalName>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,7 +19,7 @@
         </RegexTransform>
     </ItemGroup>
 
-    <Target Name="Go" DependsOnTargets="UpdateAssemblyVersion; Build; CreateDropDirectories; CopyAssemblyOutputToArtifactDropDirectory">
+    <Target Name="Go" DependsOnTargets="UpdateAssemblyVersion; Build; CreateDropDirectories; CopyAssemblyOutputToArtifactDropDirectory; ILMergeArtifacts">
     </Target>
 
     <Target Name="UpdateAssemblyVersion" Condition="'$(BUILD_NUMBER)' != ''">
@@ -40,5 +43,13 @@
         <Message Text="Copying the UCDArch Assemblies to $(ArtifactDropDirectory)" />
         <Copy ContinueOnError="false" SourceFiles="@(AssemblyOutputItems)" DestinationFiles="@(AssemblyOutputItems ->'$(ArtifactDropDirectory)\%(RecursiveDir)%(Filename)%(Extension)')" />
         <Delete Files="$(ArtifactDropDirectory)\UCDArch.ReferenceLinker.dll" />
+    </Target>
+
+    <Target Name="ILMergeArtifacts">
+        <ItemGroup>
+            <ILMergeItems Include="UCDArch.Core.dll UCDArch.Core.NHibernateValidator.dll UCDArch.Data.dll UCDArch.Testing.dll UCDArch.Web.dll UCDArch.Web.Providers.dll" />
+        </ItemGroup>
+        <Message Text="ILMerging the UCDArch dlls in $(ArtifactDropDirectory)" />
+        <Exec Command="&quot;$(ILMergeExe)&quot; /targetplatform:&quot;v4, %ProgramFiles%\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&quot; /lib:&quot;$(ReferenceBinDirectory)&quot; /out:$(ILMergeFileFinalName) %(ILMergeItems.FileName)%(ILMergeItems.Extension)" WorkingDirectory="$(ArtifactDropDirectory)" />
     </Target>
 </Project>

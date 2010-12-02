@@ -59,6 +59,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{54A9ADB0
 		Build\CommonAssemblyInfo.cs = Build\CommonAssemblyInfo.cs
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILMerge", "ILMerge", "{CE4BF466-63EF-4B18-8E8C-31088C38DA9F}"
+	ProjectSection(SolutionItems) = preProject
+		Build\ILMerge\ILMerge License.rtf = Build\ILMerge\ILMerge License.rtf
+		Build\ILMerge\ILMerge.doc = Build\ILMerge\ILMerge.doc
+		Build\ILMerge\ILMerge.exe = Build\ILMerge\ILMerge.exe
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 10
@@ -137,5 +144,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE4BF466-63EF-4B18-8E8C-31088C38DA9F} = {54A9ADB0-2E4C-4A09-8F9B-46D5B30E6DA3}
 	EndGlobalSection
 EndGlobal
