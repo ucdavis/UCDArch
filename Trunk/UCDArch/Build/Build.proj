@@ -4,8 +4,8 @@
     <PropertyGroup>
         <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
         <UCDArchRoot>$(MSBuildProjectDirectory)\..</UCDArchRoot>
-        <DropDirectory>$(UCDArchRoot)\bin</DropDirectory>
-        <ArtifactDropDirectory>$(DropDirectory)\artifacts</ArtifactDropDirectory>
+        <ArtifactDropDirectory>$(UCDArchRoot)\artifacts</ArtifactDropDirectory>
+        <AssemblyBuildDirectory>$(UCDArchRoot)\UCDArch.ReferenceLinker\bin\$(Configuration)</AssemblyBuildDirectory>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,7 +16,7 @@
         </RegexTransform>
     </ItemGroup>
 
-    <Target Name="Go" DependsOnTargets="UpdateAssemblyVersion; Build">
+    <Target Name="Go" DependsOnTargets="UpdateAssemblyVersion; Build; CreateDropDirectories; CopyAssemblyOutputToArtifactDropDirectory">
     </Target>
 
     <Target Name="UpdateAssemblyVersion" Condition="'$(BUILD_NUMBER)' != ''">
@@ -27,4 +27,18 @@
         <MSBuild Projects="$(UCDArchRoot)\UCDArch.sln" Targets="Build" Properties="EnableCodeAnalysis=true" />
     </Target>
 
+    <Target Name="CreateDropDirectories">
+        <Message Text="Making the output directories for the compiled output at '$(DropDirectory)'." />
+        <RemoveDir Directories="$(ArtifactDropDirectory)" Condition="Exists('$(ArtifactDropDirectory)')" ContinueOnError="True" />
+        <MakeDir Directories="$(ArtifactDropDirectory)" Condition="!Exists('$(ArtifactDropDirectory)')" />
+    </Target>
+
+    <Target Name="CopyAssemblyOutputToArtifactDropDirectory">
+        <ItemGroup>
+            <AssemblyOutputItems Exclude="$(AssemblyBuildDirectory)\**\UCDArch.*.pdb" Include="$(AssemblyBuildDirectory)\**\UCDArch.*.dll" />
+        </ItemGroup>
+        <Message Text="Copying the UCDArch Assemblies to $(ArtifactDropDirectory)" />
+        <Copy ContinueOnError="false" SourceFiles="@(AssemblyOutputItems)" DestinationFiles="@(AssemblyOutputItems ->'$(ArtifactDropDirectory)\%(RecursiveDir)%(Filename)%(Extension)')" />
+        <Delete Files="$(ArtifactDropDirectory)\UCDArch.ReferenceLinker.dll" />
+    </Target>
 </Project>
