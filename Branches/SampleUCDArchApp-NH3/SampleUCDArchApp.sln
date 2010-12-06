@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{3289B3C8-85A6-4CEC-9702-FEA92379FEDC}"
 	ProjectSection(SolutionItems) = preProject
+		Bin\Antlr3.Runtime.dll = Bin\Antlr3.Runtime.dll
 		Bin\AutoMapper.dll = Bin\AutoMapper.dll
 		Bin\Castle.Core.dll = Bin\Castle.Core.dll
 		Bin\Castle.DynamicProxy2.dll = Bin\Castle.DynamicProxy2.dll
@@ -23,8 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{3289B3C8-85A
 		Bin\Newtonsoft.Json.dll = Bin\Newtonsoft.Json.dll
 		Bin\NHibernate.ByteCode.Spring.dll = Bin\NHibernate.ByteCode.Spring.dll
 		Bin\NHibernate.dll = Bin\NHibernate.dll
-		Bin\NHibernate.Linq.dll = Bin\NHibernate.Linq.dll
 		Bin\NHibernate.Validator.dll = Bin\NHibernate.Validator.dll
+		Bin\Remotion.Data.Linq.dll = Bin\Remotion.Data.Linq.dll
 		Bin\Rhino.Mocks.dll = Bin\Rhino.Mocks.dll
 		Bin\Spring.Aop.dll = Bin\Spring.Aop.dll
 		Bin\Spring.Core.dll = Bin\Spring.Core.dll
