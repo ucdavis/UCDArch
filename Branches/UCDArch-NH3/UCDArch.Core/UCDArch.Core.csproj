@@ -94,7 +94,9 @@
     <Compile Include="DomainModel\IHasAssignedId.cs" />
     <Compile Include="DomainModel\ValidatableObject.cs" />
     <Compile Include="PersistanceSupport\IDbContext.cs" />
+    <Compile Include="PersistanceSupport\IQueryExtensionProvider.cs" />
     <Compile Include="PersistanceSupport\IRepository.cs" />
+    <Compile Include="PersistanceSupport\QueryExtensions.cs" />
     <Compile Include="PersistanceSupport\TransactionScope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartServiceLocator.cs" />
