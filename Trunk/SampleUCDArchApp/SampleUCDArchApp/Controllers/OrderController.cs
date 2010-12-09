@@ -30,7 +30,7 @@ namespace SampleUCDArchApp.Controllers
         [HandleTransactionsManually] //Just for demonstration purposes
         public ActionResult Index()
         {
-            var orders = _orderRepository.GetAll();
+            var orders = _orderRepository.Queryable;
 
             return View(orders);
         }
