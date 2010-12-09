@@ -47,7 +47,7 @@
 
     <Target Name="ILMergeArtifacts">
         <ItemGroup>
-            <ILMergeItems Include="UCDArch.Core.dll UCDArch.Core.NHibernateValidator.dll UCDArch.Data.dll UCDArch.Testing.dll UCDArch.Web.dll UCDArch.Web.Providers.dll" />
+            <ILMergeItems Include="UCDArch.Core.dll UCDArch.Core.DataAnnotationsValidator.dll UCDArch.Core.NHibernateValidator.dll UCDArch.Data.dll UCDArch.Testing.dll UCDArch.Web.dll UCDArch.Web.Providers.dll" />
         </ItemGroup>
         <Message Text="ILMerging the UCDArch dlls in $(ArtifactDropDirectory)" />
         <Exec Command="&quot;$(ILMergeExe)&quot; /targetplatform:&quot;v4, %ProgramFiles%\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&quot; /lib:&quot;$(ReferenceBinDirectory)&quot; /keyfile:$(MSBuildProjectDirectory)\CAESDO.snk /out:$(ILMergeFileFinalName) %(ILMergeItems.FileName)%(ILMergeItems.Extension)" WorkingDirectory="$(ArtifactDropDirectory)" />
