@@ -27,5 +27,10 @@ namespace UCDArch.Core.PersistanceSupport
         {
             return QueryExtensionProvider.Cache(queryable, region);
         }
+
+        public static IEnumerable<T> ToFuture<T>(this IQueryable<T> queryable)
+        {
+            return QueryExtensionProvider.ToFuture(queryable);
+        }
     }
 }

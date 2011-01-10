@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using UCDArch.Core.PersistanceSupport;
 using NHibernate.Linq;
 
-namespace UCDArch.Data
+namespace UCDArch.Data.NHibernate
 {
     public class NHibernateQueryExtensionProvider : IQueryExtensionProvider 
     {
@@ -31,6 +30,13 @@ namespace UCDArch.Data
             var ret = queryable.FetchMany(relationshipCollection);
 
             return thenFetchManyRelationship.Aggregate(ret, (current, fetchExpression) => current.ThenFetchMany(fetchExpression));
+        }
+
+        public IEnumerable<T> ToFuture<T>(IQueryable<T> queryable)
+        {
+            var query = LinqExtensionMethods.ToFuture(queryable);
+
+            return query;
         }
     }
 }

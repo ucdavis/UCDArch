@@ -18,5 +18,7 @@ namespace UCDArch.Core.PersistanceSupport
                                                                   relationshipCollection,
                                                               params Expression<Func<TRelated, IEnumerable<TRelated>>>[]
                                                                   thenFetchManyRelationship);
+
+        IEnumerable<T> ToFuture<T>(IQueryable<T> queryable);
     }
 }
