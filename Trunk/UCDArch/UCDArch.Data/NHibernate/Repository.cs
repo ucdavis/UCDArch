@@ -61,7 +61,7 @@ namespace UCDArch.Data.NHibernate
         {
             get
             {
-                return Session.Linq<T>();
+                return Session.Query<T>();
             }
         }
         

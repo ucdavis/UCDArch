@@ -91,6 +91,7 @@
       <HintPath>..\Bin\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -119,6 +120,7 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCDArch.Core.DataAnnotationsValidator\CommonValidationAdapter\ValidatorTests.cs" />
     <Compile Include="UCDArch.Core.NHibernateValidator\CommonValidationAdapter\CompositeKeyValidationTests.cs" />
     <Compile Include="UCDArch.Core.NHibernateValidator\CommonValidationAdapter\ValidatorExtensionTests.cs" />
     <Compile Include="UCDArch.Core\DomainModel\BaseObjectEqualityComparerTests.cs" />
@@ -133,6 +135,10 @@
     <Compile Include="UCDArch.Web\ValidatorTests\ValidatorRulesProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UCDArch.Core.DataAnnotationsValidator\UCDArch.Core.DataAnnotationsValidator.csproj">
+      <Project>{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}</Project>
+      <Name>UCDArch.Core.DataAnnotationsValidator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UCDArch.Core.NHibernateValidator\UCDArch.Core.NHibernateValidator.csproj">
       <Project>{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}</Project>
       <Name>UCDArch.Core.NHibernateValidator</Name>
