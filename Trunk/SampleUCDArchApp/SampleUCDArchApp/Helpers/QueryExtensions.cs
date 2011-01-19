@@ -6,6 +6,7 @@ using NHibernate.Linq;
 
 namespace SampleUCDArchApp.Helpers
 {
+    /*
     public static class QueryExtensions
     {
         public static INHibernateQueryable<T> NhQueryable<T>(this IQueryable<T> queryable)
@@ -33,4 +34,5 @@ namespace SampleUCDArchApp.Helpers
             return nhquery;
         }
     }
+     **/
 }
