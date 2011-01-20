@@ -68,6 +68,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILMerge", "ILMerge", "{CE4B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Core.DataAnnotationsValidator", "UCDArch.Core.DataAnnotationsValidator\UCDArch.Core.DataAnnotationsValidator.csproj", "{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{AD2B027D-7009-47B5-892A-63B6D266B4AF}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Lib\System.Web.Mvc.dll = Build\Lib\System.Web.Mvc.dll
+		Build\Lib\System.Web.WebPages.dll = Build\Lib\System.Web.WebPages.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 11
@@ -156,5 +162,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CE4BF466-63EF-4B18-8E8C-31088C38DA9F} = {54A9ADB0-2E4C-4A09-8F9B-46D5B30E6DA3}
+		{AD2B027D-7009-47B5-892A-63B6D266B4AF} = {54A9ADB0-2E4C-4A09-8F9B-46D5B30E6DA3}
 	EndGlobalSection
 EndGlobal
