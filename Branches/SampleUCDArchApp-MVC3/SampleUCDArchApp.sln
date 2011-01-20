@@ -6,8 +6,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{3289B3C8-85A
 		Bin\Antlr3.Runtime.dll = Bin\Antlr3.Runtime.dll
 		Bin\AutoMapper.dll = Bin\AutoMapper.dll
 		Bin\Castle.Core.dll = Bin\Castle.Core.dll
-		Bin\Castle.DynamicProxy2.dll = Bin\Castle.DynamicProxy2.dll
-		Bin\Castle.MicroKernel.dll = Bin\Castle.MicroKernel.dll
 		Bin\Castle.Windsor.dll = Bin\Castle.Windsor.dll
 		Bin\Common.Logging.dll = Bin\Common.Logging.dll
 		Bin\Elmah.dll = Bin\Elmah.dll
@@ -17,7 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{3289B3C8-85A
 		Bin\log4net.dll = Bin\log4net.dll
 		Bin\Microsoft.Practices.ServiceLocation.dll = Bin\Microsoft.Practices.ServiceLocation.dll
 		Bin\Microsoft.Web.Mvc.dll = Bin\Microsoft.Web.Mvc.dll
-		Bin\MvcContrib.Castle.dll = Bin\MvcContrib.Castle.dll
 		Bin\MvcContrib.dll = Bin\MvcContrib.dll
 		Bin\MvcContrib.FluentHtml.dll = Bin\MvcContrib.FluentHtml.dll
 		Bin\MvcContrib.TestHelper.dll = Bin\MvcContrib.TestHelper.dll
@@ -36,12 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{3289B3C8-85A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arch", "Arch", "{D5BF31A8-F527-4309-BE1D-9065AA7B63C7}"
 	ProjectSection(SolutionItems) = preProject
-		Arch\UCDArch.Core.dll = Arch\UCDArch.Core.dll
-		Arch\UCDArch.Core.NHibernateValidator.dll = Arch\UCDArch.Core.NHibernateValidator.dll
-		Arch\UCDArch.Data.dll = Arch\UCDArch.Data.dll
-		Arch\UCDArch.Testing.dll = Arch\UCDArch.Testing.dll
-		Arch\UCDArch.Web.dll = Arch\UCDArch.Web.dll
-		Arch\UCDArch.Web.Providers.dll = Arch\UCDArch.Web.Providers.dll
+		Arch\UCDArch.dll = Arch\UCDArch.dll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp", "SampleUCDArchApp\SampleUCDArchApp.csproj", "{4382EC53-47CA-4FF1-A2B4-C22DE5012854}"

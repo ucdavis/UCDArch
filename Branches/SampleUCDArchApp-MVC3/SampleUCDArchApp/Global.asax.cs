@@ -2,7 +2,6 @@
 using System.Web.Routing;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
-using MvcContrib.Castle;
 using SampleUCDArchApp.Controllers;
 using UCDArch.Web.IoC;
 using UCDArch.Web.ModelBinder;
@@ -45,6 +44,7 @@ namespace SampleUCDArchApp
         private static IWindsorContainer InitializeServiceLocator()
         {
             IWindsorContainer container = new WindsorContainer();
+            
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
 
             container.RegisterControllers(typeof(HomeController).Assembly);
