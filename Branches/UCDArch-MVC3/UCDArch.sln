@@ -15,7 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{7AA5B14E-F6D
 		Bin\log4net.dll = Bin\log4net.dll
 		Bin\Microsoft.Practices.ServiceLocation.dll = Bin\Microsoft.Practices.ServiceLocation.dll
 		Bin\Microsoft.Web.Mvc.dll = Bin\Microsoft.Web.Mvc.dll
-		Bin\MvcContrib.Castle.dll = Bin\MvcContrib.Castle.dll
 		Bin\MvcContrib.dll = Bin\MvcContrib.dll
 		Bin\MvcContrib.FluentHtml.dll = Bin\MvcContrib.FluentHtml.dll
 		Bin\MvcContrib.TestHelper.dll = Bin\MvcContrib.TestHelper.dll

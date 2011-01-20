@@ -129,6 +129,7 @@
     <Compile Include="Helpers\ImageLinkExtensions.cs" />
     <Compile Include="Helpers\UrlConventionExtentions.cs" />
     <Compile Include="Helpers\ValidationHelpers.cs" />
+    <Compile Include="IoC\WindsorControllerFactory.cs" />
     <Compile Include="IoC\WindsorServiceLocator.cs" />
     <Compile Include="ModelBinder\EntityCollectionValueBinder.cs" />
     <Compile Include="ModelBinder\EntityValueBinder.cs" />
