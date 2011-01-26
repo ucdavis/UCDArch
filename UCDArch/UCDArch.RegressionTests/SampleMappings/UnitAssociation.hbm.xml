@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class
+    name="UCDArch.RegressionTests.SampleMappings.UnitAssociation, UCDArch.RegressionTests"
+    table="UnitAssociations" >
+    <id name="Id" column="UnitAssociationID" unsaved-value="0">
+      <generator class="identity" />
+    </id>
+
+    <property name="Inactive" column="Inactive" />
+
+    <many-to-one name="User" column="UserID"
+      class="UCDArch.RegressionTests.SampleMappings.User, UCDArch.RegressionTests" not-null="true" />
+<!-- TODO: Enable this?
+    <many-to-one name="Application" column="ApplicationID"
+      class="UCDArch.RegressionTests.SampleMappings.Application, UCDArch.RegressionTests" not-null="true" />
+-->
+    <many-to-one name="Unit" column="UnitID"
+      class="UCDArch.RegressionTests.SampleMappings.Unit, UCDArch.RegressionTests" not-null="true" fetch="join" />
+
+  </class>
+</hibernate-mapping>

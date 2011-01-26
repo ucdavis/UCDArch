@@ -1,0 +1,14 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "SampleUCDArchApp.Db"
+   MSDTVersion = "80"
+   SccProjectName = "SAK"
+   SccLocalPath = "SAK"
+   SccAuxPath = "SAK"
+   SccProvider = "SAK"
+   Begin Folder = "Create Scripts"
+      Script = "CreateNorthwindSchemaAndData.sql"
+      Script = "CreateNorthwindSchemaOnly.sql"
+   End
+   Begin DBRefFolder = "Database References"
+   End
+End
