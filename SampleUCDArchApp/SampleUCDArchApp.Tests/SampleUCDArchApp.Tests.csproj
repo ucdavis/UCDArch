@@ -73,8 +73,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="UCDArch">
-      <HintPath>..\Arch\UCDArch.dll</HintPath>
+    <Reference Include="UCDArch, Version=3.0.0.0, Culture=neutral, PublicKeyToken=667f3cb07abadf4b, processorArchitecture=MSIL">
+      <HintPath>..\..\UCDArch\artifacts\UCDArch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
