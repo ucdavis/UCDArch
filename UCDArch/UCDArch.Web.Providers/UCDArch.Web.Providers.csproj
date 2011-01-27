@@ -64,6 +64,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq">
@@ -80,7 +81,10 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CatbertRoleProvider.cs" />
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="RoleServiceClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CatbertServiceRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CAESDO.snk" />
