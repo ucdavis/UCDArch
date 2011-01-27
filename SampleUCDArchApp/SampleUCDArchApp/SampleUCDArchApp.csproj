@@ -134,6 +134,7 @@
     <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RoleProviderController.cs" />
     <Compile Include="CustomBinder.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
