@@ -74,42 +74,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{AD2B027D-700
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 11
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = UCDArch.Core\\UCDArch.Core.csproj
-		SccProjectName1 = UCDArch.Core
-		SccLocalPath1 = UCDArch.Core
-		SccProjectUniqueName2 = UCDArch.Data\\UCDArch.Data.csproj
-		SccProjectName2 = UCDArch.Data
-		SccLocalPath2 = UCDArch.Data
-		SccProjectUniqueName3 = UCDArch.Testing\\UCDArch.Testing.csproj
-		SccProjectName3 = UCDArch.Testing
-		SccLocalPath3 = UCDArch.Testing
-		SccProjectUniqueName4 = UCDArch.Tests\\UCDArch.Tests.csproj
-		SccProjectName4 = UCDArch.Tests
-		SccLocalPath4 = UCDArch.Tests
-		SccProjectUniqueName5 = UCDArch.Web.Providers\\UCDArch.Web.Providers.csproj
-		SccProjectName5 = UCDArch.Web.Providers
-		SccLocalPath5 = UCDArch.Web.Providers
-		SccProjectUniqueName6 = UCDArch.Web\\UCDArch.Web.csproj
-		SccProjectName6 = UCDArch.Web
-		SccLocalPath6 = UCDArch.Web
-		SccProjectUniqueName7 = UCDArch.Core.NHibernateValidator\\UCDArch.Core.NHibernateValidator.csproj
-		SccProjectName7 = UCDArch.Core.NHibernateValidator
-		SccLocalPath7 = UCDArch.Core.NHibernateValidator
-		SccProjectUniqueName8 = UCDArch.RegressionTests\\UCDArch.RegressionTests.csproj
-		SccProjectName8 = UCDArch.RegressionTests
-		SccLocalPath8 = UCDArch.RegressionTests
-		SccProjectUniqueName9 = UCDArch.ReferenceLinker\\UCDArch.ReferenceLinker.csproj
-		SccProjectName9 = UCDArch.ReferenceLinker
-		SccLocalPath9 = UCDArch.ReferenceLinker
-		SccProjectUniqueName10 = UCDArch.Core.DataAnnotationsValidator\\UCDArch.Core.DataAnnotationsValidator.csproj
-		SccProjectName10 = UCDArch.Core.DataAnnotationsValidator
-		SccLocalPath10 = UCDArch.Core.DataAnnotationsValidator
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
