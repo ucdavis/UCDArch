@@ -40,24 +40,6 @@ EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "SampleUCDArchApp.Db", "SampleUCDArchApp.Db\SampleUCDArchApp.Db.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SampleUCDArchApp.Tests\\SampleUCDArchApp.Tests.csproj
-		SccProjectName1 = SampleUCDArchApp.Tests
-		SccLocalPath1 = SampleUCDArchApp.Tests
-		SccProjectUniqueName2 = SampleUCDArchApp\\SampleUCDArchApp.csproj
-		SccProjectName2 = SampleUCDArchApp
-		SccLocalPath2 = SampleUCDArchApp
-		SccProjectUniqueName3 = SampleUCDArchApp.Core\\SampleUCDArchApp.Core.csproj
-		SccProjectName3 = SampleUCDArchApp.Core
-		SccLocalPath3 = SampleUCDArchApp.Core
-		SccProjectUniqueName4 = SampleUCDArchApp.Db\\SampleUCDArchApp.Db.dbproj
-		SccProjectName4 = SampleUCDArchApp.Db
-		SccLocalPath4 = SampleUCDArchApp.Db
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
