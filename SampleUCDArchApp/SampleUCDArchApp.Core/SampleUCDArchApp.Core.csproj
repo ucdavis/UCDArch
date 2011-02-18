@@ -95,9 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Mappings\OrderMap.cs" />
     <Compile Include="Mappings\CustomerMap.cs" />
     <Compile Include="Domain\Order.cs" />
-    <Compile Include="Domain\Product.cs" />
     <Compile Include="MessageFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,9 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Domain\Order.hbm.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Domain\Product.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

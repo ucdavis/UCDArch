@@ -137,7 +137,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleProviderController.cs" />
     <Compile Include="CustomBinder.cs" />
     <Compile Include="Default.aspx.cs">
@@ -162,9 +161,6 @@
     <Content Include="Views\Order\Edit.aspx" />
     <Content Include="Views\Order\Index.aspx" />
     <Content Include="Views\Order\OrderForm.ascx" />
-    <Content Include="Views\Product\Create.aspx" />
-    <Content Include="Views\Product\Index.aspx" />
-    <Content Include="Views\Product\ProductForm.ascx" />
     <Content Include="Views\User\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
