@@ -11,7 +11,7 @@ namespace SampleUCDArchApp.Core.Mappings
 
             Map(x => x.CompanyName);
             Map(x => x.ContactName);
-            Map(x => x.ContactName);
+            Map(x => x.Country);
             Map(x => x.Fax);
 
             HasMany(x => x.Orders).Cascade.All();

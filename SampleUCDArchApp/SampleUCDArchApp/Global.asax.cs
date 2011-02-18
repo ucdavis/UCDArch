@@ -3,9 +3,11 @@ using System.Web.Routing;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
 using SampleUCDArchApp.Controllers;
+using UCDArch.Data.NHibernate;
 using UCDArch.Web.IoC;
 using UCDArch.Web.ModelBinder;
 using UCDArch.Web.Validator;
+using SampleUCDArchApp.Core.Domain;
 
 namespace SampleUCDArchApp
 {
@@ -37,6 +39,8 @@ namespace SampleUCDArchApp
             RegisterRoutes(RouteTable.Routes);
 
             ModelBinders.Binders.DefaultBinder = new UCDArchModelBinder();
+
+            NHibernateSessionConfiguration.Mappings.UseFluentMappings(typeof(Customer).Assembly);
 
             IWindsorContainer container = InitializeServiceLocator();
         }
