@@ -7,7 +7,7 @@ using UCDArch.Web.ActionResults;
 
 namespace SampleUCDArchApp.Controllers
 {
-    public class JsonController : SuperController
+    public class JsonController : ApplicationController
     {
         //
         // GET: /Json/

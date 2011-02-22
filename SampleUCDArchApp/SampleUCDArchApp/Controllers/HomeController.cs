@@ -6,7 +6,7 @@ namespace SampleUCDArchApp.Controllers
 {
     [HandleError]
     [HandleTransactionsManually]
-    public class HomeController : SuperController
+    public class HomeController : ApplicationController
     {
         public ActionResult Index()
         {

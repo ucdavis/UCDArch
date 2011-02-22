@@ -12,7 +12,7 @@ using SampleUCDArchApp.Core;
 
 namespace SampleUCDArchApp.Controllers
 {
-    public class OrderController : SuperController
+    public class OrderController : ApplicationController
     {
         private readonly IRepository<Order> _orderRepository;
         private readonly IMessageFactory _messageFactory;

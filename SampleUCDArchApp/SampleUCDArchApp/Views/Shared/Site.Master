@@ -39,6 +39,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
             <div id="footer">
+                Sample UCDArch Application | Version <%: ViewData["Version"] %>
             </div>
         </div>
     </div>

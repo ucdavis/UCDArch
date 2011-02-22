@@ -4,7 +4,7 @@ using SampleUCDArchApp.Core.Domain;
 
 namespace SampleUCDArchApp.Controllers
 {
-    public class CustomerController : SuperController
+    public class CustomerController : ApplicationController
     {
         public ActionResult Index()
         {
