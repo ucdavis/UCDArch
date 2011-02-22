@@ -11,17 +11,17 @@
 
         $("#getOrder").click(function() {
             $.get('<%= Url.Action("Get", "Json") %>', 
-                displayResult);
+                displayResult, 'html');
         });
 
         $("#getOrders").click(function() {
             $.get('<%= Url.Action("List", "Json") %>',
-                displayResult);
+                displayResult, 'html');
         });
     });
 
     function displayResult(result) {
-        $("#RawResults").html(result);
+        $("#RawResults").html(result.toString());
     }
 
 </script>

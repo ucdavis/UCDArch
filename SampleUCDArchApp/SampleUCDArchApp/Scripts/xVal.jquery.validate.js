@@ -130,7 +130,7 @@ xVal.AttachValidator = function(elementPrefix, rulesConfig, options, pluginName)
                             break;
                         case "Decimal":
                             options.number = true;
-                            options.messages = { number: errorText || xVal.Messages.DataType_Decimal };
+                            options.messages = { number: errorText || xVal.Messages.DataType_Decimal || "Please enter a valid number without any currency symbols."};
                             break;
                         case "Date":
                             options.date = true;
