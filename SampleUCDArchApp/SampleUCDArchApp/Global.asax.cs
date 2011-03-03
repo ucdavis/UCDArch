@@ -34,7 +34,7 @@ namespace SampleUCDArchApp
             HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
             #endif
             
-            xVal.ActiveRuleProviders.Providers.Add(new ValidatorRulesProvider());
+            //xVal.ActiveRuleProviders.Providers.Add(new ValidatorRulesProvider());
 
             RegisterRoutes(RouteTable.Routes);
 

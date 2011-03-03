@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using NHibernate.Validator.Constraints;
 using UCDArch.Core.DomainModel;
 using UCDArch.Core.Utils;
+using System.ComponentModel.DataAnnotations;
 
 namespace SampleUCDArchApp.Core.Domain
 {
@@ -30,7 +30,7 @@ namespace SampleUCDArchApp.Core.Domain
         }
 
         [DomainSignature]
-        [NotNullNotEmpty]
+        [Required]
         public virtual string CompanyName { get; set; }
 
         [DomainSignature]

@@ -1,9 +1,8 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 using UCDArch.Core.DomainModel;
 using UCDArch.Core.Utils;
-using NHibernate.Validator.Constraints;
-using UCDArch.Core.NHibernateValidator.Extensions;
 
 namespace SampleUCDArchApp.Core.Domain
 {
@@ -26,11 +25,11 @@ namespace SampleUCDArchApp.Core.Domain
         public virtual DateTime OrderDate { get; set; }
 
         [Required]
-        [Length(12)]
+        [StringLength(12)]
         [JsonProperty]
         public virtual string ShipAddress { get; set; }
 
-        [NotNull]
+        [Required]
         public virtual Customer OrderedBy { get; set; }
     }
 }

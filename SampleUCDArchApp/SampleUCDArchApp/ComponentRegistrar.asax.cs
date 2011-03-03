@@ -1,6 +1,6 @@
 using Castle.Windsor;
 using UCDArch.Core.CommonValidator;
-using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using UCDArch.Core.DataAnnotationsValidator.CommonValidatorAdapter;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Data.NHibernate;
 using SampleUCDArchApp.Core;

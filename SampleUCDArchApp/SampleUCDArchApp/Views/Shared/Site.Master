@@ -8,7 +8,9 @@
 
     <script src="//ajax.microsoft.com/ajax/jQuery/jquery-1.5.min.js"></script>
     <script src="//ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-    <script src="<%= Url.Script("xVal.jquery.validate.js") %>" type="text/javascript"></script>
+    <%--<script src="<%= Url.Script("jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>--%>
+    <script src="<%= Url.Script("MicrosoftAjax.js")%>" type="text/javascript"></script>
+    <script src="<%= Url.Script("MicrosoftMvcValidation.js")%>" type="text/javascript"></script>
 </head>
 
 <body>

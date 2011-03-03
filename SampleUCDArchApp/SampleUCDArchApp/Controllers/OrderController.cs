@@ -52,8 +52,6 @@ namespace SampleUCDArchApp.Controllers
         [HttpPost]
         public ActionResult Create(Order order)
         {
-            order.TransferValidationMessagesTo(ModelState);
-
             if (ModelState.IsValid)
             {
                 _orderRepository.EnsurePersistent(order);
@@ -99,9 +97,7 @@ namespace SampleUCDArchApp.Controllers
         {
             var orderToUpdate = _orderRepository.GetNullableById(order.Id);
             TransferValuesTo(orderToUpdate, order);
-
-            orderToUpdate.TransferValidationMessagesTo(ModelState);
-            
+   
             if (ModelState.IsValid)
             {
                 _orderRepository.EnsurePersistent(orderToUpdate);
