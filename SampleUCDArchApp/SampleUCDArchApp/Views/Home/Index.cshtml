@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewData["Message"]</h2>
+<p>
+    <ul>
+        <li>@Html.ActionLink("List of Orders (with Edit/New)", "Index", "Order")</li>
+        <li>@Html.ActionLink("Example of using Json with Orders", "Index", "Json")</li>
+    </ul>
+</p>

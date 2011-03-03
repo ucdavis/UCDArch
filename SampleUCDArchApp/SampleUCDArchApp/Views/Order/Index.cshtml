@@ -1,0 +1,24 @@
+@model IEnumerable<SampleUCDArchApp.Core.Domain.Order>
+
+@using SampleUCDArchApp.Controllers
+@using SampleUCDArchApp.Helpers
+
+@{
+    ViewBag.Title = "Order Index";    
+}
+
+<h2>Index</h2>
+
+@(
+
+    Html.Grid(Model).Transactional().Name("Orders").Columns(
+        col => {
+            @*col.Template(order => { @<text>@Html.ActionLink<OrderController>(a => a.Edit(order.Id), "Edit")</text> });*@
+            col.Bound(order => order.OrderedBy.CompanyName);
+            col.Bound(order => order.ShipAddress);
+            col.Bound(order => order.OrderDate).Format("{0:d}");
+        }).Pageable(x=>x.PageSize(20)).Sortable()
+)       
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
