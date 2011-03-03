@@ -147,7 +147,7 @@
     </Compile>
     <Compile Include="Helpers\CustomGridBuilder.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
-    <Compile Include="Helpers\QueryExtensions.cs" />
+    <Compile Include="Helpers\FluentHtmlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

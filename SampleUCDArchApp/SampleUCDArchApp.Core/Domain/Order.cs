@@ -22,6 +22,7 @@ namespace SampleUCDArchApp.Core.Domain
         }
 
         [JsonProperty]
+        [DataType(DataType.Date)]
         public virtual DateTime OrderDate { get; set; }
 
         [Required]

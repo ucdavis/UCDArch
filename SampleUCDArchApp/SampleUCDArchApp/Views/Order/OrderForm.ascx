@@ -1,4 +1,5 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<SampleUCDArchApp.Controllers.OrderViewModel>" %>
+<%@ Import Namespace="SampleUCDArchApp.Helpers" %>
     
     <%: Html.ValidationSummary() %>
 
@@ -9,21 +10,26 @@
 
         <fieldset>
             <legend>Fields</legend>
+
             <p>
-                <%: this.TextBox("Order.OrderDate").Format("{0:d}").Value(Model.Order.OrderDate).Label("Order Date:") %>
+                <%: Html.LabelFor(x=>x.Order.OrderDate) %>
+                <%: Html.EditorFor(x=>x.Order.OrderDate) %>
                 <%: Html.ValidationMessageFor(x=>x.Order.OrderDate) %>
             </p>
             <p>
-                <%: this.TextBox("Order.ShipAddress").Value(Model.Order.ShipAddress).Label("Ship Address:") %>
+                <%: Html.LabelFor(x=>x.Order.ShipAddress) %>
+                <%: Html.EditorFor(x=>x.Order.ShipAddress) %>
                 <%: Html.ValidationMessageFor(x=>x.Order.ShipAddress) %>
             </p>
             <p>
+
                 <%: this.Select("Order.OrderedBy")
                         .Options(Model.Customers, x=>x.Id, x=>x.CompanyName)
                         .Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : "")
                         .FirstOption(null, "--Select A Company--")
                         .HideFirstOptionWhen(Model.Order.OrderedBy != null)
-                        .Label("Ordered By:")%>
+                        .Label("Ordered By:")
+                        .IncludeUnobtrusiveValidationAttributes(Html)%>
                         
                 <%: Html.ValidationMessageFor(x=>x.Order.OrderedBy) %>
 
