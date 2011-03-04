@@ -5,7 +5,7 @@ using UCDArch.Core.PersistanceSupport;
 
 namespace SampleUCDArchApp.Helpers
 {
-    public class CustomGridBuilder<T> : GridBuilder<T> where T : class
+    public class CustomGridBuilder<T> : GridBuilder<T>, IHtmlString where T : class
     {
         protected bool UseTransaction { get; set; }
         protected bool ShouldDisplayAlternateMessage { get; set; }

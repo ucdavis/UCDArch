@@ -10,10 +10,10 @@
 <h2>Index</h2>
 
 @(
-
-    Html.Grid(Model).Transactional().Name("Orders").Columns(
+    Html.Grid(Model).Transactional().Name("Orders")
+        .Columns(
         col => {
-            @*col.Template(order => { @<text>@Html.ActionLink<OrderController>(a => a.Edit(order.Id), "Edit")</text> });*@
+            col.Template(order => @Html.ActionLink<OrderController>(x=>x.Edit(order.Id), "Edit"));
             col.Bound(order => order.OrderedBy.CompanyName);
             col.Bound(order => order.ShipAddress);
             col.Bound(order => order.OrderDate).Format("{0:d}");

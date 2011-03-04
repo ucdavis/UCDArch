@@ -174,18 +174,17 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\modernizr-1.6.min.js" />
     <Content Include="Scripts\xVal.jquery.validate.js" />
-    <Content Include="Views\Customer\Index.aspx" />
+    <None Include="Views\Customer\Index.cshtml" />
     <None Include="Views\Json\Index.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
     <None Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\Order\Create.aspx" />
-    <Content Include="Views\Order\Edit.aspx" />
-    <Content Include="Views\Order\OrderForm.ascx" />
+    <Content Include="Views\Order\_OrderForm.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

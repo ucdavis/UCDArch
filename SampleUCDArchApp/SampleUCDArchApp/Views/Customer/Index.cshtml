@@ -1,0 +1,54 @@
+@model IEnumerable<SampleUCDArchApp.Core.Domain.Customer>
+@{
+    ViewBag.Title = "Customer Index";
+}
+<h2>
+    Customers</h2>
+<table>
+    <tr>
+        <th>
+            CompanyName
+        </th>
+        <th>
+            ContactName
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            Fax
+        </th>
+        <th>
+            Id
+        </th>
+        <th>
+            Orders
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    
+        <tr>
+            <td>
+                @item.CompanyName
+            </td>
+            <td>
+                @item.ContactName
+            </td>
+            <td>
+                @item.Country
+            </td>
+            <td>
+                @item.Fax
+            </td>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Orders.Count()
+            </td>
+        </tr>
+    
+    }
+</table>
+</asp:Content> 
