@@ -6,8 +6,8 @@ using SampleUCDArchApp.Controllers;
 using UCDArch.Data.NHibernate;
 using UCDArch.Web.IoC;
 using UCDArch.Web.ModelBinder;
-using UCDArch.Web.Validator;
 using SampleUCDArchApp.Core.Domain;
+using SampleUCDArchApp.Helpers;
 
 namespace SampleUCDArchApp
 {
@@ -37,6 +37,8 @@ namespace SampleUCDArchApp
             RegisterRoutes(RouteTable.Routes);
 
             ModelBinders.Binders.DefaultBinder = new UCDArchModelBinder();
+
+            AutomapperConfig.Configure();
 
             NHibernateSessionConfiguration.Mappings.UseFluentMappings(typeof(Customer).Assembly);
 

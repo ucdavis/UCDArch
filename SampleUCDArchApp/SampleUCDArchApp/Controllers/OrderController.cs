@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
 using SampleUCDArchApp.Core.Domain;
 using UCDArch.Core.PersistanceSupport;
-using UCDArch.Web.Controller;
 using UCDArch.Web.Attributes;
 using UCDArch.Core.Utils;
 using System;
-using UCDArch.Web.Helpers;
 using SampleUCDArchApp.Core;
 
 namespace SampleUCDArchApp.Controllers
@@ -96,8 +95,9 @@ namespace SampleUCDArchApp.Controllers
         public ActionResult Edit(Order order)
         {
             var orderToUpdate = _orderRepository.GetNullableById(order.Id);
-            TransferValuesTo(orderToUpdate, order);
-   
+
+            Mapper.Map(order, orderToUpdate);
+            
             if (ModelState.IsValid)
             {
                 _orderRepository.EnsurePersistent(orderToUpdate);
@@ -113,13 +113,6 @@ namespace SampleUCDArchApp.Controllers
 
                 return View(viewModel);
             }
-        }
-
-        private static void TransferValuesTo(Order orderToUpdate, Order order)
-        {
-            orderToUpdate.OrderDate = order.OrderDate;
-            orderToUpdate.OrderedBy = order.OrderedBy;
-            orderToUpdate.ShipAddress = order.ShipAddress;
         }
     }
 
