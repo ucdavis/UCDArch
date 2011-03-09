@@ -3,8 +3,6 @@
 Thumbs.db
 #ignore database sync files
 *.dbmdl
-#ignore nuget packages
-*.nupkg
 #Ignore files build by Visual Studio
 *.obj
 *.exe
@@ -31,3 +29,6 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+#ignore build nuget packages, include the EXE
+*.nupkg
+!NuGet.exe

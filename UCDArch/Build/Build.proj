@@ -13,7 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <RegexTransform Include="$(UCDArchRoot)\Build\CommonAssemblyInfo.cs">
+        <RegexTransform Include="$(UCDArchRoot)\Build\CommonAssemblyInfo.cs; $(UCDArchRoot)\Build\NuGet\UcdArchDlls\UcdArchDlls.nuspec">
             <Find>(?&lt;major&gt;\d+)\.(?&lt;minor&gt;\d+)\.\d+\.(?&lt;revision&gt;\d+)</Find>
             <ReplaceWith>$(BUILD_NUMBER)</ReplaceWith>
             <!--<ReplaceWith>5.4.3.2</ReplaceWith>-->
