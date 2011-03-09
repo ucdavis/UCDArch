@@ -3,6 +3,8 @@
 Thumbs.db
 #ignore database sync files
 *.dbmdl
+#ignore nuget packages
+*.nupkg
 #Ignore files build by Visual Studio
 *.obj
 *.exe

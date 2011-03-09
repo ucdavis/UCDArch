@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>UcdArchDlls</id>
+    <version>0.1.0.0</version>
+    <authors>Scott Kirkland</authors>
+    <owners>Scott Kirkland</owners>
+    <licenseUrl>https://github.com/ucdavis/UCDArch/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Adds or replaces UCDArch core and reference dlls at the root Bin folder.</description>
+    <summary>Adds or replaces UCDArch core and reference dlls at the root Bin folder.</summary>
+    <language>en-US</language>
+  </metadata>
+    <files xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+        <file src="Content/*" target="Content" />
+        <file src="../../../Artifacts/UCDArch.dll" target="Bin/UCDArch.dll" />
+        <file src="../../../Bin/*.dll" target="Bin" />
+        <file src="Tools\*.*" target="Tools"/>
+    </files>
+</package>
