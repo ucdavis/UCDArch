@@ -94,6 +94,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -123,6 +125,7 @@
     <Compile Include="ActionResults\JsonDateConversionStrategy.cs" />
     <Compile Include="ActionResults\JsonNetResult.cs" />
     <Compile Include="Attributes\BypassAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Attributes\ServiceMessageAttribute.cs" />
     <Compile Include="Attributes\TransactionalActionBaseAttribute.cs" />
     <Compile Include="Attributes\HandleTransactionsManuallyAttribute.cs" />
     <Compile Include="Attributes\TransactionAttribute.cs" />
@@ -143,6 +146,9 @@
     <Compile Include="ModelBinder\UCDArchModelBinder.cs" />
     <Compile Include="ModelBinder\ValueBinderHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\MessageServiceClient.cs" />
+    <Compile Include="Services\ServiceMessage.cs" />
     <Compile Include="Validator\MvcValidationAdapter.cs" />
     <Compile Include="Validator\ValidatorRulesProvider.cs" />
   </ItemGroup>
