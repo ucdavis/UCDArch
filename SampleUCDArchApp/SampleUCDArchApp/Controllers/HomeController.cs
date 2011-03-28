@@ -15,6 +15,12 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
+        public ViewResult Sample()
+        {
+            Message = "Here is a status message stored in TempData";
+            return View();
+        }
+
         public ActionResult About()
         {
             return View();

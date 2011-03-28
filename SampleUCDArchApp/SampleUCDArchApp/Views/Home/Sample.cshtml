@@ -1,0 +1,940 @@
+﻿@{
+    ViewBag.Title = "Sample";
+    ViewBag.ErrorMessage = "Here is an error message... It could have come from anywhere!";
+}
+
+@section AdditionalScripts {
+    <script type="text/javascript">
+        $(function () {
+            $('#first').append("<em>This was loaded from jquery!</em>");
+        });
+    </script>
+}
+
+<h3>
+    SubHeader</h3>
+<p id="first">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis velit, aliquet
+    at eleifend ac, faucibus nec dolor. Mauris euismod pellentesque nunc, eu tincidunt
+    mi condimentum vel. Morbi consequat eleifend risus ut sodales. Pellentesque neque
+    tortor, rutrum ut viverra a, sodales a tellus. Etiam auctor, metus feugiat luctus
+    fermentum, eros urna pharetra sem, ut luctus leo ligula eu odio. Phasellus eget
+    quam sed tortor commodo eleifend a eu lacus. Praesent feugiat nisl sit amet dolor
+    ultricies gravida. Donec ullamcorper lobortis metus, id lacinia ligula pellentesque
+    ultrices. Etiam vitae diam eget purus cursus molestie. Vivamus id erat a felis accumsan
+    dapibus consequat id sem. Mauris eu mi enim, eget vehicula nulla. <a href="#">Aliquam
+        lacinia luctus eros eu tincidunt.</a> Mauris elementum tincidunt nunc, eu gravida
+    quam fringilla id.
+</p>
+@* An ordered list that is used as text must have a class of "copy" *@
+<ol class="copy">
+    <li>Step1</li><li>Step2</li><li>Step3</li>
+</ol>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis velit, aliquet
+    at eleifend ac, faucibus nec dolor. Mauris euismod pellentesque nunc, eu tincidunt
+    mi condimentum vel. Morbi consequat eleifend risus ut sodales. Pellentesque neque
+    tortor, rutrum ut viverra a, sodales a tellus. Etiam auctor, metus feugiat luctus
+    fermentum, eros urna pharetra sem, ut luctus leo ligula eu odio. Phasellus eget
+    quam sed tortor commodo eleifend a eu lacus. Praesent feugiat nisl sit amet dolor
+    ultricies gravida. <a href="#">Donec</a> ullamcorper lobortis metus, id lacinia
+    ligula pellentesque ultrices. Etiam vitae diam eget purus cursus molestie. Vivamus
+    id erat a felis accumsan dapibus consequat id sem. Mauris eu mi enim, eget vehicula
+    nulla. Aliquam lacinia luctus eros eu tincidunt. Mauris elementum tincidunt nunc,
+    eu gravida quam fringilla id.
+</p>
+@* An unordered list that is used as text must have a class of "copy" *@
+<ul class="copy">
+    <li>Step1</li><li>Step2</li><li>Step3</li>
+</ul>
+<p>
+    Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipiscing elit. Mauris
+    felis velit, aliquet at eleifend ac, faucibus nec dolor. Mauris euismod pellentesque
+    nunc, eu tincidunt mi condimentum vel. Morbi consequat eleifend risus ut sodales.
+    Pellentesque neque tortor, rutrum ut viverra a, sodales a tellus. Etiam auctor,
+    metus feugiat luctus fermentum, eros urna pharetra sem, ut luctus leo ligula eu
+    odio. Phasellus eget quam sed tortor commodo eleifend a eu lacus. Praesent feugiat
+    nisl sit amet dolor ultricies gravida. Donec ullamcorper lobortis metus, id lacinia
+    ligula pellentesque ultrices. Etiam vitae diam eget purus cursus molestie. Vivamus
+    id erat a felis accumsan dapibus consequat id sem. Mauris eu mi enim, eget vehicula
+    nulla. Aliquam lacinia luctus eros eu tincidunt. Mauris elementum tincidunt nunc,
+    eu gravida quam fringilla id.
+</p>
+@*
+.text_btn should be used sparingly, and only as a register or approval or continue to the next step button.  This is not a navigation element, those belong in the Navigation or Sub Navigation.  If you need a link in a block of text (<p>, <li>, etc) use a regualr <a> link
+*@
+<div class="text_btn">
+    <a href="#">Click here</a></div>
+@* You must have a form tag with a fieldset inside to have the form formatting *@
+<form>
+@* There should be one fieldset per widget/unit.  If we were adding three Dinosaurs we would need three fieldsets*@
+<fieldset>
+    @*
+Legend is required if you have more than one widget/unit to help the user understand what is being asked of them.
+Example: Dinosaur 1 
+*@ <legend>Legend</legend>@*
+Label the type of questions in this area. This requires more than one classification of question.
+Example: What is Dinosaur 1's Plan?
+*@
+    <h4>
+        Form Header</h4>
+    @*
+Be specific so the user understands what exactly you are looking for
+Example: After Dinosaur 1 moves out of his/her parents' den what will Dinosaur 1 do?  We need to know his employment plan, feeding area, as well as living situation.  This information will not be sold or give to carnivores.
+*@
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis
+        est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+    @*
+It must be clear before the user submits the form what is and what is not required.
+*@
+    <p>
+        All required fields are in <strong>bold</strong> and have a red <span class="required">
+            *</span> next to the field label.</p>
+    @*
+Every form element need to be inside an unordered list inside its own <li>
+*@
+    <ul>
+        <li>
+            <div class="editor-label required">
+                @*
+Because this is a required field the label has a class of required and a " <span>*</span>" after the : but inside the label.  The span tag is required.
+Example: <label class="required">Where does dinosaur 1 live: <span>*</span></label>
+*@
+                <label>
+                    Text Field: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                @*
+All text and input fields must have a defualt option or text that shows a accurate example of what is being asked. 
+Example: <input type="text" value="under a conifer (a divsion of Pinophyta) tree in the Jura Mountains " class="text_field" />
+*@
+                <input type="text" class="text_field" />
+                @*
+Every required field must have a <div> after with a class of "validation" with a meaningful error message.
+Example: This is a required field
+*@ <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                @*
+If a field is not required do not add a class of "required" to the label, do not add a <span> tag, and do not add an "*"
+*@
+                <label>
+                    Text Field:
+                </label>
+            </div>
+            <div class="editor-field">
+                <input type="text" class="text_field" />
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                <label class="required">
+                    Text Area: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                <textarea class="text_area"></textarea>
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                <label class="required">
+                    Select Element: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                <select name="select_element">
+                    <optgroup label="Option Group 1">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </optgroup>
+                    <optgroup label="Option Group 2">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </optgroup>
+                </select>
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                <label class="required">
+                    Radio Buttons: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                <ul class="radio_container">
+                    <li>
+                        <input type="radio" class="radio" name="radio_button" value="radio_1" />
+                        Radio 1</li><li>
+                            <input type="radio" class="radio" name="radio_button" value="radio_2" />
+                            Radio 2</li><li>
+                                <input type="radio" class="radio" name="radio_button" value="radio_3" />
+                                Radio 3</li>
+                </ul>
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                <label class="required">
+                    Chckboxes: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                <ul class="checkbox_container">
+                    <li>
+                        <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" />
+                        Radio 1</li><li>
+                            <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" />
+                            Radio 2</li><li>
+                                <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" />
+                                Radio 3</li>
+                </ul>
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                <label class="required">
+                    File Input: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                <input type="file" class="file" name="file" />
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+    </ul>
+    @*
+Still working with the same unit/widget, dinosaur 1, we are moving to a new area so close the </ul> And put a header <h4> on the new <ul>
+Example: All about dinosaur 1's diet?
+*@
+    <h4>
+        Form Header</h4>
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis
+        est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+    <ul>
+        <li>
+            <div class="editor-label required">
+                <label class="required">
+                    Text Field: <span>*</span></label>
+            </div>
+            <div class="editor-field">
+                <input type="text" class="text_field" />
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label required">
+                <label for="text_area">
+                    Text Area:</label>
+            </div>
+            <div class="editor-field">
+                <textarea class="text_area"></textarea>
+                <span class="field-validation-error">This is a required field</span>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label">
+                @*
+For the clear and submit buttons an empty label is required.
+Example: <label>&nbsp;</label>
+*@
+                <label>
+                    &nbsp;</label>
+            </div>
+            <div class="editor-field">
+                @* 
+Clear should have an approve box
+*@
+                <input class="button" type="submit" value="Submit" />
+                | <a href="#" title="Cancel">Cancel</a>
+            </div>
+        </li>
+    </ul>
+</fieldset>
+</form>
+@* 
+The First and Last cells of a table are reserved for two action (edit, view, delete, comment, or email).  Delete should have a confirmation box. Below is a list of the icons and the html code 
+These are the possible icons
+<img src="@Url.Image("details.png")" alt="View the details of this student" />
+<img src="@Url.Image("edit.png")" alt="Edit this student" />
+<img src="@Url.Image("comment.png")" alt="Write a comment on this student" />
+<img src="email.png" alt="Email this student" />
+<img src="@Url.Image("delete.png")" alt="Delete this student" />
+*@
+<table>
+    @*
+The Table's header must be in a thead, tr and th
+*@
+    <thead>
+        <tr>
+            <td colspan="8">
+                <h4>
+                    Filter Options Â±</h4>
+                <div>
+                    <form>
+                    <fieldset>
+                        <ul>
+                            <li>
+                                <div class="editor-label required">
+                                    <label>
+                                        Text Field:
+                                    </label>
+                                    <span>*</span>
+                                </div>
+                                <div class="editor-field">
+                                    <input type="text" value="Default" />
+                                    <span class="field-validation-error">The CompanyName field is required.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="editor-label required">
+                                    <label>
+                                        Text Field:
+                                    </label>
+                                    <span>*</span>
+                                </div>
+                                <div class="editor-field">
+                                    <input type="text" value="Default" />
+                                    <span class="field-validation-error">The CompanyName field is required.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="editor-label required">
+                                    <label class="required">
+                                        Chckboxes: <span>*</span></label>
+                                </div>
+                                <div class="editor-field">
+                                    <ul class="checkbox_container">
+                                        <li>
+                                            <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" />
+                                            Radio 1</li><li>
+                                                <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" />
+                                                Radio 2</li><li>
+                                                    <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" />
+                                                    Radio 3</li>
+                                    </ul>
+                                    <span class="field-validation-error">This is a required field</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            @*
+Headers should be meaningful, yet consise.  They should not be much longer than the data below it.
+Example: MI for middle initial and T, D, S in the cells below
+*@
+            <th>
+            </th>
+            <th>
+                ID Number
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                MI
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @*
+Every data row (not the thead or tfoot) should be labeled odd or even
+*@
+        <tr class="odd">
+            <td>
+                @*
+The <a> link goes around the <img> tag.  The <img> tag must have a relevant descriptive alt="" attribute.
+Example: <img src="@Url.Image("details.png")" alt="View the details of this student" />
+*@ <a href="#">
+    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a> <a
+        href="#">
+        <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                123456789
+            </td>
+            <td>
+                Vincent
+            </td>
+            <td>
+                T
+            </td>
+            <td>
+                Jennings
+            </td>
+            <td>
+                12/13/1963
+            </td>
+            <td>
+                Physician
+            </td>
+            @*
+The <a> link goes around the <img> tag.  The <img> tag must have a relevant descriptive alt="" attribute. Delete should have a confirmation box.
+Example: <img src="@Url.Image("delete.png")" alt="Delete this student" />
+*@
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("comment.png")" alt="Write a comment on this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("email.png")" alt="Email this student" /></a>
+            </td>
+            <td>
+                512415236
+            </td>
+            <td>
+                Shawn
+            </td>
+            <td>
+                D
+            </td>
+            <td>
+                Tarin
+            </td>
+            <td>
+                5/1/1953
+            </td>
+            <td>
+                Counselor
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                512415874
+            </td>
+            <td>
+                Margaret
+            </td>
+            <td>
+                S
+            </td>
+            <td>
+                Pond
+            </td>
+            <td>
+                9/27/1953
+            </td>
+            <td>
+                New Writer
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                854726539
+            </td>
+            <td>
+                Kelli
+            </td>
+            <td>
+                P
+            </td>
+            <td>
+                Stengel
+            </td>
+            <td>
+                5/5/1993
+            </td>
+            <td>
+                Student
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                452186593
+            </td>
+            <td>
+                Edward
+            </td>
+            <td>
+            </td>
+            <td>
+                Vera
+            </td>
+            <td>
+                10/25/1980
+            </td>
+            <td>
+                Secret Agent
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                542846958
+            </td>
+            <td>
+                Jennifer
+            </td>
+            <td>
+                S
+            </td>
+            <td>
+                Jay
+            </td>
+            <td>
+                12/18/1982
+            </td>
+            <td>
+                Manager
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                548769532
+            </td>
+            <td>
+                Jack
+            </td>
+            <td>
+            </td>
+            <td>
+                Bradford
+            </td>
+            <td>
+                5/15/1980
+            </td>
+            <td>
+                Carpenter
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                541784456
+            </td>
+            <td>
+                Roberta
+            </td>
+            <td>
+            </td>
+            <td>
+                Olivo
+            </td>
+            <td>
+                5/18/1972
+            </td>
+            <td>
+                Clerk
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                451425136
+            </td>
+            <td>
+                Heather
+            </td>
+            <td>
+                S
+            </td>
+            <td>
+                Shell
+            </td>
+            <td>
+                6/19/1975
+            </td>
+            <td>
+                Unknown
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                123456789
+            </td>
+            <td>
+                Vincent
+            </td>
+            <td>
+                T
+            </td>
+            <td>
+                Jennings
+            </td>
+            <td>
+                12/13/1963
+            </td>
+            <td>
+                Physician
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                512415236
+            </td>
+            <td>
+                Shawn
+            </td>
+            <td>
+                D
+            </td>
+            <td>
+                Tarin
+            </td>
+            <td>
+                5/1/1953
+            </td>
+            <td>
+                Counselor
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                512415874
+            </td>
+            <td>
+                Margaret
+            </td>
+            <td>
+                S
+            </td>
+            <td>
+                Pond
+            </td>
+            <td>
+                9/27/1953
+            </td>
+            <td>
+                New Writer
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                854726539
+            </td>
+            <td>
+                Kelli
+            </td>
+            <td>
+                P
+            </td>
+            <td>
+                Stengel
+            </td>
+            <td>
+                5/5/1993
+            </td>
+            <td>
+                Student
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                452186593
+            </td>
+            <td>
+                Edward
+            </td>
+            <td>
+            </td>
+            <td>
+                Vera
+            </td>
+            <td>
+                10/25/1980
+            </td>
+            <td>
+                Secret Agent
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                542846958
+            </td>
+            <td>
+                Jennifer
+            </td>
+            <td>
+                S
+            </td>
+            <td>
+                Jay
+            </td>
+            <td>
+                12/18/1982
+            </td>
+            <td>
+                Manager
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                548769532
+            </td>
+            <td>
+                Jack
+            </td>
+            <td>
+            </td>
+            <td>
+                Bradford
+            </td>
+            <td>
+                5/15/1980
+            </td>
+            <td>
+                Carpenter
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                541784456
+            </td>
+            <td>
+                Roberta
+            </td>
+            <td>
+            </td>
+            <td>
+                Olivo
+            </td>
+            <td>
+                5/18/1972
+            </td>
+            <td>
+                Clerk
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("details.png")" alt="View the details of this student" /></a>
+                <a href="#">
+                    <img src="@Url.Image("edit.png")" alt="Edit this student" /></a>
+            </td>
+            <td>
+                451425136
+            </td>
+            <td>
+                Heather
+            </td>
+            <td>
+                S
+            </td>
+            <td>
+                Shell
+            </td>
+            <td>
+                6/19/1975
+            </td>
+            <td>
+                Unknown
+            </td>
+            <td>
+                <a href="#">
+                    <img src="@Url.Image("delete.png")" alt="Delete this student" /></a>
+            </td>
+        </tr>
+    </tbody>
+    @*
+Long tables should be broken up into pages and the pagination goes into the tfoot.
+*@
+    <tfoot>
+        <tr>
+            @*
+If there is no previous page (the user is on page 1) "previous" should not be a link
+*@
+            <td>
+                <a href="#">Previous</a>
+            </td>
+            @*
+The colspan value is equal to the total number of rows minus 2
+*@
+            <td colspan="6">
+                Page 1 of 10
+            </td>
+            @*
+If there is no next page (the user is on page 10) "next" should not be a link
+*@
+            <td>
+                <a href="#">Next</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+@section SubNav {
+    <ul class="navigation">
+        <li><a href="#">SubPageNav1</a> </li>
+        <li><a href="#">SubPageNav2</a> </li>
+        <li><a href="#">SubPageNav3</a> </li>
+        <li><a href="#">SubPageNav4</a> </li>
+    </ul>
+}

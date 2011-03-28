@@ -188,6 +188,7 @@
     <Content Include="Scripts\modernizr-1.6.min.js" />
     <Content Include="Scripts\xVal.jquery.validate.js" />
     <None Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Home\Sample.cshtml" />
     <None Include="Views\Json\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
