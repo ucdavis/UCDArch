@@ -165,7 +165,6 @@
     <Content Include="Images\email.png" />
     <Content Include="Images\logo-caes-long-cap.png" />
     <Content Include="Images\logo-ucdavis.png" />
-    <Content Include="Images\raptor.png" />
     <Content Include="Images\top_blue_bar.jpg" />
     <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.js" />

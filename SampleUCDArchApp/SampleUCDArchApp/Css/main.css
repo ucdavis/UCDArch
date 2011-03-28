@@ -19,8 +19,8 @@ a img {border:none;}
 /*    branding      */
 /* ---------------- */
 
-#branding .frontpage {background: url(w:/Webdevel/GRAMPS/Images/branding.jpg) repeat-x top center; height: 50px; margin: 0 auto; z-index:2; position:relative;}
-#branding {background: url(top_blue_bar.jpg) repeat-x #014a81; margin: 0 auto; z-index:2; position:relative;}
+/*#branding .frontpage {background: url(w:/Webdevel/GRAMPS/Images/branding.jpg) repeat-x top center; height: 50px; margin: 0 auto; z-index:2; position:relative;}*/
+#branding {background: url(../Images/top_blue_bar.jpg) repeat-x #014a81; margin: 0 auto; z-index:2; position:relative;}
 #branding span.header {padding: 2em 0 0.2em 0; margin: 0px auto; display: block;}
 #branding h1 {text-align:left; font-size:3em; line-height:1em; padding-bottom:.2em;}
 #branding {color:#FFF; }
