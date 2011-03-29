@@ -8,6 +8,7 @@ namespace UCDArch.Testing.Fakes
     #region mocks
     /// <summary>
     /// Mock the HTTPContext. Used for getting the current user name
+    /// Example Call: Controller.ControllerContext.HttpContext = new MockHttpContext(0, new[] { "" }, "John");
     /// </summary>
     public class MockHttpContext : HttpContextBase
     {
