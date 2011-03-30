@@ -10,30 +10,50 @@
 
     <fieldset>
         <legend>Fields</legend>
-        <p>
-            @Html.LabelFor(x => x.Order.OrderDate)
-            @Html.EditorFor(x => x.Order.OrderDate)
-            @Html.ValidationMessageFor(x => x.Order.OrderDate)
-        </p>
-        <p>
-            @Html.LabelFor(x => x.Order.ShipAddress)
-            @Html.EditorFor(x => x.Order.ShipAddress)
-            @Html.ValidationMessageFor(x => x.Order.ShipAddress)
-        </p>
-        <p>
-            @(this.Select("Order.OrderedBy").Options(Model.Customers, x => x.Id, x => x.CompanyName)
-                    .Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : "")
-                    .FirstOption(null, "--Select A Company--")
-                    .HideFirstOptionWhen(Model.Order.OrderedBy != null)
-                    .Label("Ordered By:")
-                    .IncludeUnobtrusiveValidationAttributes(Html)
-            )
+        <ul>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(x => x.Order.OrderDate)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(x => x.Order.OrderDate)
+                    @Html.ValidationMessageFor(x => x.Order.OrderDate)
+                </div>
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(x => x.Order.ShipAddress)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(x => x.Order.ShipAddress)
+                    @Html.ValidationMessageFor(x => x.Order.ShipAddress)
+                </div>
+            </li>
+            <li>
+                <div class="editor-label">
+                    @Html.LabelFor(x => x.Order.OrderedBy, "Ordered By:")
+                </div>
+                <div class="editor-field">
+                    @(this.Select("Order.OrderedBy").Options(Model.Customers, x => x.Id, x => x.CompanyName)
+                            .Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : "")
+                            .FirstOption(null, "--Select A Company--")
+                            .HideFirstOptionWhen(Model.Order.OrderedBy != null)
+                            .IncludeUnobtrusiveValidationAttributes(Html)
+                    )
+                    @Html.ValidationMessageFor(x => x.Order.OrderedBy)
+                </div>
+            </li>
             
-            @Html.ValidationMessageFor(x => x.Order.OrderedBy)
-        </p>
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+            <li>
+                <div class="editor-label">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="editor-field">      
+                    <input class="button" type="submit" value="Submit" />
+                    | <a href="#" title="Cancel">Cancel</a>
+                </div>
+            </li>
+        </ul>
     </fieldset>
 }
 <div>

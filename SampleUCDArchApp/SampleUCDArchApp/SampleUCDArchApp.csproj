@@ -155,7 +155,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\datatables.css" />
+    <Content Include="Css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\images\ui-bg_flat_0_ffffff_40x100.png" />
+    <Content Include="Css\images\ui-bg_glass_20_014a81_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_20_3182c0_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_55_f2edcf_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Css\images\ui-bg_highlight-soft_50_014a81_1x100.png" />
+    <Content Include="Css\images\ui-bg_inset-soft_95_f2bfbf_1x100.png" />
+    <Content Include="Css\images\ui-icons_014a81_256x240.png" />
+    <Content Include="Css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Css\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Css\main.css" />
+    <Content Include="Css\jquery-ui-1.8.11.caes.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\comment.png" />
