@@ -118,7 +118,9 @@
     <Compile Include="Extensions\AssertExtensions.cs" />
     <Compile Include="Extensions\RouteTestingExtensions.cs" />
     <Compile Include="Extensions\ValidationExtensions.cs" />
+    <Compile Include="Fakes\ControllerRecordFakes.cs" />
     <Compile Include="Fakes\FakeHttpPostedFileBase.cs" />
+    <Compile Include="Fakes\FakeIdentityAndFiles.cs" />
     <Compile Include="FluentRepositoryTestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryTestBase.cs" />
