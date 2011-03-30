@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Placeholder";
+}
+
+@*<h2>Placeholder</h2>*@
+
+<form action="@Url.Action("Placeholder")" method="get">
+<fieldset>
+    <legend>Example of using placeholders</legend>
+
+    <ul>
+        <li>
+            <div class="editor-label">
+                <label>Text Box:</label>
+            </div>
+            <div class="editor-field">
+                <input type="text" name="text_box" class="text_box" placeholder="Enter text"></input>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label">
+                <label>Text Area:</label>
+            </div>
+            <div class="editor-field">
+                <textarea name="text_area" rows="5" class="text_area" placeholder="Write a novella"></textarea>
+            </div>
+        </li>
+        <li>
+            <div class="editor-label">
+                <label>&nbsp;</label>
+            </div>
+            <div class="editor-field">
+                <input class="button" type="submit" value="Submit to query string" />
+                | <a href="@Url.Action("Index")" title="Cancel">Cancel</a>
+            </div>
+        </li>
+    </ul>
+</fieldset>
+</form>

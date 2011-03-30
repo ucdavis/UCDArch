@@ -166,6 +166,8 @@
     <Content Include="Images\logo-caes-long-cap.png" />
     <Content Include="Images\logo-ucdavis.png" />
     <Content Include="Images\top_blue_bar.jpg" />
+    <Content Include="Scripts\Common\jquery.dataTables.min.js" />
+    <Content Include="Scripts\Common\jquery.placeholder.min.js" />
     <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.js" />
     <Content Include="Scripts\jquery-1.5.min.js" />
@@ -189,6 +191,7 @@
     <Content Include="Scripts\xVal.jquery.validate.js" />
     <None Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Home\Sample.cshtml" />
+    <Content Include="Views\Home\Placeholder.cshtml" />
     <None Include="Views\Json\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
