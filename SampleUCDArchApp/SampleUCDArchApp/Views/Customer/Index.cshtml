@@ -1,54 +1,68 @@
 @model IEnumerable<SampleUCDArchApp.Core.Domain.Customer>
+
 @{
-    ViewBag.Title = "Customer Index";
+    ViewBag.Title = "Customers";
 }
-<h2>
-    Customers</h2>
-<table>
-    <tr>
-        <th>
-            CompanyName
-        </th>
-        <th>
-            ContactName
-        </th>
-        <th>
-            Country
-        </th>
-        <th>
-            Fax
-        </th>
-        <th>
-            Id
-        </th>
-        <th>
-            Orders
-        </th>
-    </tr>
-    @foreach (var item in Model)
-    {
-    
+
+@section AdditionalScripts {
+    <link href="@Url.Css("jquery-ui-1.8.11.caes.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Css("datatables.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Script("Common/jquery.dataTables.min.js")"></script>
+}
+<table id="customers">
+    <thead>
         <tr>
-            <td>
-                @item.CompanyName
-            </td>
-            <td>
-                @item.ContactName
-            </td>
-            <td>
-                @item.Country
-            </td>
-            <td>
-                @item.Fax
-            </td>
-            <td>
-                @item.Id
-            </td>
-            <td>
-                @item.Orders.Count()
-            </td>
+            <th>
+            </th>
+            <th>
+                CompanyName
+            </th>
+            <th>
+                ContactName
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Fax
+            </th>
+            <th>
+                Id
+            </th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
     
-    }
+            <tr>
+                <td>
+                </td>
+                <td>
+                    @item.CompanyName
+                </td>
+                <td>
+                    @item.ContactName
+                </td>
+                <td>
+                    @item.Country
+                </td>
+                <td>
+                    @item.Fax
+                </td>
+                <td>
+                    @item.Id
+                </td>
+            </tr>
+    
+        }
+    </tbody>
 </table>
-</asp:Content> 
+<script type="text/javascript">
+    $(function () {
+        $('#customers').dataTable({
+            "bJQueryUI": true,
+            "sPaginationType": "full_numbers"
+        });
+    });
+</script>
