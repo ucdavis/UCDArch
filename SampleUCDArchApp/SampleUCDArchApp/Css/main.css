@@ -19,8 +19,8 @@ a img {border:none;}
 /*    branding      */
 /* ---------------- */
 
-/*#branding .frontpage {background: url(w:/Webdevel/GRAMPS/Images/branding.jpg) repeat-x top center; height: 50px; margin: 0 auto; z-index:2; position:relative;}*/
-#branding {background: url(../Images/top_blue_bar.jpg) repeat-x #014a81; margin: 0 auto; z-index:2; position:relative;}
+#branding .frontpage {background: url(w:/Webdevel/GRAMPS/Images/branding.jpg) repeat-x top center; height: 50px; margin: 0 auto; z-index:2; position:relative;}
+#branding {background: url(caes/images/ui-bg-highlight-soft_0_014a81_1x100.png) repeat-x #014a81; margin: 0 auto; z-index:2; position:relative;}
 #branding span.header {padding: 2em 0 0.2em 0; margin: 0px auto; display: block;}
 #branding h1 {text-align:left; font-size:3em; line-height:1em; padding-bottom:.2em;}
 #branding {color:#FFF; }
@@ -131,3 +131,16 @@ tfoot {text-align:center;}
 #footer .col2 {vertical-align:top; font-style:italic;}
 #footer .col1 {border-right:2px solid #074F84;}
 #footer .navigation {text-align:left;}
+
+/* ---------------------------- */
+/* DataTables Specific Styling  */
+/* ---------------------------- */
+.dataTables_length {width: 40%;	float: left;}
+.dataTables_filter {width: 50%;	float: right; text-align: right;}
+.dataTables_info {width: 60%;	float: left;}
+.dataTables_paginate {width: auto; float: right; text-align: right;}
+div.dataTables_wrapper .ui-toolbar{padding: 5px;}
+div.dataTables_wrapper table{margin: 0;clear:both;}
+.DataTables_sort_wrapper{cursor:pointer;}
+.css_right { float:right;}
+.clear { clear: both; }
