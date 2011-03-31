@@ -13,7 +13,7 @@
     <language>en-US</language>
   </metadata>
     <files xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Css/*" target="Content/Css" />
+        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Css/**" target="Content/Css" />
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Images/*" target="Content/Images" />
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_Layout.cshtml" target="Content/Views/Shared/_LayoutExample.cshtml" />
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_Navigation.cshtml" target="Content/Views/Shared/_NavigationExample.cshtml" />
