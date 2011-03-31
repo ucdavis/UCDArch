@@ -139,6 +139,7 @@ tfoot {text-align:center;}
 .dataTables_filter {width: 50%;	float: right; text-align: right;}
 .dataTables_info {width: 60%;	float: left;}
 .dataTables_paginate {width: auto; float: right; text-align: right;}
+.dataTables_paginate .ui-button { margin-right: .1em !important; padding: 0 .25em;}
 div.dataTables_wrapper .ui-toolbar{padding: 5px;}
 div.dataTables_wrapper table{margin: 0;clear:both;}
 .DataTables_sort_wrapper{cursor:pointer;}

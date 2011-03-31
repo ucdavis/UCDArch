@@ -9,6 +9,9 @@
     <script type="text/javascript" src="@Url.Script("Common/jquery.dataTables.min.js")"></script>
 }
 
+<style type="text/css">
+
+</style>
 
 <table id="customers">
     <thead>
@@ -62,8 +65,10 @@
 <script type="text/javascript">
     $(function () {
         $('#customers').dataTable({
-            "bJQueryUI": true
-            //"sPaginationType": "full_numbers"
+            "bJQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "aoColumnDefs": [{ "bSortable": false, "aTargets": [ 0 ] }],
+            "aaSorting": [[1, 'asc']]
         });
     });
 </script>
