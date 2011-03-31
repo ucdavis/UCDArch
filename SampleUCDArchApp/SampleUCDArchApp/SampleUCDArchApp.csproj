@@ -171,6 +171,7 @@
     <Content Include="Css\jquery-ui-1.8.11.custom.css" />
     <Content Include="Css\main.css" />
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\comment.png" />
     <Content Include="Images\delete.png" />
@@ -180,6 +181,7 @@
     <Content Include="Images\logo-caes-long-cap.png" />
     <Content Include="Images\logo-ucdavis.png" />
     <Content Include="Images\top_blue_bar.jpg" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\Common\jquery.dataTables.min.js" />
     <Content Include="Scripts\Common\jquery.placeholder.min.js" />
     <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />

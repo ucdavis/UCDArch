@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     <title>UCDArch App - @ViewBag.Title</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")">
+
     <link href="@Url.Css("main.css")" rel="stylesheet" type="text/css" />
     @*<link href="@Url.Css("jquery-ui-1.8.11.custom.css")" rel="Stylesheet" type="text/css" />*@
 
@@ -99,6 +105,16 @@
         $(function () {
             $('input, textarea').placeholder();
         });
+    </script>
+
+    @*----------- Google Analytics ---------- *@
+    <script>
+        var _gaq = [["_setAccount", "UA-XXXXX-X"], ["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID 
+        (function (d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0]; g.async = 1;
+            g.src = ("https:" == location.protocol ? "//ssl" : "//www") + ".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g, s)
+        } (document, "script"));
     </script>
 </body>
 </html>
