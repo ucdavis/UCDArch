@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Web.Mvc;
+using System.Web.Caching;
 
 namespace UCDArch.Web.Attributes
 {
@@ -39,7 +40,8 @@ namespace UCDArch.Web.Attributes
                 version = string.Format("{0}.{1}.{2}.{3}", MajorVersion, buildDate.Year, buildDate.Month,
                                             buildDate.Day);
 
-                filterContext.HttpContext.Cache[VersionKey] = version;
+                //Insert version into the cache until tomorrow (Today + 1 day)
+                filterContext.HttpContext.Cache.Insert(VersionKey, version, null, DateTime.Today.AddDays(1), Cache.NoSlidingExpiration);
             }
 
             filterContext.Controller.ViewData[VersionKey] = version;
