@@ -1,12 +1,13 @@
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
 using Rhino.Mocks;
 using UCDArch.Core.CommonValidator;
-using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
-using UCDArch.Web.IoC;
+//using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using UCDArch.Core.DataAnnotationsValidator.CommonValidatorAdapter;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Data.NHibernate;
-using Castle.MicroKernel.Registration;
+using UCDArch.Web.IoC;
 
 namespace UCDArch.Testing
 {
