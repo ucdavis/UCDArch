@@ -2,6 +2,7 @@
 using System.Web.Routing;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
+using MvcMiniProfiler;
 using SampleUCDArchApp.Controllers;
 using UCDArch.Data.NHibernate;
 using UCDArch.Web.IoC;
@@ -57,6 +58,19 @@ namespace SampleUCDArchApp
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
             return container;
+        }
+
+        protected void Application_BeginRequest()
+        {
+            if (Request.IsLocal)
+            {
+                MiniProfiler.Start();
+            }
+        }
+
+        protected void Application_EndRequest()
+        {
+            MiniProfiler.Stop();
         }
     }
 }

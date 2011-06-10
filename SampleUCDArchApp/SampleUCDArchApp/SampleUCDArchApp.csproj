@@ -74,6 +74,9 @@
     <Reference Include="MvcContrib.FluentHtml">
       <HintPath>..\..\UCDArch\Bin\MvcContrib.FluentHtml.dll</HintPath>
     </Reference>
+    <Reference Include="MvcMiniProfiler">
+      <HintPath>..\..\UCDArch\Bin\MvcMiniProfiler.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\UCDArch\Bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
