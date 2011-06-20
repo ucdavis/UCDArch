@@ -228,6 +228,7 @@
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\Shared\_ServiceMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleUCDArchApp.Core\SampleUCDArchApp.Core.csproj">
