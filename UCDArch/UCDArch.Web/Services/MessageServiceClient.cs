@@ -1,5 +1,5 @@
 ﻿using System;
-using System.CodeDom.Compiler;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
@@ -7,7 +7,6 @@ using System.ServiceModel.Channels;
 namespace UCDArch.Web.Services
 {
     [DebuggerStepThrough]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     public class MessageServiceClient : ClientBase<IMessageService>, IMessageService
     {
         public MessageServiceClient()
@@ -24,15 +23,13 @@ namespace UCDArch.Web.Services
         {
         }
 
-        public MessageServiceClient(string endpointConfigurationName, EndpointAddress remoteAddress)
-            :
-                base(endpointConfigurationName, remoteAddress)
+        public MessageServiceClient(string endpointConfigurationName, EndpointAddress remoteAddress) :
+            base(endpointConfigurationName, remoteAddress)
         {
         }
 
-        public MessageServiceClient(Binding binding,
-                                    EndpointAddress remoteAddress) :
-                                        base(binding, remoteAddress)
+        public MessageServiceClient(Binding binding, EndpointAddress remoteAddress) :
+            base(binding, remoteAddress)
         {
         }
 
@@ -43,11 +40,13 @@ namespace UCDArch.Web.Services
             return base.Channel.GetMessages(appName);
         }
 
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
         public IAsyncResult BeginGetMessages(string appName, AsyncCallback callback, object asyncState)
         {
             return base.Channel.BeginGetMessages(appName, callback, asyncState);
         }
 
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
         public ServiceMessage[] EndGetMessages(IAsyncResult result)
         {
             return base.Channel.EndGetMessages(result);
