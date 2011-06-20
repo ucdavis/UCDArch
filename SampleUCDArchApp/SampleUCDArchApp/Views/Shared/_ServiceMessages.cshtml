@@ -1,0 +1,18 @@
+﻿@{
+    var messages = ViewData["ServiceMessages"] as UCDArch.Web.Services.ServiceMessage[];
+    var hasMessages = messages.Count() > 0 ? true : false;
+}        
+
+@if (hasMessages){ 
+<div id="system_wide_status">
+    <div id="system_wide_status_text">
+        @foreach(var message in messages.OrderByDescending(a => a.Critical).ThenBy(a => a.Global)){
+            var isCritical = message.Critical ? "critical" : "non-critical";
+            <div class="@isCritical" >@message.Message</div>                    
+        }  
+    </div>
+</div>
+}
+
+
+

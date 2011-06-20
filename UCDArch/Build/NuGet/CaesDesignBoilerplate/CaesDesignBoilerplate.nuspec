@@ -19,6 +19,7 @@
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Images/*" target="Content/Images" />
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_Layout.cshtml" target="Content/Views/Shared/_LayoutExample.cshtml" />
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_Navigation.cshtml" target="Content/Views/Shared/_NavigationExample.cshtml" />
+        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_ServiceMessages.cshtml" target="Content/Views/Shared/_ServiceMessagesExample.cshtml" />
         <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Home/Sample.cshtml" target="Content/Views/Home/Sample.cshtml" />
     </files>
 </package>
