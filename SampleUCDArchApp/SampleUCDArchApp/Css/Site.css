@@ -1,0 +1,160 @@
+/* ---------------- */
+/*    reset         */
+/* ---------------- */
+* {padding:0; margin:0;}
+a img {border:none;}
+
+/* ---------------- */
+/*    site width    */
+/* ---------------- */
+#branding span.header, #personalbar, div.main , #footertext, #system-messages-text{width: 1020px;}
+
+/* ---------------- */
+/*system wide status*/
+/* ---------------- */
+#system-messages-text {margin:0.5em auto; text-align:center;}
+#system-messages {border:3px solid #C83900; background-color:#fcf0f0;}
+#system-messages-text div {margin: .5em;}
+#system-messages-text div.critical {font-weight: bolder; color: red; font-size: 1.5em;}
+#system-messages-text div.non-critical {}
+
+/* ---------------- */
+/*    branding      */
+/* ---------------- */
+#branding {
+	/* fallback */
+	background: url(../Images/top_blue_bar.jpg) repeat-x #014a81; margin: 0 auto; z-index:2; position:relative;
+	
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(0% 20% 90deg,#024B82, #002359);
+	
+	/ * Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#002359), to(#024B82));
+}
+#branding span.header {padding: 2em 0 0.2em 0; margin: 0px auto; display: block;}
+#branding h1 {text-align:left; font-size:3em; line-height:1em; padding-bottom:.2em;}
+#branding {color:#FFF; display:block;}
+#branding a:hover {color: #E4B939;}
+#branding a {color: #FFF; text-decoration: none; font-weight: bold;}
+#branding nav a.currentpage {color: #E4B939;}
+
+/* ----------------------- */
+/*    personal bar         */
+/* ----------------------- */
+#personalbar {margin:5px auto;}
+#personalbar a {color:#000;}
+#LogOffOn {text-align:right;}
+#personalbar #LogOffOn a {background-color:#014a81;-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding:15px 15px 10px 15px; color:#FFFFFF; text-decoration:none; margin-right:-15px; font-weight:bold; font-size:0.9em; letter-spacing:.5px; text-transform:uppercase;}
+#personalbar a:hover, #personalbar #LogOffOn a:hover {color:#E4B939;}
+#personalbar a {text-decoration:none; color:#0068B7;}
+#welcome_user {display:block; font-weight: bold; font-size: .8em; letter-spacing: .25px; text-transform: uppercase;}
+#personalbar .col1 {text-align: left;}
+#personalbar .col2 {text-align: right;}
+
+/* ---------------- */
+/*    navigation    */
+/* ---------------- */
+menu li,nav li {display:inline-block; list-style-type: none; padding: 0 0 0 1em;}
+menu, nav {text-align: right;}
+
+/* ---------------- */
+/*    main          */
+/* ---------------- */
+.main {margin:0 auto;}
+.col1 , .col2 {display:inline-block; width:500px;}
+.col1 { margin-right:10px;}
+ul.copy, ol.copy{margin:0.5em 0 0.5em 5em;}
+.copy li {margin:3px 0;}
+section#body {margin-top: 1.5em;}
+
+/* -------------------- */
+/*    messages          */
+/* -------------------- */
+#status-message, #error-message {margin: 10px auto; max-width:600px; text-align:center; padding:10px;}
+#error-message, .field-validation-error  {border:2px solid #C83900; background-color:#fcf0f0;}
+#status-message {border:2px solid #E4C466; background-color:#fbf7eb;}
+
+/* ---------------------- */
+/*    main links          */
+/* ---------------------- */
+.main  a {text-decoration:none; color:#0068b7;}
+.main a.ui-button {color: #FFFFFF;}	/*override of ui button color*/
+.main  a:hover {text-decoration:none; color:#826200;}
+.main ul.navigation a:hover {border-bottom: 2px solid #826200;}
+.main  .text_btn a  {background-color:#014a81;-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding:10px; color:#FFFFFF; text-decoration:none; font-weight:bold; font-size:0.9em; letter-spacing:.5px; text-transform:uppercase; color:#FFF;}
+.main  .text_btn a:hover {background-color:#3182C0; color:#FFFFFF;}
+.text_btn {text-align:center; margin: 1.5em 0;}
+.main p a {font-weight:bold;}
+.main p a:hover {text-decoration:underline;}
+
+/* ---------------- */
+/*    font          */
+/* ---------------- */
+.main h2 {text-align:left; font-size:2.5em; line-height:1em; padding-bottom:.2em; margin-top: 1em;}
+body {font: 11.5px/16px Verdana, Arial, sans-serif;}
+
+/* ---------------- */
+/*    form          */
+/* ---------------- */
+form {margin:1em 0; text-align:left;}
+form ul li {list-style-type:none;margin:10px 0;}
+form ul li ul li{margin:2px 0;}
+form .col1 {text-align:right; width:200px;}
+form fieldset {padding:10px; margin-bottom: .5em;}
+form fieldset  ul{padding:10px 50px 10px 100px;}
+form fieldset  ul ul{padding:0;}
+form fieldset div.editor-label {display:inline-block; width:120px; vertical-align:top;}
+form fieldset div.editor-field {display:inline-block; vertical-align:top;}
+form .radio_container, form .checkbox_container {display:inline-block;}
+form .radio, form .checkbox {margin-bottom:5px;}
+form input[type='radio'], form input[type='checkbox'] {margin-left: 10px;}
+form .radio_container > input[type='radio']:first-child, form .checkbox_container > input[type='checkbox']:first-child {margin-left: 0px;}
+form .text_field, form .text_area  {min-width:200px;}
+form select, form input[type='text'], form input[type='date'], form input[type='datetime'] {min-width: 200px;}
+.required {font-weight:bold;}
+.required span, span.required {color:#FF0000;}
+input.button {font-size: 1.2em; padding: 8px 15px 3px;}
+
+/*   validation     */
+.field-validation-error {padding:2px 10px; margin:-2px 0 0 5px; display:inline-block; vertical-align:top;}
+table thead form .field-validation-error{color:#000000;}
+/* ---------------- */
+/*    table         */
+/* ---------------- */
+table {border:1px solid #003054; border-collapse: collapse; margin:0.5em 0; width:100%;}
+th{text-align:left;}
+thead tr, tfoot tr  {background-color:#014A81; color:#FFFFFF;}
+.main thead a, .main tfoot a {color:#FFFFFF; font-weight:bold;}
+.main thead a:hover, .main tfoot a:hover {color:#E4C466;}
+td, th { padding:0.5em;}
+td {vertical-align:top; line-height:1.5em;}
+.table_select {}
+.table_edit{}
+.even {background-color:#F0F0F0;}
+.odd {}
+.even:hover, .odd:hover {background-color:#d0e3f1;}
+tr  > td:first-child {width:55px; text-align:center;}
+tr > td:last-child {width:40px; text-align:center;}
+tfoot tr  > td:first-child {text-align:left;}
+tfoot tr > td:last-child {text-align:right;}
+tfoot {text-align:center;}
+.noicon tr  > td:first-child,.noicon tr > td:last-child {width:auto; text-align:left;}
+.nofirsticon tr > td:first-child {width: auto; text-align: left;}
+.nolasticon tr > td:last-child {width: auto; text-align: left;}
+
+/* ---------------- */
+/*    footer        */
+/* ---------------- */
+#footer {background-color:#014a81; padding:1em 0; margin-top:5em; display: block;}
+#footertext {margin:0 auto; color:#FFFFFF; font-size:0.9em;}
+#footertext a {color:#FFFFFF; text-decoration:none;}
+#footertext a:hover {color:#E4B939;}
+#footertext ul li {list-style-type:none; display:inline-block; text-align:left;}
+#footertext .col2 ul li {list-style-type:none; display:block; text-align:left;}
+#footertext nav {display:inline-block;}
+#footer .col1 .navigation li a{border-bottom:2px solid #074F84; width:200px; padding-left:10px; display:block;}
+#footer .col1 .navigation li a:hover {background-color:#074F84;}
+#footer .col2 {vertical-align:top; font-style:italic;}
+#footer .col1 {border-right:2px solid #074F84;}
+#footer .navigation {text-align:left;}
+

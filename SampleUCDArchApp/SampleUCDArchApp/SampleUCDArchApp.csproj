@@ -26,6 +26,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -161,8 +162,9 @@
     <Content Include="Css\images\ui-icons_c83900_256x240.png" />
     <Content Include="Css\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Css\images\ui-icons_fffff_256x240.png" />
-    <Content Include="Css\jquery-ui-1.8.11.custom.css" />
+    <Content Include="Css\jquery-ui-1.8.14.caes.css" />
     <Content Include="Css\main.css" />
+    <Content Include="Css\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -197,10 +199,15 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\modernizr-1.6.min.js" />
+    <Content Include="Scripts\modernizr.custom.51742.js" />
     <Content Include="Scripts\xVal.jquery.validate.js" />
     <None Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Home\Sample.cshtml" />
     <Content Include="Views\Home\Placeholder.cshtml" />
+    <Content Include="Views\Home\Full.cshtml" />
+    <Content Include="Views\Home\Form.cshtml" />
+    <Content Include="Views\Home\Table.cshtml" />
+    <Content Include="Views\Home\Jquery.cshtml" />
     <None Include="Views\Json\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
