@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UCDArch.Core.CommonValidator;
 
 namespace UCDArch.Testing.Extensions
@@ -12,14 +13,7 @@ namespace UCDArch.Testing.Extensions
         /// <returns></returns>
         public static List<string> AsMessageList(this IEnumerable<IValidationResult> validationResults)
         {
-            var resultsList = new List<string>();
-
-            foreach (var result in validationResults)
-            {
-                resultsList.Add(string.Format("{0}: {1}", result.PropertyName, result.Message));
-            }
-
-            return resultsList;
+            return validationResults.Select(result => result.Message).ToList();
         }
     }
 }
