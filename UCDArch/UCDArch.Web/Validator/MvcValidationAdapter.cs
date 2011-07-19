@@ -45,7 +45,7 @@ namespace UCDArch.Web.Validator
                         ? "." + validationResult.PropertyName
                         : "");
 
-                modelStateDictionary.AddModelError(key, string.Format("{0}: {1}", validationResult.PropertyName, validationResult.Message));
+                modelStateDictionary.AddModelError(key, validationResult.Message);
                 modelStateDictionary.SetModelValue(key, new ValueProviderResult(null, null, null));
             }
 
