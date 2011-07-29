@@ -23,7 +23,7 @@ a img {border:none;}
 /* ---------------- */
 #branding {
 	/* fallback */
-	background: url(../Images/top_blue_bar.jpg) repeat-x #014a81; margin: 0 auto; z-index:2; position:relative;
+	background: url(../Images/top_blue_bar.jpg) repeat-x #014a81; margin: 0 auto; position:relative;
 	
 	/* Firefox 3.6+ */
 	background: -moz-linear-gradient(0% 20% 90deg,#024B82, #002359);
