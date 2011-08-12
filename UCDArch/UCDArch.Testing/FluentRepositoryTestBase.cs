@@ -70,6 +70,15 @@ namespace UCDArch.Testing
             LoadData();
         }
 
+        /// <summary>
+        /// Used to cleanup something that resharper 6 currently leaves behind.
+        /// </summary>
+        [TestCleanup]
+        public void TearDown()
+        {
+            NHibernateSessionManager.Instance.CloseSession();
+        }
+
         protected virtual void LoadData()
         {
 
