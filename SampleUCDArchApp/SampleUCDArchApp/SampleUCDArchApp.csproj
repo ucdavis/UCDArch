@@ -148,20 +148,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\images\ui-bg_diagonals-small_50_aaaaaa_40x40.png" />
+    <Content Include="Css\images\ui-bg_flat_50_aaaaaa_40x100.png" />
     <Content Include="Css\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Css\images\ui-bg_glass_0_014a81_1x400.png" />
-    <Content Include="Css\images\ui-bg_glass_0_3182c0_1x400.png" />
-    <Content Include="Css\images\ui-bg_glass_0_fbf7eb_1x400.png" />
-    <Content Include="Css\images\ui-bg_glass_0_ffffff_1x400.png" />
-    <Content Include="Css\images\ui-bg_highlight-soft_0_014a81_1x100.png" />
-    <Content Include="Css\images\ui-bg_inset-soft_0_fcf0f0_1x100.png" />
+    <Content Include="Css\images\ui-bg_glass_20_014a81_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_20_3182c0_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_20_ffffff_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_50_fbf7eb_1x400.png" />
+    <Content Include="Css\images\ui-bg_highlight-soft_50_014a81_1x100.png" />
+    <Content Include="Css\images\ui-bg_inset-soft_50_fcf0f0_1x100.png" />
     <Content Include="Css\images\ui-icons_014a81_256x240.png" />
     <Content Include="Css\images\ui-icons_222222_256x240.png" />
     <Content Include="Css\images\ui-icons_c83900_256x240.png" />
     <Content Include="Css\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Css\images\ui-icons_fffff_256x240.png" />
-    <Content Include="Css\jquery-ui-1.8.14.caes.css" />
+    <Content Include="Css\jquery-ui-1.8.16.caes.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\Site.css" />
     <Content Include="Default.aspx" />
