@@ -81,8 +81,11 @@ section#body {margin-top: 1.5em;}
 .main a.ui-button {color: #FFFFFF;}	/*override of ui button color*/
 .main  a:hover {text-decoration:none; color:#826200;}
 .main ul.navigation a:hover {border-bottom: 2px solid #826200;}
-.main  .text_btn a  {background-color:#014a81;-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding:10px; color:#FFFFFF; text-decoration:none; font-weight:bold; font-size:0.9em; letter-spacing:.5px; text-transform:uppercase; color:#FFF;}
-.main  .text_btn a:hover {background-color:#3182C0; color:#FFFFFF;}
+/*.main  .text_btn a  {background-color:#014a81;-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding:10px; color:#FFFFFF; text-decoration:none; font-weight:bold; font-size:0.9em; letter-spacing:.5px; text-transform:uppercase; color:#FFF;}
+.main  .text_btn a:hover {background-color:#3182C0; color:#FFFFFF;}*/
+
+.main .text_btn a { font-weight: bold;padding: 10px; letter-spacing:.5px;text-transform: uppercase; }
+
 .text_btn {text-align:center; margin: 1.5em 0;}
 .main p a {font-weight:bold;}
 .main p a:hover {text-decoration:underline;}
@@ -100,23 +103,73 @@ form {margin:1em 0; text-align:left;}
 form ul li {list-style-type:none;margin:10px 0;}
 form ul li ul li{margin:2px 0;}
 form .col1 {text-align:right; width:200px;}
-form fieldset {padding:10px; margin-bottom: .5em;}
-form fieldset  ul{padding:10px 50px 10px 100px;}
-form fieldset  ul ul{padding:0;}
-form fieldset div.editor-label {display:inline-block; width:120px; vertical-align:top;}
-form fieldset div.editor-field {display:inline-block; vertical-align:top;}
+form section {
+    margin-bottom: .5em;
+    display: block;
+    border: 1px solid #CCCCCC;
+}
+form section.padded .section-contents {
+    margin: 15px;
+}
+form section header {
+    font-size: large;
+    font-weight: bold;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 10px;
+    color: #014A81;
+    
+    /*firefox 3.6+*/
+    background: -moz-linear-gradient(center bottom, #EEEEEE 0%, white 75%);
+    /*Safari 4+, Chrome 1-9*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(white), to(#EEEEEE));
+    /*Safari 5.1+, Mobile Safari, Chrome 10+*/
+    background: -webkit-linear-gradient(top, white, #EEEEEE);
+    /*IE 10+*/
+    background-image: -ms-linear-gradient(top, white, #EEEEEE);
+    /*Opera 11.10+*/
+    background-image: -o-linear-gradient(top, white, #EEEEEE);       
+}
+
+form section footer {
+    border-top: 1px solid #CCCCCC;
+    padding: 10px;
+    color: #014A81;
+    
+    /*firefox 3.6+*/
+    background: -moz-linear-gradient(center bottom, #EEEEEE 0%, white 75%);
+    /*Safari 4+, Chrome 1-9*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(white), to(#EEEEEE));
+    /*Safari 5.1+, Mobile Safari, Chrome 10+*/
+    background: -webkit-linear-gradient(top, white, #EEEEEE);
+    /*IE 10+*/
+    background-image: -ms-linear-gradient(top, white, #EEEEEE);
+    /*Opera 11.10+*/
+    background-image: -o-linear-gradient(top, white, #EEEEEE);           
+}
+
+form section .section-text {
+    padding: 10px;
+    background-color: #FB7EB;
+    border: 1px solid #E4C466;
+    margin: 10px;
+}
+form section  ul{padding:10px 50px 10px 100px;}
+form section  ul ul{padding:0;}
+form section div.editor-label {display:inline-block; width:120px;padding: .5em 0;}
+form section div.editor-field {display:inline-block; vertical-align:top;}
 form .radio_container, form .checkbox_container {display:inline-block;}
 form .radio, form .checkbox {margin-bottom:5px;}
 form input[type='radio'], form input[type='checkbox'] {margin-left: 10px;}
 form .radio_container > input[type='radio']:first-child, form .checkbox_container > input[type='checkbox']:first-child {margin-left: 0px;}
 form .text_field, form .text_area  {min-width:200px;}
-form select, form input[type='text'], form input[type='date'], form input[type='datetime'] {min-width: 200px;}
+form input[type='text'], form input[type='date'], form input[type='datetime'], form textarea {min-width: 200px;padding: .5em;}
+form select { min-width: 215px;padding: .5em;}
 .required {font-weight:bold;}
 .required span, span.required {color:#FF0000;}
 input.button {font-size: 1.2em; padding: 8px 15px 3px;}
 
 /*   validation     */
-.field-validation-error {padding:2px 10px; margin:-2px 0 0 5px; display:inline-block; vertical-align:top;}
+.field-validation-error {padding:.5em; margin:-2px 0 0 5px; display:inline-block; vertical-align:top;}
 table thead form .field-validation-error{color:#000000;}
 /* ---------------- */
 /*    table         */
@@ -158,3 +211,19 @@ tfoot {text-align:center;}
 #footer .col1 {border-right:2px solid #074F84;}
 #footer .navigation {text-align:left;}
 
+/* ---------------- */
+/*    background    */
+/* ---------------- */
+.gradientbackground
+{
+    /*firefox 3.6+*/
+    background: -moz-linear-gradient(center bottom, #EEEEEE 0%, white 75%);
+    /*Safari 4+, Chrome 1-9*/
+    background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(white), to(#EEEEEE));
+    /*Safari 5.1+, Mobile Safari, Chrome 10+*/
+    background: -webkit-linear-gradient(top, white, #EEEEEE);
+    /*IE 10+*/
+    background-image: -ms-linear-gradient(top, white, #EEEEEE);
+    /*Opera 11.10+*/
+    background-image: -o-linear-gradient(top, white, #EEEEEE);   
+}

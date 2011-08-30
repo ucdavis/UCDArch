@@ -8,6 +8,9 @@
     <script type="text/javascript">
         $(function () {
             $('#first').append("<em>This was loaded from jquery!</em>");
+
+
+            $(".button, .text_btn a").button();
         });
     </script>
 }
@@ -66,42 +69,43 @@
     <a href="#">Click here</a></div>
 @* You must have a form tag with a fieldset inside to have the form formatting *@
 <form>
-@* There should be one fieldset per widget/unit.  If we were adding three Dinosaurs we would need three fieldsets*@
-<fieldset>
-    @*
-Legend is required if you have more than one widget/unit to help the user understand what is being asked of them.
-Example: Dinosaur 1 
-*@ <legend>Legend</legend>@*
-Label the type of questions in this area. This requires more than one classification of question.
-Example: What is Dinosaur 1's Plan?
-*@
-    <h4>
-        Form Header</h4>
-    @*
-Be specific so the user understands what exactly you are looking for
-Example: After Dinosaur 1 moves out of his/her parents' den what will Dinosaur 1 do?  We need to know his employment plan, feeding area, as well as living situation.  This information will not be sold or give to carnivores.
-*@
-    <p>
+
+@* There should be one section per widget/unit.  If we were adding three Dinosaurs we would need three fieldsets*@
+<section>
+
+    @* Header is required if you have more than one widget/unit to help the user understand what is being asked of them (Ex. Dinosaur 1) *@
+    <header>Dinoasur 1</header>
+
+    <div class="section-contents">
+    @* Section for description text of the following fields *@
+    <div class="section-text">
+        
+        @* Label of the type of questions in this area.  This requires more than one classification of question. *@
+        <h4>Form Header</h4>
+
+        @* Describe what you are looking for here.  (Ex. Give some context to the questions) *@
+        <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis
-        est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
-    @*
-It must be clear before the user submits the form what is and what is not required.
-*@
-    <p>
-        All required fields are in <strong>bold</strong> and have a red <span class="required">
-            *</span> next to the field label.</p>
-    @*
-Every form element need to be inside an unordered list inside its own <li>
-*@
+        est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.
+        </p>
+
+        @* Also give a tip as to what is expected in the form. *@
+        <p>
+        All required fields are in <strong>bold</strong> and have a red <span class="required">*</span> next to the field label.
+        </p>
+
+    </div>
+
+    @* Put all fields in a ul *@
     <ul>
         <li>
             <div class="editor-label required">
-                @*
-Because this is a required field the label has a class of required and a " <span>*</span>" after the : but inside the label.  The span tag is required.
-Example: <label class="required">Where does dinosaur 1 live: <span>*</span></label>
-*@
+                @* Because this is a required field the label has a class of required and a " <span>*</span>" after the : but inside the label.  The span tag is required.
+                    Example: <label class="required">Where does dinosaur 1 live: <span>*</span></label>
+                *@
                 <label>
-                    Text Field: <span>*</span></label>
+                    Text Field: <span>*</span>
+                </label>
             </div>
             <div class="editor-field">
                 @*
@@ -116,10 +120,8 @@ Example: This is a required field
             </div>
         </li>
         <li>
-            <div class="editor-label required">
-                @*
-If a field is not required do not add a class of "required" to the label, do not add a <span> tag, and do not add an "*"
-*@
+            <div class="editor-label">
+                @* If a field is not required do not add a class of "required" to the label, do not add a <span> tag, and do not add an "*" *@
                 <label>
                     Text Field:
                 </label>
@@ -207,15 +209,19 @@ If a field is not required do not add a class of "required" to the label, do not
             </div>
         </li>
     </ul>
-    @*
-Still working with the same unit/widget, dinosaur 1, we are moving to a new area so close the </ul> And put a header <h4> on the new <ul>
-Example: All about dinosaur 1's diet?
-*@
-    <h4>
-        Form Header</h4>
-    <p>
+    </div>
+
+    <div class="section-text">
+    
+        <h4>Form Header</h4>
+        
+        <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis
-        est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+        est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.
+        </p>
+
+    </div>
+
     <ul>
         <li>
             <div class="editor-label required">
@@ -239,24 +245,22 @@ Example: All about dinosaur 1's diet?
         </li>
         <li>
             <div class="editor-label">
-                @*
-For the clear and submit buttons an empty label is required.
-Example: <label>&nbsp;</label>
-*@
+                @* For the clear and submit buttons an empty label is required. Example: <label>&nbsp;</label> *@
                 <label>
                     &nbsp;</label>
             </div>
             <div class="editor-field">
-                @* 
-Clear should have an approve box
-*@
+                @*  Clear should have an approve box *@
                 <input class="button" type="submit" value="Submit" />
                 | <a href="#" title="Cancel">Cancel</a>
             </div>
         </li>
     </ul>
-</fieldset>
-</form>
+
+    <footer>Some footer text here.</footer>
+
+</section>
+
 @* 
 The First and Last cells of a table are reserved for two action (edit, view, delete, comment, or email).  Delete should have a confirmation box. Below is a list of the icons and the html code 
 These are the possible icons
