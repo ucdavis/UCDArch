@@ -183,7 +183,7 @@ table thead form .field-validation-error{color:#000000;}
     display: inline-block;
     width: 120px;
 }
-.display-form .display-value {display: inline-block; font-weight: bold;}
+.display-form .display-details {display: inline-block; font-weight: bold;}
 
 /* ---------------- */
 /*    table         */
