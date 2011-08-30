@@ -11,10 +11,26 @@
     </ul>
 }
 
+@section AdditionalScripts{
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(".button, .text_btn a, button").button();
+            
+        });
+
+    </script>
+}
 
 <form>
-	<fieldset>
-		<legend>Personal Information</legend>
+	<section>
+		<header><div class="col1">Personal Information</div>
+                <div class="col2"><button>Action 1</button><button>Action 2</button></div>
+        </header>
+
+        <div class="section-contents">
 		<ul>
 			<li><div class="editor-label required">First Name:<span>*</span></div>
 				<div class="editor-field"><input type="text" /></div>
@@ -46,10 +62,13 @@
 				</div>
 			</li>
 		</ul>
-	</fieldset>
+        </div>
+
+	</section>
 						
-	<fieldset>
-		<legend>Contact Information</legend>
+	<section>
+		<header>Contact Information</header>
+        <div class="section-contents">
 		<ul>
 			<li><div class="editor-label">Address:</div>
 				<div class="editor-field"><input type="text" placeholder="Ex.123 Fake Street" /></div>
@@ -69,9 +88,11 @@
 				<div class="editor-field"><input type="text" placeholder="xxxxx-xxxx" /></div>
 			</li>
 		</ul>
-	</fieldset>
+        </div>
+	</section>
 					
-	<fieldset>
+	<section>
+        <div class="section-contents">
 		<ul>
 			<li><div class="editor-label">&nbsp;</div>
 				<div class="editor-field">
@@ -81,7 +102,8 @@
 									
 				</div>
 		</ul>
-	</fieldset>
+        </div>
+	</section>
 						
 </form>
 					
