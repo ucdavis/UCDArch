@@ -100,13 +100,13 @@ body {font: 11.5px/16px Verdana, Arial, sans-serif;}
 /*    form          */
 /* ---------------- */
 form {margin:1em 0; text-align:left;}
-form ul li {list-style-type:none;margin:10px 0;}
-form ul li ul li{margin:2px 0;}
+form ul li, .display-form ul li {list-style-type:none;margin:10px 0;}
+form ul li ul li, .display-form ul li ul li{margin:2px 0;}
 /*form .col1 {text-align:right; width:200px;} not really used*/ 
-form .col1, form .col2 { width: 490px;}
-form .col2 { text-align: right;}
-form .col2 .ui-button { margin-left: 10px;}
-form section {
+form .col1, form .col2, .display-form .col1, .display-form .col2{ width: 490px;}
+form .col2, .display-form .col2 { text-align: right;}
+form .col2 .ui-button, .display-form .col2 .ui-button { margin-left: 10px;}
+form section, .display-form {
     margin-bottom: .5em;
     display: block;
     border: 1px solid #CCCCCC;
@@ -114,7 +114,7 @@ form section {
 form section.padded .section-contents {
     margin: 15px;
 }
-form section header {
+form section header, .display-form header {
     font-size: large;
     font-weight: bold;
     border-bottom: 1px solid #CCCCCC;
@@ -133,7 +133,7 @@ form section header {
     background-image: -o-linear-gradient(top, white, #EEEEEE);       
 }
 
-form section footer {
+form section footer, .display-form footer {
     border-top: 1px solid #CCCCCC;
     padding: 10px;
     color: #014A81;
@@ -150,14 +150,14 @@ form section footer {
     background-image: -o-linear-gradient(top, white, #EEEEEE);           
 }
 
-form section .section-text {
+form section .section-text, .display-form .section-text {
     padding: 10px;
     background-color: #FB7EB;
     border: 1px solid #E4C466;
     margin: 10px;
 }
-form section  ul{padding:10px 50px 10px 100px;}
-form section  ul ul{padding:0;}
+form section  ul, .display-form ul{padding:10px 50px 10px 100px;}
+form section  ul ul, .display-form ul ul{padding:0;}
 form section div.editor-label {display:inline-block; width:120px;padding: .5em 0;}
 form section div.editor-field {display:inline-block; vertical-align:top;}
 form .radio_container, form .checkbox_container {display:inline-block;}
@@ -174,6 +174,17 @@ input.button {font-size: 1.2em; padding: 8px 15px 3px;}
 /*   validation     */
 .field-validation-error {padding:.5em; margin:-2px 0 0 5px; display:inline-block; vertical-align:top;}
 table thead form .field-validation-error{color:#000000;}
+
+/* ---------------- */
+/*  display-form    */
+/* ---------------- */
+
+.display-form .display-label {
+    display: inline-block;
+    width: 120px;
+}
+.display-form .display-value {display: inline-block; font-weight: bold;}
+
 /* ---------------- */
 /*    table         */
 /* ---------------- */

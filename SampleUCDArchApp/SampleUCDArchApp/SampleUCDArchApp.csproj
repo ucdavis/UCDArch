@@ -207,6 +207,7 @@
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\Home\Table.cshtml" />
     <Content Include="Views\Home\Jquery.cshtml" />
+    <Content Include="Views\Home\DisplayForm.cshtml" />
     <None Include="Views\Json\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />

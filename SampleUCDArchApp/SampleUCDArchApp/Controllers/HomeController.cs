@@ -41,6 +41,11 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
+        public ActionResult DisplayForm()
+        {
+            return View();
+        }
+
         public ViewResult Placeholder()
         {
             return View();
