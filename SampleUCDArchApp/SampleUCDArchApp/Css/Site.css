@@ -165,7 +165,7 @@ form .radio, form .checkbox {margin-bottom:5px;}
 form input[type='radio'], form input[type='checkbox'] {margin-left: 10px;}
 form .radio_container > input[type='radio']:first-child, form .checkbox_container > input[type='checkbox']:first-child {margin-left: 0px;}
 form .text_field, form .text_area  {min-width:200px;}
-form input[type='text'], form input[type='date'], form input[type='datetime'], form textarea {min-width: 200px;padding: .5em;}
+form input[type='text'], form input[type='email'], form input[type='date'], form input[type='datetime'], form textarea {min-width: 200px;padding: .5em;}
 form select { min-width: 215px;padding: .5em;}
 .required {font-weight:bold;}
 .required span, span.required {color:#FF0000;}
