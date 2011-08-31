@@ -111,7 +111,8 @@ form section, .display-form {
     display: block;
     border: 1px solid #CCCCCC;
 }
-form section.padded .section-contents {
+.display-form { margin-bottom: 1em;}
+form section.padded .section-contents, .display-form .section-contents {
     margin: 15px;
 }
 form section header, .display-form header {
