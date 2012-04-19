@@ -3,28 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{7AA5B14E-F6D2-4574-B65C-96E1781F2000}"
 	ProjectSection(SolutionItems) = preProject
-		Bin\Antlr3.Runtime.dll = Bin\Antlr3.Runtime.dll
 		Bin\AutoMapper.dll = Bin\AutoMapper.dll
 		Bin\Castle.Core.dll = Bin\Castle.Core.dll
 		Bin\Castle.Windsor.dll = Bin\Castle.Windsor.dll
-		Bin\Common.Logging.dll = Bin\Common.Logging.dll
 		Bin\Elmah.dll = Bin\Elmah.dll
 		Bin\HibernatingRhinos.Profiler.Appender.dll = Bin\HibernatingRhinos.Profiler.Appender.dll
-		Bin\Iesi.Collections.dll = Bin\Iesi.Collections.dll
-		Bin\log4net.dll = Bin\log4net.dll
 		Bin\Microsoft.Practices.ServiceLocation.dll = Bin\Microsoft.Practices.ServiceLocation.dll
 		Bin\Microsoft.Web.Mvc.dll = Bin\Microsoft.Web.Mvc.dll
 		Bin\MvcContrib.dll = Bin\MvcContrib.dll
 		Bin\MvcContrib.FluentHtml.dll = Bin\MvcContrib.FluentHtml.dll
 		Bin\MvcContrib.TestHelper.dll = Bin\MvcContrib.TestHelper.dll
 		Bin\Newtonsoft.Json.dll = Bin\Newtonsoft.Json.dll
-		Bin\Remotion.Data.Linq.dll = Bin\Remotion.Data.Linq.dll
 		Bin\Rhino.Mocks.dll = Bin\Rhino.Mocks.dll
-		Bin\Spring.Aop.dll = Bin\Spring.Aop.dll
-		Bin\Spring.Core.dll = Bin\Spring.Core.dll
 		Bin\System.Data.SQLite.DLL = Bin\System.Data.SQLite.DLL
-		Bin\Telerik.Web.Mvc.dll = Bin\Telerik.Web.Mvc.dll
-		Bin\xVal.dll = Bin\xVal.dll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Web", "UCDArch.Web\UCDArch.Web.csproj", "{CDEA60DF-144D-41C5-81F1-EADF33FF9FA9}"
