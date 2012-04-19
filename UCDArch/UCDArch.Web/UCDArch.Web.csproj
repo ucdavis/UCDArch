@@ -118,10 +118,6 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="xVal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f8fbed92c68c4006, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Bin\xVal.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Build\CommonAssemblyInfo.cs">
@@ -155,7 +151,6 @@
     <Compile Include="Services\MessageServiceClient.cs" />
     <Compile Include="Services\ServiceMessage.cs" />
     <Compile Include="Validator\MvcValidationAdapter.cs" />
-    <Compile Include="Validator\ValidatorRulesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UCDArch.Core.NHibernateValidator\UCDArch.Core.NHibernateValidator.csproj">
