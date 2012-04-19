@@ -45,7 +45,7 @@ namespace UCDArch.Tests.UCDArch.Core.JsonNet
 
             var result = JsonConvert.SerializeObject(obj);
 
-            const string jsonString = "{\"Id\":42,\"Name\":\"TestName\"}";
+            const string jsonString = "{\"Name\":\"TestName\",\"Id\":42}";
 
             Assert.AreEqual(jsonString, result);
         }
