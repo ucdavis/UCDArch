@@ -10,7 +10,8 @@ namespace UCDArch.RegressionTests.Core
     {
         public ContinuousIntegrationDeploymentHack()
         {
-            new NHibernate.ByteCode.Spring.ProxyFactoryFactory();
+            //Hopefully byteCode no longer needed now that NHibernate integrates a bytecode provider
+            //new NHibernate.ByteCode.Spring.ProxyFactoryFactory(); 
             new System.Data.SQLite.SQLiteException();
 
             throw new Exception("This class should never be called or instantiated");
