@@ -3,7 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{7AA5B14E-F6D2-4574-B65C-96E1781F2000}"
 	ProjectSection(SolutionItems) = preProject
-		Bin\AutoMapper.dll = Bin\AutoMapper.dll
 		Bin\Castle.Core.dll = Bin\Castle.Core.dll
 		Bin\Castle.Windsor.dll = Bin\Castle.Windsor.dll
 		Bin\Elmah.dll = Bin\Elmah.dll
