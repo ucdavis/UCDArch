@@ -8,12 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{7AA5B14E-F6D
 		Bin\Elmah.dll = Bin\Elmah.dll
 		Bin\HibernatingRhinos.Profiler.Appender.dll = Bin\HibernatingRhinos.Profiler.Appender.dll
 		Bin\Microsoft.Practices.ServiceLocation.dll = Bin\Microsoft.Practices.ServiceLocation.dll
-		Bin\Microsoft.Web.Mvc.dll = Bin\Microsoft.Web.Mvc.dll
-		Bin\MvcContrib.dll = Bin\MvcContrib.dll
-		Bin\MvcContrib.FluentHtml.dll = Bin\MvcContrib.FluentHtml.dll
-		Bin\MvcContrib.TestHelper.dll = Bin\MvcContrib.TestHelper.dll
 		Bin\Newtonsoft.Json.dll = Bin\Newtonsoft.Json.dll
-		Bin\Rhino.Mocks.dll = Bin\Rhino.Mocks.dll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Web", "UCDArch.Web\UCDArch.Web.csproj", "{CDEA60DF-144D-41C5-81F1-EADF33FF9FA9}"
