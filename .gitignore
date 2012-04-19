@@ -31,5 +31,6 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 #ignore build nuget packages, include the EXE
 *.nupkg
+packages/
 !NuGet.exe
 !UCDArch/Bin
