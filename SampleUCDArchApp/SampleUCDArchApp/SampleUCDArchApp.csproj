@@ -27,6 +27,8 @@
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
     <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -303,13 +305,14 @@
     <None Include="App_Start\UCDArchBootstrapper.cs.pp" />
     <Compile Include="App_Start\NHibernateProfilerBootstrapper.cs" />
     <Compile Include="App_Start\UCDArchBootstrapper.cs" />
-    <Compile Include="ComponentRegistrar.asax.cs" />
+    <Compile Include="ComponentRegistrar.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\RoleProviderController.cs" />
+    <None Include="ComponentRegistrar.cs.pp" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -608,6 +611,9 @@
     <Content Include="Scripts\modernizr.custom.51742.js" />
     <Content Include="Scripts\xVal.jquery.validate.js" />
     <Content Include="packages.config" />
+    <None Include="Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Home\Sample.cshtml" />
     <Content Include="Views\Home\Placeholder.cshtml" />
@@ -914,4 +920,5 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>
