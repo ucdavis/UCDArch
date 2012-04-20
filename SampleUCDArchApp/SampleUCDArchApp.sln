@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp", "SampleUCDArchApp\SampleUCDArchApp.csproj", "{4382EC53-47CA-4FF1-A2B4-C22DE5012854}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Tests", "SampleUCDArchApp.Tests\SampleUCDArchApp.Tests.csproj", "{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Core", "SampleUCDArchApp.Core\SampleUCDArchApp.Core.csproj", "{8FD3C894-6FF0-4C94-9E85-E838B210D38B}"
 EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "SampleUCDArchApp.Db", "SampleUCDArchApp.Db\SampleUCDArchApp.Db.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Tests", "SampleUCDArchApp.Tests\SampleUCDArchApp.Tests.csproj", "{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +19,16 @@ Global
 		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
