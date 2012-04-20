@@ -2,7 +2,6 @@
 using System.Web.Routing;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
-using MvcMiniProfiler;
 using SampleUCDArchApp.Controllers;
 using UCDArch.Data.NHibernate;
 using UCDArch.Web.IoC;
@@ -31,10 +30,6 @@ namespace SampleUCDArchApp
 
         protected void Application_Start()
         {
-            #if DEBUG
-            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
-            #endif
-
             RegisterRoutes(RouteTable.Routes);
 
             ModelBinders.Binders.DefaultBinder = new UCDArchModelBinder();
@@ -42,8 +37,6 @@ namespace SampleUCDArchApp
             AutomapperConfig.Configure();
 
             NHibernateSessionConfiguration.Mappings.UseFluentMappings(typeof(Customer).Assembly);
-
-            InitProfilerSettings();
 
             IWindsorContainer container = InitializeServiceLocator();
         }
@@ -60,33 +53,6 @@ namespace SampleUCDArchApp
             ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
             return container;
-        }
-
-        private static void InitProfilerSettings()
-        {
-            //Don't profile any resource files 
-            MiniProfiler.Settings.IgnoredPaths = new[] { "/mini-profiler-", "/css/", "/scripts/", "/images/", "/favicon.ico" };
-
-            //Clean up the nhibernate stack trace
-            MiniProfiler.Settings.ExcludeAssembly("mscorlib");
-            MiniProfiler.Settings.ExcludeAssembly("NHibernate");
-            MiniProfiler.Settings.ExcludeAssembly("System.Web.Extensions");
-            MiniProfiler.Settings.ExcludeType("DbCommandProxy");
-
-            MiniProfiler.Settings.SqlFormatter = new MvcMiniProfiler.SqlFormatters.InlineFormatter();
-        }
-
-        protected void Application_BeginRequest()
-        {
-            if (Request.IsLocal)
-            {
-                MiniProfiler.Start();
-            }
-        }
-
-        protected void Application_EndRequest()
-        {
-            MiniProfiler.Stop();
         }
     }
 }
