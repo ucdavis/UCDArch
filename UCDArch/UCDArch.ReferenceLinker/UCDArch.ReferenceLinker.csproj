@@ -87,10 +87,6 @@
       <Project>{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}</Project>
       <Name>UCDArch.Core.DataAnnotationsValidator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UCDArch.Core.NHibernateValidator\UCDArch.Core.NHibernateValidator.csproj">
-      <Project>{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}</Project>
-      <Name>UCDArch.Core.NHibernateValidator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UCDArch.Core\UCDArch.Core.csproj">
       <Project>{5D518D9F-6249-4676-99DF-2893A1C2BDAF}</Project>
       <Name>UCDArch.Core</Name>

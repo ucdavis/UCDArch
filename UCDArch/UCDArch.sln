@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Testing", "UCDArch.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Tests", "UCDArch.Tests\UCDArch.Tests.csproj", "{7DDB95E3-4BF7-49A9-BFAE-DFBDB0F8F3B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Core.NHibernateValidator", "UCDArch.Core.NHibernateValidator\UCDArch.Core.NHibernateValidator.csproj", "{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.RegressionTests", "UCDArch.RegressionTests\UCDArch.RegressionTests.csproj", "{9BEB0306-FE27-41CA-B966-667358312176}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.ReferenceLinker", "UCDArch.ReferenceLinker\UCDArch.ReferenceLinker.csproj", "{E96AA00D-2EB3-498F-8BAB-A00B449A7903}"
@@ -81,10 +79,6 @@ Global
 		{7DDB95E3-4BF7-49A9-BFAE-DFBDB0F8F3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DDB95E3-4BF7-49A9-BFAE-DFBDB0F8F3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DDB95E3-4BF7-49A9-BFAE-DFBDB0F8F3B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9BEB0306-FE27-41CA-B966-667358312176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9BEB0306-FE27-41CA-B966-667358312176}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BEB0306-FE27-41CA-B966-667358312176}.Release|Any CPU.ActiveCfg = Release|Any CPU

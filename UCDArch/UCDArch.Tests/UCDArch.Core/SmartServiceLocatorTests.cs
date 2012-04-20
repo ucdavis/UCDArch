@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using UCDArch.Core;
 using UCDArch.Core.CommonValidator;
-using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using UCDArch.Core.DataAnnotationsValidator.CommonValidatorAdapter;
 using UCDArch.Web.IoC;
 using Castle.MicroKernel.Registration;
 

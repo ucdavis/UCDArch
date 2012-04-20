@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NHibernate.Validator.Constraints;
-using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
-using UCDArch.Core.NHibernateValidator.Extensions;
 using UCDArch.Testing;
 using UCDArch.Web.Validator;
+using Validator = UCDArch.Core.DataAnnotationsValidator.CommonValidatorAdapter.Validator;
 
 namespace UCDArch.Tests.UCDArch.Web.ValidatorTests
 {
@@ -103,16 +102,16 @@ namespace UCDArch.Tests.UCDArch.Web.ValidatorTests
         /// </summary>
         private class SomeObject
         {
-            [NotNull(Message = "Dude...the name please!!")]
+            [Required(ErrorMessage = "Dude...the name please!!")]
             public string LastName { get; set; }
 
             [Required]
             public string Street { get; set; }
 
-            [Length(10)]
+            [StringLength(10)]
             public string FirstName { get; set; }
 
-            [Length(10)]
+            [StringLength(10)]
             public string MiddleName { get; set; }
         }
 

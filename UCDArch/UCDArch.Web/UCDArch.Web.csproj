@@ -87,13 +87,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.Validator, Version=1.3.1.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NHibernate.Validator.1.3.1.4000\lib\Net35\NHibernate.Validator.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.Validator.Specific">
-      <HintPath>..\packages\NHibernate.Validator.1.3.1.4000\lib\Net35\NHibernate.Validator.Specific.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -152,10 +145,6 @@
     <Compile Include="Validator\MvcValidationAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UCDArch.Core.NHibernateValidator\UCDArch.Core.NHibernateValidator.csproj">
-      <Project>{BD08E187-F0F4-4AC0-ABB5-B3356BF33F6E}</Project>
-      <Name>UCDArch.Core.NHibernateValidator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UCDArch.Core\UCDArch.Core.csproj">
       <Project>{5D518D9F-6249-4676-99DF-2893A1C2BDAF}</Project>
       <Name>UCDArch.Core</Name>
