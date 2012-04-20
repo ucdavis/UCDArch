@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>Scott Kirkland</authors>
+    <owners>Scott Kirkland</owners>
+    <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
+    <dependencies>
+      <dependency id="DataAnnotationsExtensions.MVC3" version="1.0.2.0" />
+      <dependency id="elmah" version="1.2.2" />
+      <dependency id="WebActivator" version="1.5" />
+      <dependency id="NHibernateProfiler" version="1.0.0.935" />
+      <dependency id="MvcContrib.Mvc3.FluentHtml-ci" version="3.0.100.0" />
+    </dependencies>
+    <id>UcdArch.Mvc</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>UCDArch Mvc package for bringing UCDArch and related components into an MVC application</description>
+    <summary>UCDArch Mvc package for bringing UCDArch and related components into an MVC application</summary>
+    <copyright>Scott Kirkland</copyright>
+    <language>en-US</language>
+    <tags>ASPNETMVC</tags>
+  </metadata>
+  <files>
+    <file src="content\App_Start\UCDArchBootstrapper.cs.pp" target="content\App_Start\UCDArchBootstrapper.cs.pp" />
+    <file src="content\ComponentRegistrar.cs.pp" target="content\ComponentRegistrar.cs.pp" />
+    <file src="content\Web.config.transform" target="content\Web.config.transform" />
+  </files>
+</package>
