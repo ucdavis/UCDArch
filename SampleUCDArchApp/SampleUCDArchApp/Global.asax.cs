@@ -1,12 +1,5 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
-using SampleUCDArchApp.Controllers;
-using UCDArch.Data.NHibernate;
-using UCDArch.Web.IoC;
-using UCDArch.Web.ModelBinder;
-using SampleUCDArchApp.Core.Domain;
 using SampleUCDArchApp.Helpers;
 
 namespace SampleUCDArchApp
@@ -32,27 +25,7 @@ namespace SampleUCDArchApp
         {
             RegisterRoutes(RouteTable.Routes);
 
-            ModelBinders.Binders.DefaultBinder = new UCDArchModelBinder();
-
             AutomapperConfig.Configure();
-
-            NHibernateSessionConfiguration.Mappings.UseFluentMappings(typeof(Customer).Assembly);
-
-            IWindsorContainer container = InitializeServiceLocator();
-        }
-
-        private static IWindsorContainer InitializeServiceLocator()
-        {
-            IWindsorContainer container = new WindsorContainer();
-            
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
-
-            container.RegisterControllers(typeof(HomeController).Assembly);
-            ComponentRegistrar.AddComponentsTo(container);
-
-            ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
-
-            return container;
         }
     }
 }

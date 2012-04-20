@@ -300,7 +300,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UploadLocalization.zh-CN.resx</DependentUpon>
     </Compile>
+    <None Include="App_Start\UCDArchBootstrapper.cs.pp" />
     <Compile Include="App_Start\NHibernateProfilerBootstrapper.cs" />
+    <Compile Include="App_Start\UCDArchBootstrapper.cs" />
     <Compile Include="ComponentRegistrar.asax.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
