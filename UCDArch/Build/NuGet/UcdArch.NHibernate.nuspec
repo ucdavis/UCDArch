@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>Scott Kirkland</authors>
+    <owners>Scott Kirkland</owners>
+    <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
+    <dependencies>
+      <dependency id="UcdArch" version="1.0.0" />
+      <dependency id="Castle.Windsor" version="3.0.0.4001" />
+      <dependency id="CommonServiceLocator" version="1.0" />
+      <dependency id="FluentNHibernate" version="1.3.0.717" />
+      <dependency id="Newtonsoft.Json" version="4.5.3" />
+    </dependencies>
+    <id>UcdArch.NHibernate</id>
+    <title />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Runs UcdArch with NHibernate support.</description>
+    <summary />
+    <copyright>Scott Kirkland</copyright>
+    <language>en-US</language>
+    <tags>ASPNETMVC</tags>
+  </metadata>
+  <files />
+</package>
