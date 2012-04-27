@@ -22,8 +22,8 @@
     <tags>ASPNETMVC</tags>
   </metadata>
   <files>
-    <file src="content\App_Start\UCDArchBootstrapper.cs.pp" target="content\App_Start\UCDArchBootstrapper.cs.pp" />
-    <file src="content\ComponentRegistrar.cs.pp" target="content\ComponentRegistrar.cs.pp" />
-    <file src="content\Web.config.transform" target="content\Web.config.transform" />
+    <file src="SampleUCDArchApp\SampleUCDArchApp\App_Start\UCDArchBootstrapper.cs.pp" target="content\App_Start\UCDArchBootstrapper.cs.pp" />
+    <file src="SampleUCDArchApp\SampleUCDArchApp\ComponentRegistrar.cs.pp" target="content\ComponentRegistrar.cs.pp" />
+    <file src="SampleUCDArchApp\SampleUCDArchApp\Web.config.transform" target="content\Web.config.transform" />
   </files>
 </package>
