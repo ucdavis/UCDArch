@@ -6,7 +6,7 @@
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
     <dependencies>
-      <dependency id="UcdArch.NHibernate" version="3.2.0" />
+      <dependency id="UcdArch.NHibernate" version="3.3.0" />
       <dependency id="DataAnnotationsExtensions.MVC3" version="1.0.2.0" />
       <dependency id="elmah" version="1.2.2" />
       <dependency id="WebActivator" version="1.5" />
