@@ -101,20 +101,17 @@ namespace UCDArch.RegressionTests.Repository
             Assert.IsFalse(user.IsTransient()); //Make sure the user is saved
 
             NHibernateSessionManager.Instance.GetSession().Evict(user); //get the user out of the local cache
-
-
+            
             User retrievedUser = _userRepository.GetNullableById(userId);
 
             Assert.IsNull(retrievedUser);
             Assert.AreEqual(10, _userRepository.GetAll().Count);
         }
 
-
         /// <summary>
         /// Without the force save generates exception.
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof (StaleStateException))]
         public void WithoutForceSaveGeneratesException()
         {
             User user = DomainObjectDataHelper.CreateValidUser();
@@ -123,21 +120,22 @@ namespace UCDArch.RegressionTests.Repository
             Assert.IsTrue(user.IsTransient());
             _userRepository.DbContext.BeginTransaction();
             _userRepository.EnsurePersistent(user);
-            int userId = user.Id;
             _userRepository.DbContext.RollbackTransaction();
 
             Assert.IsFalse(user.IsTransient()); //Make sure the user is saved
 
             NHibernateSessionManager.Instance.GetSession().Evict(user); //get the user out of the local cache
-
-
-            _userRepository.DbContext.BeginTransaction();
-            _userRepository.EnsurePersistent(user); //Don't force the save
-            Assert.AreEqual(userId, user.Id);
-            _userRepository.DbContext.CommitTransaction(); //Generates exception
-            Assert.AreEqual(userId, user.Id);
-
-            Assert.AreEqual(11, _userRepository.GetAll().Count);
+            
+            try
+            {
+                _userRepository.DbContext.BeginTransaction();
+                _userRepository.EnsurePersistent(user); //Don't force the save, will generate an exception
+                Assert.Fail("Expected Exception of type StaleObjectStateException");
+            }
+            catch (StaleObjectStateException)
+            {
+                
+            }
         }
 
         /// <summary>
