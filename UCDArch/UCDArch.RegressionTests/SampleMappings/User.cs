@@ -21,7 +21,7 @@ namespace UCDArch.RegressionTests.SampleMappings
 
         //[StringStringLengthValidator(50)]
         //[IgnoreNulls]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Not a well-formed email address.")]
         public virtual string Email { get; set; }
 
         //[StringStringLengthValidator(50)]
