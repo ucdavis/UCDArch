@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NHibernate;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Data.NHibernate;
 using UCDArch.RegressionTests.SampleMappings;
@@ -180,21 +181,16 @@ namespace UCDArch.RegressionTests.Repository
         /// Wrongs the property name throws exception.
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(NHibernate.QueryException))]
         public void WrongPropertyNameThrowsException()
         {
             try
             {
-                if (_userRepository != null)
-                {
-                    IList<User> users = _userRepository.GetAll("bbb", true);
-                    Assert.IsNull(users);
-                }
+                IList<User> users = _userRepository.GetAll("bbb", true);
+                Assert.Fail("Expected QueryException");
             }
-            catch (Exception message)
+            catch (QueryException message)
             {
                 Assert.AreEqual("could not resolve property: bbb of: UCDArch.RegressionTests.SampleMappings.User", message.Message );
-                throw;
             }
         }
 
