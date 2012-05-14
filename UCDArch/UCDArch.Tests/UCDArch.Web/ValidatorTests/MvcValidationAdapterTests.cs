@@ -80,9 +80,9 @@ namespace UCDArch.Tests.UCDArch.Web.ValidatorTests
             }
             var errors = new[]
                              {
-                                 "LastName: Dude...the name please!!",
-                                 "Street: may not be null or empty",
-                                 "FirstName: length must be between 0 and 10"
+                                 "Dude...the name please!!",
+                                 "The Street field is required.",
+                                 "The field FirstName must be a string with a maximum length of 10."
                              };
 
             Assert.AreEqual(resultsList.Count, errors.Length, "Number of error messages do not match");
