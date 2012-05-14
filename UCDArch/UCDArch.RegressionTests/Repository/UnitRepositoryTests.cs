@@ -68,23 +68,18 @@ namespace UCDArch.RegressionTests.Repository
                 unit = CreateValidUnit();
                 unit.FullName = null;
                 _repository.EnsurePersistent(unit);
-
+                Assert.Fail("Expected Application Exception");
             }
-            catch (Exception)
+            catch (ApplicationException)
             {
                 Assert.IsNotNull(unit);
-                if (unit != null)
-                {
-                    unit.ValidationResults().AsMessageList().AssertErrorsAre("FullName: may not be null or empty");
-                }
-                throw;
+                unit.ValidationResults().AsMessageList().AssertErrorsAre("The FullName field is required.");
             }
         }
         /// <summary>
         /// Units does not save with empty full name.
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ApplicationException))]
         public void UnitDoesNotSaveWithEmptyFullName()
         {
             Unit unit = null;
@@ -93,23 +88,18 @@ namespace UCDArch.RegressionTests.Repository
                 unit = CreateValidUnit();
                 unit.FullName = "";
                 _repository.EnsurePersistent(unit);
-
+                Assert.Fail("Expected Application Exception");
             }
-            catch (Exception)
+            catch (ApplicationException)
             {
                 Assert.IsNotNull(unit);
-                if (unit != null)
-                {
-                    unit.ValidationResults().AsMessageList().AssertErrorsAre("FullName: may not be null or empty");
-                }
-                throw;
+                unit.ValidationResults().AsMessageList().AssertErrorsAre("The FullName field is required.");
             }
         }
         /// <summary>
         /// Units does not save with Spaces Only full name.
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ApplicationException))]
         public void UnitDoesNotSaveWithSpacesOnlyFullName()
         {
             Unit unit = null;
@@ -118,23 +108,18 @@ namespace UCDArch.RegressionTests.Repository
                 unit = CreateValidUnit();
                 unit.FullName = " ";
                 _repository.EnsurePersistent(unit);
-
+                Assert.Fail("Expected Application Exception");
             }
-            catch (Exception)
+            catch (ApplicationException)
             {
                 Assert.IsNotNull(unit);
-                if (unit != null)
-                {
-                    unit.ValidationResults().AsMessageList().AssertErrorsAre("FullName: may not be null or empty");
-                }
-                throw;
+                unit.ValidationResults().AsMessageList().AssertErrorsAre("The FullName field is required.");
             }
         }
         /// <summary>
         /// Units does not save with Spaces Only full name.
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ApplicationException))]
         public void UnitDoesNotSaveWithTooLongFullName()
         {
             Unit unit = null;
@@ -143,16 +128,12 @@ namespace UCDArch.RegressionTests.Repository
                 unit = CreateValidUnit();
                 unit.FullName = "123456789 123456789 123456789 123456789 12345678901"; //51 characters long, max 50 allowed
                 _repository.EnsurePersistent(unit);
-
+                Assert.Fail("Expected Application Exception");
             }
-            catch (Exception)
+            catch (ApplicationException)
             {
                 Assert.IsNotNull(unit);
-                if (unit != null)
-                {
-                    unit.ValidationResults().AsMessageList().AssertErrorsAre("FullName: length must be between 0 and 50");
-                }
-                throw;
+                unit.ValidationResults().AsMessageList().AssertErrorsAre("The field FullName must be a string with a maximum length of 50.");
             }
         }
         #endregion FullName Tests
