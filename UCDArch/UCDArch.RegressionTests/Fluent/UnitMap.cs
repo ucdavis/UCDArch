@@ -10,10 +10,10 @@ namespace UCDArch.RegressionTests.Fluent
             Table("Unit");
             Id(x => x.Id).Column("UnitID");
 
-            Map(x => x.FISCode);
+            Map(x => x.FISCode).Column("FIS_Code");
+            Map(x => x.PPSCode).Column("PPS_Code");
             Map(x => x.ShortName);
             Map(x => x.FullName);
-            Map(x => x.PPSCode);
         }
     }
 }

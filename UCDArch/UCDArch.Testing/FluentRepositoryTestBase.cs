@@ -21,9 +21,6 @@ namespace UCDArch.Testing
         public List<Guid> UserIds { get; set; }
         public IRepository Repository { get; set; }
 
-        private readonly Assembly _mappingAssembly;
-        private readonly Assembly _conventionAssembly;
-
         /// <summary>
         /// Get the statistics for the associated session factory
         /// </summary>
@@ -39,15 +36,27 @@ namespace UCDArch.Testing
             }
         }
 
+        private static readonly Configuration FluentConfiguration = BuildConfiguration();
+            
+        private static Configuration BuildConfiguration()
+        {
+            var mappingAssembly = typeof (TMappingClass).Assembly;
+            var conventionAssembly = typeof (TConventionClass).Assembly;
+
+            NHibernateSessionConfiguration.Mappings.UseFluentMappings(mappingAssembly, conventionAssembly);
+
+            var config = Fluently.Configure().Mappings(
+                x =>
+                x.FluentMappings.AddFromAssembly(mappingAssembly).Conventions.AddAssembly(conventionAssembly)).
+                BuildConfiguration();
+
+            return config;
+        }
+
         protected FluentRepositoryTestBase()
         {
             UserIds = new List<Guid>();
             Repository = new Repository();
-
-            _mappingAssembly = typeof (TMappingClass).Assembly;
-            _conventionAssembly = typeof (TConventionClass).Assembly;
-
-            NHibernateSessionConfiguration.Mappings.UseFluentMappings(_mappingAssembly, _conventionAssembly);
         }
 
         /// <summary>
@@ -56,13 +65,7 @@ namespace UCDArch.Testing
         [TestInitialize]
         public void CreateDB()
         {
-            var config = Fluently
-                .Configure()
-                .Mappings(x => x.FluentMappings.AddFromAssembly(_mappingAssembly)
-                       .Conventions.AddAssembly(_conventionAssembly))
-                .BuildConfiguration();
-            
-            new NHibernate.Tool.hbm2ddl.SchemaExport(config).Execute(false, true, false,
+            new NHibernate.Tool.hbm2ddl.SchemaExport(FluentConfiguration).Execute(false, true, false,
                                                                      NHibernateSessionManager.
                                                                          Instance.GetSession().Connection, null);
             InitServiceLocator();

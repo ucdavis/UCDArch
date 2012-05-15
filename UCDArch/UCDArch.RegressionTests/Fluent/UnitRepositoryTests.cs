@@ -10,7 +10,7 @@ using UCDArch.Testing.Extensions;
 namespace UCDArch.RegressionTests.Fluent
 {
     [TestClass]
-    public class UnitRepositoryTests : FluentRepositoryTestBase<UnitMap>
+    public class FluentUnitRepositoryTests : FluentRepositoryTestBase<UnitMap>
     {
         private readonly IRepository<Unit> _repository = new Repository<Unit>();
 
