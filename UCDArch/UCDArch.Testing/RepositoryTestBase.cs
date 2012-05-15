@@ -14,6 +14,8 @@ namespace UCDArch.Testing
         public List<Guid> UserIds { get; set; }
         public IRepository Repository { get; set; }
 
+        private static readonly Configuration Configuration = new Configuration().Configure();
+
         /// <summary>
         /// Get the statistics for the associated session factory
         /// </summary>
@@ -41,8 +43,7 @@ namespace UCDArch.Testing
         [TestInitialize]
         public void CreateDB()
         {
-            Configuration config = new Configuration().Configure();
-            new NHibernate.Tool.hbm2ddl.SchemaExport(config).Execute(false, true, false,
+            new NHibernate.Tool.hbm2ddl.SchemaExport(Configuration).Execute(false, true, false,
                                                                      NHibernateSessionManager.
                                                                          Instance.GetSession().Connection, null);
             InitServiceLocator();
