@@ -10,7 +10,7 @@ namespace UCDArch.RegressionTests.Repository
     /// Tests to check object flushing/dirty checking behavior
     /// </summary>
     [TestClass]
-    public class ObjectFlushTests : RepositoryTestBase
+    public class ObjectFlushTests : FluentRepositoryTestBase<UnitMap>
     {
         protected override void LoadData()
         {

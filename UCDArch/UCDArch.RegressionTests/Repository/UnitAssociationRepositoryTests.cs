@@ -9,7 +9,7 @@ using UCDArch.Testing;
 namespace UCDArch.RegressionTests.Repository
 {
     [TestClass]
-    public class UnitAssociationRepositoryTests : RepositoryTestBase
+    public class UnitAssociationRepositoryTests : FluentRepositoryTestBase<UnitAssociationMap>
     {
         private readonly IRepository<UnitAssociation> _unitAssociationRepository = new Repository<UnitAssociation>();
         private readonly IRepository<User> _userRepository = new Repository<User>();

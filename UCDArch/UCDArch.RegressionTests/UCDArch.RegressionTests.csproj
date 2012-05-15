@@ -107,6 +107,7 @@
     <Compile Include="Repository\UserRepositoryTests.cs" />
     <Compile Include="SampleMappings\Unit.cs" />
     <Compile Include="SampleMappings\UnitAssociation.cs" />
+    <Compile Include="SampleMappings\UnitAssociationMap.cs" />
     <Compile Include="SampleMappings\UnitMap.cs" />
     <Compile Include="SampleMappings\User.cs" />
   </ItemGroup>
@@ -125,15 +126,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SampleMappings\User.hbm.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="SampleMappings\Unit.hbm.xml" />
-    <EmbeddedResource Include="SampleMappings\UnitAssociation.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

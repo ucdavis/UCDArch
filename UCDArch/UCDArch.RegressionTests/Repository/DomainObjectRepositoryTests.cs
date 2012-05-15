@@ -8,7 +8,7 @@ using UCDArch.Testing;
 namespace UCDArch.RegressionTests.Repository
 {
     [TestClass]
-    public class DomainObjectRepositoryTests : RepositoryTestBase
+    public class DomainObjectRepositoryTests : FluentRepositoryTestBase<UserMap>
     {
         private readonly IRepository<User> _userRepository = new Repository<User>();
 

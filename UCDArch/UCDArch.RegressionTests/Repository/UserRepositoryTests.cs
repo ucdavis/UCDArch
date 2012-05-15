@@ -11,7 +11,7 @@ using UCDArch.Testing.Extensions;
 namespace UCDArch.RegressionTests.Repository
 {
     [TestClass]
-    public class UserRepositoryTests : RepositoryTestBase
+    public class UserRepositoryTests : FluentRepositoryTestBase<UserMap>
     {
         private readonly IRepository<User> _repository = new Repository<User>();
         private readonly IRepository<Unit> _unitRepository = new Repository<Unit>();

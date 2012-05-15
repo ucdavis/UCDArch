@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using FluentNHibernate.Mapping;
 using UCDArch.Core.DomainModel;
 
 namespace UCDArch.RegressionTests.SampleMappings
@@ -50,6 +51,28 @@ namespace UCDArch.RegressionTests.SampleMappings
         public User()
         {
             UnitAssociations = new List<UnitAssociation>();
+        }
+    }
+
+    public class UserMap : ClassMap<User>
+    {
+        public UserMap()
+        {
+            Id(x => x.Id).Column("UserID");
+            Map(x => x.FirstName);
+            Map(x => x.LastName);
+
+            Map(x => x.LoginID);
+            Map(x => x.Phone);
+            Map(x => x.Email);
+
+            Map(x => x.EmployeeID);
+            Map(x => x.StudentID);
+            Map(x => x.UserKey);
+            Map(x => x.Inactive);
+
+            HasManyToMany(x => x.UnitAssociations).Table("UnitAssociations")
+                .ParentKeyColumn("UserID").ChildKeyColumn("UnitID").Not.Inverse().Cascade.None();
         }
     }
 }

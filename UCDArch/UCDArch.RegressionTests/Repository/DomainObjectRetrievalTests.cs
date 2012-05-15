@@ -11,7 +11,7 @@ using UCDArch.Testing;
 namespace UCDArch.RegressionTests.Repository
 {
     [TestClass]
-    public class DomainObjectRetrievalTests : RepositoryTestBase
+    public class DomainObjectRetrievalTests : FluentRepositoryTestBase<UserMap>
     {
         private readonly IRepository<User> _userRepository = new Repository<User>();
         protected override void LoadData()
