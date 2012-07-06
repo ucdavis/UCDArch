@@ -43,8 +43,14 @@ namespace UCDArch.Testing.Fakes
                     .Return(records[i])
                     .Repeat
                     .Any();
+                repository
+                    .Expect(a => a.GetById(i1 + 1))
+                    .Return(records[i])
+                    .Repeat
+                    .Any();
             }
             repository.Expect(a => a.GetNullableById(totalCount + 1)).Return(null).Repeat.Any();
+            repository.Expect(a => a.GetById(totalCount + 1)).Return(null).Repeat.Any();
             repository.Expect(a => a.Queryable).Return(records.AsQueryable()).Repeat.Any();
             repository.Expect(a => a.GetAll()).Return(records).Repeat.Any();
         }
