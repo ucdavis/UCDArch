@@ -85,12 +85,6 @@
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SampleUCDArchApp\SampleUCDArchApp.csproj">
-      <Project>{4382EC53-47CA-4FF1-A2B4-C22DE5012854}</Project>
-      <Name>SampleUCDArchApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>

@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using UCDArch.Web.Attributes;
-using UCDArch.Web.Controller;
 
 namespace SampleUCDArchApp.Controllers
 {
