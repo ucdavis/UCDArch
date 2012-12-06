@@ -16,6 +16,8 @@ namespace SampleUCDArchApp.Controllers
 
         public ViewResult Sample()
         {
+            ViewBag.ErrorMessage = "Houston we have a problem... just kidding, this is only a test";
+            Message = "Sample Message from the Controller";
             return View();
         }
 
