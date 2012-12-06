@@ -3,109 +3,79 @@
 }
 
 @section SubNav {
-    <ul class="navigation">
-        <li>@Html.ActionLink("Full Demo", "Full")</li>
-        <li>@Html.ActionLink("Form", "Form")</li>
-        <li>@Html.ActionLink("Table", "Table")</li>
-        <li>@Html.ActionLink("JQuery", "Jquery")</li>
-    </ul>
+    <li>@Html.ActionLink("Sample Index", "Sample")</li>
+    <li class="active">@Html.ActionLink("Form", "Form")</li>
+    <li>@Html.ActionLink("Table", "Table")</li>
+    <li>@Html.ActionLink("JQuery", "Jquery")</li>
+    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+    <li>@Html.ActionLink("Full Demo", "Full")</li>
 }
 
-@section AdditionalScripts{
-
-    <script type="text/javascript">
-
-        $(function () {
-
-            $(".button, .text_btn a, button").button();
-            
-        });
-
-    </script>
-}
-
-<form>
-	<section>
-		<header><div class="col1">Personal Information</div>
-                <div class="col2"><button>Action 1</button><button>Action 2</button></div>
-        </header>
-
-        <div class="section-contents">
-		<ul>
-			<li><div class="editor-label required">First Name:<span>*</span></div>
-				<div class="editor-field"><input type="text" /></div>
-			</li>
-			<li><div class="editor-label required">Last Name:<span>*</span></div>
-				<div class="editor-field"><input type="text" /></div>
-			</li>
-			<li><div class="editor-label">Social Security #:</div>
-				<div class="editor-field"><input type="text" placeholder="xxx-xx-xxxx" /></div>
-			</li>
-			<li><div class="editor-label">Date of Birth:</div>
-				<div class="editor-field"><input type="datetime" /></div>
-			</li>
-			<li><div class="editor-label">Gender:</div>
-				<div class="editor-field">
-					<ul class="radio_container">
-						<li><input type="radio" value="M" name="gender" /> Male</li>
-						<li><input type="radio" value="F" name="gender" /> Female</li>
-					</ul>
-				</div>
-			</li>
-			<li><div class="editor-label">Interests:</div>
-				<div class="editor-field">
-					<ul class="checkbox_container">
-						<li><input type="checkbox" value="1" /> Computers</li>
-						<li><input type="checkbox" value="2" /> Rocket Chairs</li>
-						<li><input type="checkbox" value="3" /> Space Bandidos</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
+<h2>Form Example</h2>
+<p class="lead">This is an example of what a standard form would look like</p>
+<form class="well form-horizontal" action="@Url.Action("Form")" method="POST">
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Personal Information</legend>
+        <div class="control-group">
+            <label class="control-label" for="inputFirstName">First Name<span class="required">*</span></label>
+            <div class="controls">
+                <input type="text" id="inputFirstName" placeholder="First Name" required="required">
+            </div>
         </div>
-
-	</section>
-						
-	<section>
-		<header>Contact Information</header>
-        <div class="section-contents">
-		<ul>
-			<li><div class="editor-label">Address:</div>
-				<div class="editor-field"><input type="text" placeholder="Ex.123 Fake Street" /></div>
-			</li>
-			<li><div class="editor-label">City:</div>
-				<div class="editor-field"><input type="text" /></div>
-			</li>
-			<li><div class="editor-label">State:</div>
-				<div class="editor-field">
-					<select>
-						<option value="">--Select a State--</option>
-						<option value="CA">California</option>
-					</select>
-				</div>
-			</li>
-			<li><div class="editor-label">Zip:</div>
-				<div class="editor-field"><input type="text" placeholder="xxxxx-xxxx" /></div>
-			</li>
-		</ul>
+        <div class="control-group">
+            <label class="control-label" for="inputLastName">Last Name</label>
+            <div class="controls">
+                <input type="text" id="inputLastName" placeholder="Last Name">
+            </div>
         </div>
-	</section>
-					
-	<section>
-        <div class="section-contents">
-		<ul>
-			<li><div class="editor-label">&nbsp;</div>
-				<div class="editor-field">
-									
-					<input type="submit" class="button" value="Save" />
-					| <a href="#">Cancel</a>
-									
-				</div>
-		</ul>
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+                <input type="email" id="inputEmail" placeholder="Email">
+            </div>
         </div>
-	</section>
-						
-</form>
-					
-</div>
-				
+        <div class="control-group">
+            <label class="control-label" for="inputBirthday">Date Of Birth</label>
+            <div class="controls">
+                <input type="date" id="inputBirthday">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Gender</label>
+            <div class="controls">
+                <label class="radio">
+                    <input type="radio" name="optionsRadios" id="optMale" value="male" checked>
+                    Male
+                </label>
+                <label class="radio">
+                    <input type="radio" name="optionsRadios" id="optFemale" value="female">
+                    Female
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Contact Information</legend>
+        <div class="control-group">
+            <label class="control-label" for="inputAddress">Address</label>
+            <div class="controls">
+                <input type="text" id="inputAddress" placeholder="Address">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputState">State</label>
+            <div class="controls">
+                <select id="inputState">
+                    <option value>-- Select A State --</option>
+                    <option value="CA">California</option>
+                    <option value="NY">New York</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-link">Cancel</button>
+        </div>
+    </fieldset>
+</form>						

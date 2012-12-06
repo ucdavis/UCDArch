@@ -32,6 +32,14 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Form(string data)
+        {
+            Message = "The form was submitted successfully";
+
+            return View();
+        }
+
         public ActionResult Table()
         {
             return View();

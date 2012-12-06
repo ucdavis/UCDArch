@@ -191,7 +191,7 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="App_Start\UCDArchBootstrapper.cs.pp" />
     <Content Include="ComponentRegistrar.cs.pp" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -241,7 +241,6 @@
     <Content Include="Views\Json\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Shared\_ServiceMessages.cshtml" />
-    <Content Include="Views\Home\Subnav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
