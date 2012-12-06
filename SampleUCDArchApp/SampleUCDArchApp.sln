@@ -15,6 +15,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SampleUCDArchApp.Db", "Samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Tests", "SampleUCDArchApp.Tests\SampleUCDArchApp.Tests.csproj", "{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Web", "SampleUCDArchApp.Web\SampleUCDArchApp.Web.csproj", "{F20BC5A0-6EC7-4F2A-B18F-946590F01220}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Display Form";
+}
+
+@section SubNav {
+    <ul class="navigation">
+        <li>@Html.ActionLink("Full Demo", "Full")</li>
+        <li>@Html.ActionLink("Form", "Form")</li>
+        <li>@Html.ActionLink("Table", "Table")</li>
+        <li>@Html.ActionLink("JQuery", "Jquery")</li>
+        <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+    </ul>
+}
+
+<section class="display-form">
+
+    <header>Object Name</header>
+
+    <div class="section-contents">
+    
+        <div class="section-text">This is the details of the object</div>
+
+        <ul>
+            <li><div class="display-label">First Name:</div>
+                <div class="display-details">Philip</div>
+            </li>
+            <li><div class="display-label">Last Name:</div>
+                <div class="display-details">Fry</div>
+            </li>
+            <li><div class="display-label">Email:</div>
+                <div class="display-details">pjfry@planex.com</div>
+            </li>
+        </ul>
+
+    </div>
+
+    <footer></footer>
+
+</section>

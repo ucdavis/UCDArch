@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Form Demo";
+}
+
+@section SubNav {
+    <ul class="navigation">
+        <li>@Html.ActionLink("Full Demo", "Full")</li>
+        <li>@Html.ActionLink("Form", "Form")</li>
+        <li>@Html.ActionLink("Table", "Table")</li>
+        <li>@Html.ActionLink("JQuery", "Jquery")</li>
+    </ul>
+}
+
+@section AdditionalScripts{
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(".button, .text_btn a, button").button();
+            
+        });
+
+    </script>
+}
+
+<form>
+	<section>
+		<header><div class="col1">Personal Information</div>
+                <div class="col2"><button>Action 1</button><button>Action 2</button></div>
+        </header>
+
+        <div class="section-contents">
+		<ul>
+			<li><div class="editor-label required">First Name:<span>*</span></div>
+				<div class="editor-field"><input type="text" /></div>
+			</li>
+			<li><div class="editor-label required">Last Name:<span>*</span></div>
+				<div class="editor-field"><input type="text" /></div>
+			</li>
+			<li><div class="editor-label">Social Security #:</div>
+				<div class="editor-field"><input type="text" placeholder="xxx-xx-xxxx" /></div>
+			</li>
+			<li><div class="editor-label">Date of Birth:</div>
+				<div class="editor-field"><input type="datetime" /></div>
+			</li>
+			<li><div class="editor-label">Gender:</div>
+				<div class="editor-field">
+					<ul class="radio_container">
+						<li><input type="radio" value="M" name="gender" /> Male</li>
+						<li><input type="radio" value="F" name="gender" /> Female</li>
+					</ul>
+				</div>
+			</li>
+			<li><div class="editor-label">Interests:</div>
+				<div class="editor-field">
+					<ul class="checkbox_container">
+						<li><input type="checkbox" value="1" /> Computers</li>
+						<li><input type="checkbox" value="2" /> Rocket Chairs</li>
+						<li><input type="checkbox" value="3" /> Space Bandidos</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+        </div>
+
+	</section>
+						
+	<section>
+		<header>Contact Information</header>
+        <div class="section-contents">
+		<ul>
+			<li><div class="editor-label">Address:</div>
+				<div class="editor-field"><input type="text" placeholder="Ex.123 Fake Street" /></div>
+			</li>
+			<li><div class="editor-label">City:</div>
+				<div class="editor-field"><input type="text" /></div>
+			</li>
+			<li><div class="editor-label">State:</div>
+				<div class="editor-field">
+					<select>
+						<option value="">--Select a State--</option>
+						<option value="CA">California</option>
+					</select>
+				</div>
+			</li>
+			<li><div class="editor-label">Zip:</div>
+				<div class="editor-field"><input type="text" placeholder="xxxxx-xxxx" /></div>
+			</li>
+		</ul>
+        </div>
+	</section>
+					
+	<section>
+        <div class="section-contents">
+		<ul>
+			<li><div class="editor-label">&nbsp;</div>
+				<div class="editor-field">
+									
+					<input type="submit" class="button" value="Save" />
+					| <a href="#">Cancel</a>
+									
+				</div>
+		</ul>
+        </div>
+	</section>
+						
+</form>
+					
+</div>
+				
