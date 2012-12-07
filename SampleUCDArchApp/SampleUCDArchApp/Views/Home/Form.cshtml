@@ -26,9 +26,10 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="inputLastName">Last Name</label>
+            <label class="control-label" for="inputLastName"><strong>Last Name</strong><span class="required">*</span></label>
             <div class="controls">
-                <input type="text" id="inputLastName" placeholder="Last Name">
+                <input type="text" id="inputLastName" name="inputLastName" placeholder="Last Name" data-val="true" data-val-required="Last Name Required (if Madonna enter N/A)">
+                <span class="field-validation-valid" data-valmsg-for="inputLastName" data-valmsg-replace="true"></span>
             </div>
         </div>
         <div class="control-group">
