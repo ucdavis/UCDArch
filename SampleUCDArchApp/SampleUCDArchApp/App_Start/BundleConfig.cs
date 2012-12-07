@@ -36,7 +36,7 @@ namespace SampleUCDArchApp
             // Note: Including datatables helper css for bootstrap (http://datatables.net/blog/Twitter_Bootstrap_2)
             bundles.Add(new StyleBundle("~/Content/DataTables-1.9.4/media/css/dataTables")
                             .Include("~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css")
-                            .Include("~/Content/datatables-bootstrap.css"));
+                            .Include("~/Content/DataTables-1.9.4/media/css/datatables-bootstrap.css"));
         }
     }
 }
