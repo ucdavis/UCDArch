@@ -3,37 +3,30 @@
 }
 
 @section SubNav {
-    <ul class="navigation">
-        <li>@Html.ActionLink("Full Demo", "Full")</li>
-        <li>@Html.ActionLink("Form", "Form")</li>
-        <li>@Html.ActionLink("Table", "Table")</li>
-        <li>@Html.ActionLink("JQuery", "Jquery")</li>
-        <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
-    </ul>
+    <li>@Html.ActionLink("Sample Index", "Sample")</li>
+    <li>@Html.ActionLink("Form", "Form")</li>
+    <li>@Html.ActionLink("Table", "Table")</li>
+    <li class="active">@Html.ActionLink("Display Form", "DisplayForm")</li>
+    <li>@Html.ActionLink("Full Demo", "Full")</li>
 }
 
-<section class="display-form">
+<h2>Display Form Example</h2>
+<p>This is an example of a page that displays some object or infomation</p>
 
-    <header>Object Name</header>
-
-    <div class="section-contents">
-    
-        <div class="section-text">This is the details of the object</div>
-
-        <ul>
-            <li><div class="display-label">First Name:</div>
-                <div class="display-details">Philip</div>
-            </li>
-            <li><div class="display-label">Last Name:</div>
-                <div class="display-details">Fry</div>
-            </li>
-            <li><div class="display-label">Email:</div>
-                <div class="display-details">pjfry@planex.com</div>
-            </li>
-        </ul>
-
-    </div>
-
-    <footer></footer>
-
-</section>
+<div class="form-horizontal well-small">
+    <fieldset>
+        <legend>Form info</legend>
+        <div class="control-group">
+            <label class="control-label">Name</label>
+            <div class="controls form-text">Bob Dobalina</div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Email</label>
+            <div class="controls form-text">bdobalina@gmail.com</div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Phone</label>
+            <div class="controls form-text">530-555-5231</div>
+        </div>
+    </fieldset>
+</div>

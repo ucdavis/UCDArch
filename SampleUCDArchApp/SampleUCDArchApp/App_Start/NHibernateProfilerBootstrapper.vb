@@ -2,10 +2,10 @@ Imports HibernatingRhinos.Profiler.Appender.NHibernate
 
 <assembly: WebActivator.PreApplicationStartMethod(typeof(SampleUCDArchApp.App_Start.NHibernateProfilerBootstrapper), "PreStart")>
 Namespace App_Start
-	Public Class NHibernateProfilerBootstrapper
+    Public Class NHibernateProfilerBootstrapper
         Public Shared Sub PreStart()
             ' Initialize the profiler
-			NHibernateProfiler.Initialize()
+            NHibernateProfiler.Initialize()
 
             ' You can also use the profiler in an offline manner.
             ' This will generate a file with a snapshot of all the NHibernate activity in the application,
