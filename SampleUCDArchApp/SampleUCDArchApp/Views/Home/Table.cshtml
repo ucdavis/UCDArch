@@ -3,168 +3,61 @@
 }
 
 @section SubNav {
-    <ul class="navigation">
-        <li>@Html.ActionLink("Full Demo", "Full")</li>
-        <li>@Html.ActionLink("Form", "Form")</li>
-        <li>@Html.ActionLink("Table", "Table")</li>
-        <li>@Html.ActionLink("JQuery", "Jquery")</li>
-    </ul>
+    <li>@Html.ActionLink("Sample Index", "Sample")</li>
+    <li>@Html.ActionLink("Form", "Form")</li>
+    <li class="active">@Html.ActionLink("Table", "Table")</li>
+    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+    <li>@Html.ActionLink("Full Demo", "Full")</li>
 }
 
+<h2>Table Example</h2>
+<p class="lead">This is an example of a good looking table without any paging/sorting</p>
 
-<table>
+<table class="table table-striped table-hover">
 	<thead>
 		<tr>
-			<th></th>
+			<th>#</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Social Security</th>
-			<th>Gender</th>
-			<th></th>								
+			<th>Gender</th>							
 		</tr>
 	</thead>
 	<tbody>
-		<tr class="odd">
-			<td>
-				<a href="#"><img src="Images/details.png" alt="Details"/ ></a>
-				<a href="#"><img src="Images/edit.png" alt="Edit" /></a>
-			</td>
-			<td>Philip</td>
-			<td>Fry</td>
-			<td>123-33-4032</td>
-			<td>Male</td>
-			<td>
-				<a href="#"><img src="Images/delete.png" alt="delete" /></a>
-			</td>
-		</tr>
-		<tr class="even">
-			<td>
-				<a href="#"><img src="Images/details.png" alt="Details"/ ></a>
-				<a href="#"><img src="Images/edit.png" alt="Edit" /></a>
-			</td>
-			<td>John</td>
-			<td>Zoidberg</td>
-			<td>342-23-2423</td>
-			<td>Male</td>
-			<td>
-				<a href="#"><img src="Images/delete.png" alt="delete" /></a>
-			</td>
-		</tr>
-		<tr class="odd">
-			<td>
-				<a href="#"><img src="Images/details.png" alt="Details"/ ></a>
-				<a href="#"><img src="Images/edit.png" alt="Edit" /></a>
-			</td>
-			<td>Hermes</td>
-			<td>Conrad</td>
-			<td>493-23-4323</td>
-			<td>Male</td>
-			<td>
-				<a href="#"><img src="Images/delete.png" alt="delete" /></a>
-			</td>
-		</tr>
-		<tr class="even"> 
-			<td>
-				<a href="#"><img src="Images/details.png" alt="Details"/ ></a>
-				<a href="#"><img src="Images/edit.png" alt="Edit" /></a>
-			</td>
-			<td>Amy</td>
-			<td>Wong</td>
-			<td>454-45-4324</td>
-			<td>Female</td>
-			<td>
-				<a href="#"><img src="Images/delete.png" alt="delete" /></a>
-			</td>
-		</tr>
-		<tr class="odd">
-			<td>
-				<a href="#"><img src="Images/details.png" alt="Details"/ ></a>
-				<a href="#"><img src="Images/edit.png" alt="Edit" /></a>
-			</td>
-			<td>Turanga</td>
-			<td>Leela</td>
-			<td>134-31-3431</td>
-			<td>Female</td>
-			<td>
-				<a href="#"><img src="Images/delete.png" alt="delete" /></a>
-			</td>
-		</tr>
-	</tbody>
-	<tfoot>
-	</tfoot>
-</table>
-					
-<table class="noicon">
-	<thead>
+	    <tr>
+	        <th>1</th>
+	        <td>Philip</td>
+	        <td>Fry</td>
+	        <td>123-33-4032</td>
+	        <td>Male</td>
+	    </tr>
 		<tr>
-			<td colspan="4">
-								
-				<h4>Filter Options</h4>
-									
-				<div>
-					<form>
-						<fieldset>
-							<ul>
-								<li>
-								<div class="editor-label">Name</div>
-								<div class="editor-field"><input /></div>
-								</li>
-								<li>
-									<div class="editor-label">Gender:</div>
-									<div class="editor-field">
-										<ul class="radio_container">
-											<li><input type="radio" name="gender" />Male</li>
-											<li><input type="radio"/>Female</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
-				</div>
-								
-			</td>
-		</tr>
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Social Security</th>
-			<th>Gender</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr class="odd">
-			<td>Philip</td>
-			<td>Fry</td>
-			<td>123-33-4032</td>
-			<td>Male</td>
-		</tr>
-		<tr class="even">
+			<td>2</td>
 			<td>John</td>
 			<td>Zoidberg</td>
 			<td>342-23-2423</td>
 			<td>Male</td>
 		</tr>
-		<tr class="odd">
+		<tr>
+			<td>3</td>
 			<td>Hermes</td>
 			<td>Conrad</td>
 			<td>493-23-4323</td>
 			<td>Male</td>
 		</tr>
-		<tr class="even"> 
+		<tr> 
+			<td>4</td>
 			<td>Amy</td>
 			<td>Wong</td>
 			<td>454-45-4324</td>
 			<td>Female</td>
 		</tr>
-		<tr class="odd">
+		<tr>
+			<td>5</td>
 			<td>Turanga</td>
 			<td>Leela</td>
 			<td>134-31-3431</td>
 			<td>Female</td>
 		</tr>
 	</tbody>
-	<tfoot>
-	</tfoot>
-</table>
-					
+</table>					

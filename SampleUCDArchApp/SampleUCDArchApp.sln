@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D7C274
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp", "SampleUCDArchApp\SampleUCDArchApp.csproj", "{4382EC53-47CA-4FF1-A2B4-C22DE5012854}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Core", "SampleUCDArchApp.Core\SampleUCDArchApp.Core.csproj", "{8FD3C894-6FF0-4C94-9E85-E838B210D38B}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SampleUCDArchApp.Db", "SampleUCDArchApp.Db\SampleUCDArchApp.Db.sqlproj", "{BE05494E-3E3C-4320-8C43-2DCDD2DCA372}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp.Tests", "SampleUCDArchApp.Tests\SampleUCDArchApp.Tests.csproj", "{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUCDArchApp", "SampleUCDArchApp\SampleUCDArchApp.csproj", "{F20BC5A0-6EC7-4F2A-B18F-946590F01220}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4382EC53-47CA-4FF1-A2B4-C22DE5012854}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD3C894-6FF0-4C94-9E85-E838B210D38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F819EF2-8AF0-4B76-B7D9-BE246883E4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20BC5A0-6EC7-4F2A-B18F-946590F01220}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

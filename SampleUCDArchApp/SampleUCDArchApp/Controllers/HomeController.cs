@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using UCDArch.Web.Attributes;
-using UCDArch.Web.Controller;
 
 namespace SampleUCDArchApp.Controllers
 {
@@ -17,6 +16,8 @@ namespace SampleUCDArchApp.Controllers
 
         public ViewResult Sample()
         {
+            ViewBag.ErrorMessage = "Houston we have a problem... just kidding, this is only a test";
+            Message = "Sample Message from the Controller";
             return View();
         }
 
@@ -31,12 +32,15 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
-        public ActionResult Table()
+        [HttpPost]
+        public ActionResult Form(string data)
         {
+            Message = "The form was submitted successfully";
+
             return View();
         }
 
-        public ActionResult Jquery()
+        public ActionResult Table()
         {
             return View();
         }
