@@ -16,7 +16,8 @@ namespace SampleUCDArchApp
                             .Include("~/Scripts/jquery.unobtrusive*", "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatables")
-                    .Include("~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.js"));
+                            .Include("~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.js")
+                            .Include("~/Scripts/datatables-bootstrap.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -32,7 +33,10 @@ namespace SampleUCDArchApp
                             .Include("~/Content/bootstrap-responsive.css")
                             .Include("~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css"));
+            // Note: Including datatables helper css for bootstrap (http://datatables.net/blog/Twitter_Bootstrap_2)
+            bundles.Add(new StyleBundle("~/Content/DataTables-1.9.4/media/css/jquery.dataTables")
+                            .Include("~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css")
+                            .Include("~/Content/datatables-bootstrap.css"));
         }
     }
 }
