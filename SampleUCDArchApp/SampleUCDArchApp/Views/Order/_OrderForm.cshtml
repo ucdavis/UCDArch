@@ -38,7 +38,7 @@
                             .Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : "")
                             .FirstOption(null, "--Select A Company--")
                             .HideFirstOptionWhen(Model.Order.OrderedBy != null)
-                            .IncludeUnobtrusiveValidationAttributes(Html)
+                            //.IncludeUnobtrusiveValidationAttributes(Html)
                     )
                     @Html.ValidationMessageFor(x => x.Order.OrderedBy)
                 </div>

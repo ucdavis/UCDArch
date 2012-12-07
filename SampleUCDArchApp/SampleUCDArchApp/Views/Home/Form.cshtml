@@ -1,4 +1,6 @@
-﻿@{
+﻿@model SampleUCDArchApp.Controllers.OrderViewModel
+
+@{
     ViewBag.Title = "Form Demo";
 }
 
@@ -19,7 +21,8 @@
         <div class="control-group">
             <label class="control-label" for="inputFirstName"><strong>First Name</strong><span class="required">*</span></label>
             <div class="controls">
-                <input type="text" id="inputFirstName" placeholder="First Name" required="required">
+                <input type="text" id="inputFirstName" name="inputFirstName" placeholder="First Name" data-val="true" data-val-required="First Name Required">
+                <span class="field-validation-valid" data-valmsg-for="inputFirstName" data-valmsg-replace="true"></span>
             </div>
         </div>
         <div class="control-group">
