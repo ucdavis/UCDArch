@@ -234,7 +234,6 @@
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\Home\Full.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Jquery.cshtml" />
     <Content Include="Views\Home\Placeholder.cshtml" />
     <Content Include="Views\Home\Sample.cshtml" />
     <Content Include="Views\Home\Table.cshtml" />

@@ -45,11 +45,6 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
-        public ActionResult Jquery()
-        {
-            return View();
-        }
-
         public ActionResult DisplayForm()
         {
             return View();
