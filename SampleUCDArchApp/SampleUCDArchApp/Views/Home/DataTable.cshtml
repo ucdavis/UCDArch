@@ -1,0 +1,53 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Data Tables";
+}
+
+@Styles.Render("~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css")
+
+@section SubNav {
+    <li>@Html.ActionLink("Sample Index", "Sample")</li>
+    <li>@Html.ActionLink("Form", "Form")</li>
+    <li>@Html.ActionLink("Table", "Table")</li>
+    <li class="active">@Html.ActionLink("Data Tables", "DataTable")</li>
+    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+}
+
+@section AdditionalScripts
+{
+    @Scripts.Render("~/bundles/datatables")
+
+    <script type="text/javascript">
+        $(function () {
+            $("table").dataTable();
+        });
+    </script>
+    
+}
+
+<h2>Data Tables Example</h2>
+<p class="lead">This is an example of using Data Tables to create interactive client-side tables</p>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Gender</th>			
+            <th>Score</th>				
+        </tr>
+    </thead>
+    <tbody>
+        @{ var rand = new Random();}
+        @for (int i = 1; i < 50; i++)
+        {
+            <tr>
+                <th>@i</th>
+                <td>Person @i</td>
+                <td>@(i % 2 == 0 ? "Male" : "Female")</td>
+                <td>@(rand.Next(1000))</td>
+            </tr>
+        }
+    </tbody>
+</table>

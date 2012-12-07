@@ -45,6 +45,11 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
+        public ActionResult DataTable()
+        {
+            return View();
+        }
+
         public ActionResult DisplayForm()
         {
             return View();
