@@ -30,6 +30,7 @@ namespace SampleUCDArchApp
             // Note: Including bootstrap responsive-- comment it out if you don't need responsive css
             bundles.Add(new StyleBundle("~/Content/css")
                             .Include("~/Content/bootstrap.css")
+                            .Include("~/Content/bootstrap-custom.css")
                             .Include("~/Content/bootstrap-responsive.css")
                             .Include("~/Content/site.css"));
 
