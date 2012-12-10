@@ -23,3 +23,5 @@ form .input-validation-error {border-color: #B94A48;}
 .navbar .brand, .navbar .nav> li > a { color: white;text-shadow: none;}
 
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover { color: #D4AC33; }
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus { color: #C99700; }
