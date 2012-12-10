@@ -3,3 +3,23 @@ form .field-validation-error {color: #b94a48;}
 form .field-validation-valid {display: none;}
 form .input-validation-error {border-color: #B94A48;}
 .form-text { font-weight: bold;padding-top: 5px; }
+
+.navbar-inner {
+  background-color: #014A81; /* fallback color, place your own */
+
+  /* Gradients for modern browsers, replace as you see fit */
+  background-image: -moz-linear-gradient(top, #024B82, #002359);
+  background-image: -ms-linear-gradient(top, #024B82, #002359);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#024B82), to(#002359));
+  background-image: -webkit-linear-gradient(top, #024B82, #002359);
+  background-image: -o-linear-gradient(top, #024B82, #002359);
+  background-image: linear-gradient(top, #024B82, #002359);
+  background-repeat: repeat-x;
+
+  /* IE8-9 gradient filter */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#024B82', endColorstr='#002359', GradientType=0);
+}
+
+.navbar .brand, .navbar .nav> li > a { color: white;text-shadow: none;}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover { color: #D4AC33; }
