@@ -2,7 +2,7 @@
 <package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>CaesDesignBoilerplate</id>
-    <version>3.0.0.0</version>
+    <version>4.0.0-beta</version>
     <authors>Scott Kirkland</authors>
     <owners>Scott Kirkland</owners>
     <licenseUrl>https://github.com/ucdavis/UCDArch/blob/master/LICENSE.txt</licenseUrl>

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0</version>
+    <version>4.0.0-beta</version>
     <authors>Scott Kirkland</authors>
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
     <dependencies>
-      <dependency id="UcdArch" version="3.3.0" />
+      <dependency id="UcdArch" version="4.0.0" />
       <dependency id="Castle.Windsor" version="3.0.0.4001" />
       <dependency id="CommonServiceLocator" version="1.0" />
       <dependency id="FluentNHibernate" version="1.3.0.727" />
