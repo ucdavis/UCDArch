@@ -8,6 +8,8 @@ namespace SampleUCDArchApp
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            const string dataTablesVersion = "1.9.4";
+
             // Use Google CDN in production
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                             .Include("~/Scripts/jquery-{version}.js"));
@@ -16,7 +18,7 @@ namespace SampleUCDArchApp
                             .Include("~/Scripts/jquery.unobtrusive*", "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatables")
-                            .Include("~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.js")
+                            .Include(string.Format("~/Scripts/DataTables-{0}/media/js/jquery.dataTables.js", dataTablesVersion))
                             .Include("~/Scripts/datatables-bootstrap.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -35,9 +37,9 @@ namespace SampleUCDArchApp
                             .Include("~/Content/site.css"));
 
             // Note: Including datatables helper css for bootstrap (http://datatables.net/blog/Twitter_Bootstrap_2)
-            bundles.Add(new StyleBundle("~/Content/DataTables-1.9.4/media/css/dataTables")
-                            .Include("~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css")
-                            .Include("~/Content/DataTables-1.9.4/media/css/datatables-bootstrap.css"));
+            bundles.Add(new StyleBundle(string.Format("~/Content/DataTables-{0}/media/css/dataTables", dataTablesVersion))
+                            .Include(string.Format("~/Content/DataTables-{0}/media/css/jquery.dataTables.css", dataTablesVersion))
+                            .Include(string.Format("~/Content/DataTables-{0}/media/css/datatables-bootstrap.css", dataTablesVersion)));
         }
     }
 }
