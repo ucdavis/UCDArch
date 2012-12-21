@@ -62,11 +62,11 @@ namespace UCDArch.Web.Attributes
             {
                 if (MessageServiceUrl == null && MessageServiceAppSettingsKey == null)
                     throw new InvalidOperationException(
-                        "Either MessageServiceAppSettingsKey or MessageServiceAppSettingsKey must be set.");
+                        "Either MessageServiceAppSettingsKey or MessageServiceUrl must be set.");
 
                 if (MessageServiceUrl != null && MessageServiceAppSettingsKey != null)
                     throw new InvalidOperationException(
-                        "Either MessageServiceAppSettingsKey or MessageServiceAppSettingsKey must be set, but not both.");
+                        "Either MessageServiceAppSettingsKey or MessageServiceUrl must be set, but not both.");
 
                 return MessageServiceUrl ?? WebConfigurationManager.AppSettings[MessageServiceAppSettingsKey];
             }
@@ -85,7 +85,7 @@ namespace UCDArch.Web.Attributes
 
             if (string.IsNullOrWhiteSpace(ServiceUrl))
                 throw new InvalidOperationException(
-                    "Service Url is not valid:  Please set either MessageServiceAppSettingsKey or MessageServiceAppSettingsKey");
+                    "Service Url is not valid:  Please set either MessageServiceAppSettingsKey or MessageServiceUrl");
 
             cache[CacheKey] = new ServiceMessage[0];
 
