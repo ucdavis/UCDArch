@@ -272,7 +272,7 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\site.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="App_Start\UCDArchBootstrapper.cs.pp" />
     <Content Include="ComponentRegistrar.cs.pp" />
     <Content Include="Scripts\datatables-bootstrap.js" />

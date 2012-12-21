@@ -44,7 +44,7 @@ namespace $rootnamespace$.App_Start
                             .Include("~/Content/bootstrap.css")
                             .Include("~/Content/bootstrap-custom.css")
                             .Include("~/Content/bootstrap-responsive.css")
-                            .Include("~/Content/site.css"));
+                            .Include("~/Content/custom.css"));
 
             // Note: Including datatables helper css for bootstrap (http://datatables.net/blog/Twitter_Bootstrap_2)
             bundles.Add(new StyleBundle(string.Format("~/Content/DataTables-{0}/media/css/dataTables", dataTablesVersion))
