@@ -13,11 +13,13 @@
         <language>en-US</language>
         <dependencies>
             <dependency id="Twitter.Bootstrap" version="2.2.2" />
+            <dependency id="WebActivator" version="1.5.3" />
         </dependencies>
     </metadata>
     <files>
         <file src="..\..\SampleUCDArchApp\Content\custom.css" target="Content/Content/custom.css" />
         <file src="..\..\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Content/DataTables-1.9.4/" />
+        <file src="..\..\SampleUCDArchApp\App_Start\BundleBootstrapper.cs.pp" target="Content/App_Start/BundleBootstrapper.cs.pp" />
         <file src="..\..\SampleUCDArchApp\favicon.ico" target="Content/faviconUCD.ico" />
         <file src="..\..\SampleUCDArchApp\robots.txt" target="Content/robots.txt" />
         <file src="..\..\SampleUCDArchApp\Views\Shared\_Layout.cshtml" target="Content/Views/Shared/_LayoutExample.cshtml" />
