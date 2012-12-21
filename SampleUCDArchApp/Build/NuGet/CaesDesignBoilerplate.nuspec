@@ -1,25 +1,27 @@
-<?xml version="1.0"?>
-<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <id>CaesDesignBoilerplate</id>
-    <version>4.0.0-beta</version>
-    <authors>Scott Kirkland</authors>
-    <owners>Scott Kirkland</owners>
-    <licenseUrl>https://github.com/ucdavis/UCDArch/blob/master/LICENSE.txt</licenseUrl>
-    <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Adds the CAES website boilerplate style and images, along with some example razor views.</description>
-    <summary>Adds the CAES website boilerplate style and images, along with some example razor views.</summary>
-    <language>en-US</language>
-  </metadata>
-    <files xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/favicon.ico" target="Content/" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/robots.txt" target="Content/" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Css/**" target="Content/Css" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Images/*" target="Content/Images" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_Layout.cshtml" target="Content/Views/Shared/_LayoutExample.cshtml" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_Navigation.cshtml" target="Content/Views/Shared/_NavigationExample.cshtml" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Shared/_ServiceMessages.cshtml" target="Content/Views/Shared/_ServiceMessagesExample.cshtml" />
-        <file src="../../../../SampleUCDArchApp/SampleUCDArchApp/Views/Home/Sample.cshtml" target="Content/Views/Home/Sample.cshtml" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>CaesDesignBoilerplate</id>
+        <version>4.0.0-beta</version>
+        <authors>Scott Kirkland</authors>
+        <owners>Scott Kirkland</owners>
+        <licenseUrl>https://github.com/ucdavis/UCDArch/blob/master/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Adds the CAES website boilerplate style and images, along with some example razor views.</description>
+        <summary>Adds the CAES website boilerplate style and images, along with some example razor views.</summary>
+        <language>en-US</language>
+        <dependencies>
+            <dependency id="Twitter.Bootstrap" version="2.2.2" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\..\SampleUCDArchApp\Content\Site.css" target="Content/Css/Site.css" />
+        <file src="..\..\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Css/DataTables-1.9.4/" />
+        <file src="..\..\SampleUCDArchApp\favicon.ico" target="Content/favicon.ico" />
+        <file src="..\..\SampleUCDArchApp\robots.txt" target="Content/robots.txt" />
+        <file src="..\..\SampleUCDArchApp\Views\Shared\_Layout.cshtml" target="Content/Views/Shared/_LayoutExample.cshtml" />
+        <file src="..\..\SampleUCDArchApp\Views\Shared\_Navigation.cshtml" target="Content/Views/Shared/_Navigation.cshtml" />
+        <file src="..\..\SampleUCDArchApp\Views\Shared\_ServiceMessages.cshtml" target="Content/Views/Shared/_ServiceMessages.cshtml" />
     </files>
 </package>
