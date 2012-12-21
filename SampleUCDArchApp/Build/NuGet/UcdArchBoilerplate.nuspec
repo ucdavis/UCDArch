@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
-        <id>CaesDesignBoilerplate</id>
-        <version>4.0.0-beta</version>
+        <id>UcdArchBoilerplate</id>
+        <version>4.0.0</version>
         <authors>Scott Kirkland</authors>
         <owners>Scott Kirkland</owners>
         <licenseUrl>https://github.com/ucdavis/UCDArch/blob/master/LICENSE.txt</licenseUrl>
         <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Adds the CAES website boilerplate style and images, along with some example razor views.</description>
-        <summary>Adds the CAES website boilerplate style and images, along with some example razor views.</summary>
+        <description>Everything you need to start an ASPNET MVC project w/ UCDArch and the standard boilerplate styles</description>
+        <summary>Adds twitter bootstrap styling, datatables custom styling, style/script bundles, and a sample layout page website</summary>
         <language>en-US</language>
         <dependencies>
             <dependency id="Twitter.Bootstrap" version="2.2.2" />
