@@ -171,6 +171,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ComponentRegistrar.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <None Include="Controllers\SampleController.cs.pp" />
+    <None Include="Controllers\ApplicationController.cs.pp" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
