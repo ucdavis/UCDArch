@@ -30,6 +30,6 @@
       <file src="..\..\SampleUCDArchApp\Views\Shared\_ServiceMessages.cshtml" target="Content/Views/Shared/_ServiceMessages.cshtml" />
       <file src="..\..\SampleUCDArchApp\Controllers\ApplicationController.cs.pp" target="Content/Controllers.ApplicationController.cs.pp" />
       <file src="..\..\SampleUCDArchApp\Controllers\SampleController.cs.pp" target="Content/Controllers.SampleController.cs.pp" />
-      <file src="..\..\SampleUCDArchApp\Views\Sample\*" target="Content/View/Sample/" />
+      <file src="..\..\SampleUCDArchApp\Views\Sample\*" target="Content/Views/Sample/" />
     </files>
 </package>
