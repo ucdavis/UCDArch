@@ -10,29 +10,32 @@ using UCDArch.Web.ModelBinder;
 [assembly: WebActivator.PreApplicationStartMethod(typeof(UCDArchBootstrapper), "PreStart")]
 namespace $rootnamespace$.App_Start
 {
-    /// <summary>
-    /// PreStart for the UCDArch Application configures the model binding, db, and IoC container
-    /// </summary>
-    public static void PreStart()
+    public class UCDArchBootstrapper
     {
-        ModelBinders.Binders.DefaultBinder = new UCDArchModelBinder();
+        /// <summary>
+        /// PreStart for the UCDArch Application configures the model binding, db, and IoC container
+        /// </summary>
+        public static void PreStart()
+        {
+            ModelBinders.Binders.DefaultBinder = new UCDArchModelBinder();
 
-        NHibernateSessionConfiguration.Mappings.UseFluentMappings(typeof(Customer).Assembly);
+            NHibernateSessionConfiguration.Mappings.UseFluentMappings(typeof(Customer).Assembly);
             
-        IWindsorContainer container = InitializeServiceLocator();
-    }
+            IWindsorContainer container = InitializeServiceLocator();
+        }
 
-    private static IWindsorContainer InitializeServiceLocator()
-    {
-        IWindsorContainer container = new WindsorContainer();
+        private static IWindsorContainer InitializeServiceLocator()
+        {
+            IWindsorContainer container = new WindsorContainer();
 
-        ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container));
 
-        container.RegisterControllers(typeof(HomeController).Assembly);
-        ComponentRegistrar.AddComponentsTo(container);
+            container.RegisterControllers(typeof(HomeController).Assembly);
+            ComponentRegistrar.AddComponentsTo(container);
 
-        ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
+            ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
-        return container;
+            return container;
+        }
     }
 }
