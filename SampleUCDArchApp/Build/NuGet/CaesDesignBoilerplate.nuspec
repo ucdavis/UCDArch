@@ -13,7 +13,7 @@
         <language>en-US</language>
         <dependencies>
             <dependency id="Twitter.Bootstrap" version="2.2.2" />
-            <dependency id="WebActivator" version="1.5.3" />
+            <dependency id="UcdArch.Mvc" version="4.0.95" />
         </dependencies>
     </metadata>
     <files>
