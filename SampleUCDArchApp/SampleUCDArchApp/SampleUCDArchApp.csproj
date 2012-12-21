@@ -161,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleBootstrapper.cs" />
+    <None Include="App_Start\BundleBootstrapper.cs.pp" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NHibernateProfilerBootstrapper.cs" />
     <Compile Include="App_Start\RegisterClientValidationExtensions.cs" />
