@@ -1,7 +1,7 @@
 ﻿using System.Web.Optimization;
 using $rootnamespace$.App_Start;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(BundleBootstrapper), "PreStart")]
+[assembly: WebActivator.PostApplicationStartMethod(typeof(BundleBootstrapper), "PostStart")]
 namespace $rootnamespace$.App_Start
 {
     /// <summary>
@@ -9,7 +9,7 @@ namespace $rootnamespace$.App_Start
     /// </summary>
     public class BundleBootstrapper
     {
-        private static void PreStart()
+        private static void PostStart()
         {
             const string dataTablesVersion = "1.9.4";
 
