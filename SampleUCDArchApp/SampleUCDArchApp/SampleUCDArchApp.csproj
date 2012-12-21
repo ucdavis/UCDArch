@@ -176,6 +176,7 @@
     <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\RoleProviderController.cs" />
+    <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -365,17 +366,17 @@
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\DisplayForm.cshtml" />
-    <Content Include="Views\Home\Form.cshtml" />
+    <Content Include="Views\Sample\DisplayForm.cshtml" />
+    <Content Include="Views\Sample\Form.cshtml" />
     <Content Include="Views\Home\Full.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Placeholder.cshtml" />
-    <Content Include="Views\Home\Sample.cshtml" />
-    <Content Include="Views\Home\Table.cshtml" />
+    <Content Include="Views\Sample\Index.cshtml" />
+    <Content Include="Views\Sample\Table.cshtml" />
     <Content Include="Views\Json\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Shared\_ServiceMessages.cshtml" />
-    <Content Include="Views\Home\DataTable.cshtml" />
+    <Content Include="Views\Sample\DataTable.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
