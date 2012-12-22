@@ -17,19 +17,19 @@
         </dependencies>
     </metadata>
     <files>
-      <file src="..\..\SampleUCDArchApp\Content\bootstrap-custom.css" target="Content/Content/bootstrap-custom.css" />
-      <file src="..\..\SampleUCDArchApp\Content\custom.css" target="Content/Content/custom.css" />
-      <file src="..\..\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Content/DataTables-1.9.4/" />
-      <file src="..\..\SampleUCDArchApp\Scripts\DataTables-1.9.4\**" target="Content/Scripts/DataTables-1.9.4/" />
-      <file src="..\..\SampleUCDArchApp\App_Start\BundleBootstrapper.cs.pp" target="Content/App_Start/BundleBootstrapper.cs.pp" />
-      <file src="..\..\SampleUCDArchApp\favicon.ico" target="Content/favicon.ico" />
-      <file src="..\..\SampleUCDArchApp\favicon.ico" target="Content/faviconUcdArch.ico" />
-      <file src="..\..\SampleUCDArchApp\robots.txt" target="Content/robots.txt" />
-      <file src="..\..\SampleUCDArchApp\Views\Shared\_Layout.cshtml" target="Content/Views/Shared/_LayoutUcdArch.cshtml" />
-      <file src="..\..\SampleUCDArchApp\Views\Shared\_Navigation.cshtml" target="Content/Views/Shared/_Navigation.cshtml" />
-      <file src="..\..\SampleUCDArchApp\Views\Shared\_ServiceMessages.cshtml" target="Content/Views/Shared/_ServiceMessages.cshtml" />
-      <file src="..\..\SampleUCDArchApp\Controllers\ApplicationController.cs.pp" target="Content/Controllers/ApplicationController.cs.pp" />
-      <file src="..\..\SampleUCDArchApp\Controllers\SampleController.cs.pp" target="Content/Controllers/SampleController.cs.pp" />
-      <file src="..\..\SampleUCDArchApp\Views\Sample\*" target="Content/Views/Sample/" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Content\bootstrap-custom.css" target="Content/Content/bootstrap-custom.css" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Content\custom.css" target="Content/Content/custom.css" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Content/DataTables-1.9.4/" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Scripts\DataTables-1.9.4\**" target="Content/Scripts/DataTables-1.9.4/" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\App_Start\BundleBootstrapper.cs.pp" target="Content/App_Start/BundleBootstrapper.cs.pp" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\favicon.ico" target="Content/favicon.ico" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\favicon.ico" target="Content/faviconUcdArch.ico" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\robots.txt" target="Content/robots.txt" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Views\Shared\_Layout.cshtml" target="Content/Views/Shared/_LayoutUcdArch.cshtml" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Views\Shared\_Navigation.cshtml" target="Content/Views/Shared/_Navigation.cshtml" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Views\Shared\_ServiceMessages.cshtml" target="Content/Views/Shared/_ServiceMessages.cshtml" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Controllers\ApplicationController.cs.pp" target="Content/Controllers/ApplicationController.cs.pp" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Controllers\SampleController.cs.pp" target="Content/Controllers/SampleController.cs.pp" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Views\Sample\*" target="Content/Views/Sample/" />
     </files>
 </package>
