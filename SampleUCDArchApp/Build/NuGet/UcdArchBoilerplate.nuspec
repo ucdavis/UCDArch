@@ -21,6 +21,7 @@
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\custom.css" target="Content/Content/custom.css" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Content/DataTables-1.9.4/" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Scripts\DataTables-1.9.4\**" target="Content/Scripts/DataTables-1.9.4/" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Scripts\datatables-bootstrap.js" target="Content/Scripts/datatables-bootstrap.js" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\App_Start\BundleBootstrapper.cs.pp" target="Content/App_Start/BundleBootstrapper.cs.pp" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\favicon.ico" target="Content/favicon.ico" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\favicon.ico" target="Content/faviconUcdArch.ico" />
