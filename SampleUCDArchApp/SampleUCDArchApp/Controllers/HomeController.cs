@@ -14,11 +14,6 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
         
-        public ViewResult Placeholder()
-        {
-            return View();
-        }
-
         public ActionResult About()
         {
             return View();

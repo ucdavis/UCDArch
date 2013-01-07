@@ -370,9 +370,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Sample\DisplayForm.cshtml" />
     <Content Include="Views\Sample\Form.cshtml" />
-    <Content Include="Views\Home\Full.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Placeholder.cshtml" />
     <Content Include="Views\Sample\Index.cshtml" />
     <Content Include="Views\Sample\Table.cshtml" />
     <Content Include="Views\Json\Index.cshtml" />
