@@ -1,0 +1,187 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#
+MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
+string className = mvcHost.ControllerRootName;
+string lowerClassName = className.ToLower();
+string camelClassName = className.Substring(0, 1).ToLower() + className.Substring(1);
+string repository = "_" + camelClassName + "Repository";
+#>
+using System;
+using System.Linq;
+using System.Web.Mvc;
+using UCDArch.Core.PersistanceSupport;
+using UCDArch.Core.Utils;
+
+namespace <#= mvcHost.Namespace #>
+{
+    /// <summary>
+    /// Controller for the <#= className #> class
+    /// </summary>
+    public class <#= mvcHost.ControllerName #> : ApplicationController
+    {
+	    private readonly IRepository<<#= className #>> <#= repository #>;
+
+        public <#= mvcHost.ControllerName #>(IRepository<<#= className #>> <#= camelClassName #>Repository)
+        {
+            <#= repository #> = <#= camelClassName #>Repository;
+        }
+    
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/
+        public ActionResult Index()
+        {
+            var <#= camelClassName #>List = <#= repository #>.Queryable;
+
+            return View(<#= camelClassName #>List.ToList());
+        }
+
+<#
+if(mvcHost.AddActionMethods) {
+#>
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Details/5
+        public ActionResult Details(int id)
+        {
+            var <#= camelClassName #> = <#= repository #>.GetNullableById(id);
+
+            if (<#= camelClassName #> == null) return RedirectToAction("Index");
+
+            return View(<#= camelClassName #>);
+        }
+
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Create
+        public ActionResult Create()
+        {
+			var viewModel = <#= className #>ViewModel.Create(Repository);
+            
+            return View(viewModel);
+        } 
+
+        //
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Create
+        [HttpPost]
+        public ActionResult Create(<#= className #> <#= camelClassName #>)
+        {
+            var <#= camelClassName #>ToCreate = new <#= className #>();
+
+            TransferValues(<#= camelClassName #>, <#= camelClassName #>ToCreate);
+
+            if (ModelState.IsValid)
+            {
+                <#= repository #>.EnsurePersistent(<#= camelClassName #>ToCreate);
+
+                Message = "<#= className #> Created Successfully";
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+				var viewModel = <#= className #>ViewModel.Create(Repository);
+                viewModel.<#= className #> = <#= camelClassName #>;
+
+                return View(viewModel);
+            }
+        }
+
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Edit/5
+        public ActionResult Edit(int id)
+        {
+            var <#= camelClassName #> = <#= repository #>.GetNullableById(id);
+
+            if (<#= camelClassName #> == null) return RedirectToAction("Index");
+
+			var viewModel = <#= className #>ViewModel.Create(Repository);
+			viewModel.<#= className #> = <#= camelClassName #>;
+
+			return View(viewModel);
+        }
+        
+        //
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, <#= className #> <#= camelClassName #>)
+        {
+            var <#= camelClassName #>ToEdit = <#= repository #>.GetNullableById(id);
+
+            if (<#= camelClassName #>ToEdit == null) return RedirectToAction("Index");
+
+            TransferValues(<#= camelClassName #>, <#= camelClassName #>ToEdit);
+
+            if (ModelState.IsValid)
+            {
+                <#= repository #>.EnsurePersistent(<#= camelClassName #>ToEdit);
+
+                Message = "<#= className #> Edited Successfully";
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+				var viewModel = <#= className #>ViewModel.Create(Repository);
+                viewModel.<#= className #> = <#= camelClassName #>;
+
+                return View(viewModel);
+            }
+        }
+        
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Delete/5 
+        public ActionResult Delete(int id)
+        {
+			var <#= camelClassName #> = <#= repository #>.GetNullableById(id);
+
+            if (<#= camelClassName #> == null) return RedirectToAction("Index");
+
+            return View(<#= camelClassName #>);
+        }
+
+        //
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, <#= className #> <#= camelClassName #>)
+        {
+			var <#= camelClassName #>ToDelete = <#= repository #>.GetNullableById(id);
+
+            if (<#= camelClassName #>ToDelete == null) return RedirectToAction("Index");
+
+            <#= repository #>.Remove(<#= camelClassName #>ToDelete);
+
+            Message = "<#= className #> Removed Successfully";
+
+            return RedirectToAction("Index");
+        }
+        
+        /// <summary>
+        /// Transfer editable values from source to destination
+        /// </summary>
+        private static void TransferValues(<#= className #> source, <#= className #> destination)
+        {
+			//Recommendation: Use AutoMapper
+			//Mapper.Map(source, destination)
+            throw new NotImplementedException();
+        }
+
+<#
+}
+#>
+    }
+
+	/// <summary>
+    /// ViewModel for the <#= className #> class
+    /// </summary>
+    public class <#= className #>ViewModel
+	{
+		public <#= className #> <#= className #> { get; set; }
+ 
+		public static <#= className #>ViewModel Create(IRepository repository)
+		{
+			Check.Require(repository != null, "Repository must be supplied");
+			
+			var viewModel = new <#= className #>ViewModel {<#= className #> = new <#= className #>()};
+ 
+			return viewModel;
+		}
+	}
+}
