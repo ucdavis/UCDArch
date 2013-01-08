@@ -197,8 +197,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\AutomapperConfig.cs" />
+    <Compile Include="Helpers\FluentExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
