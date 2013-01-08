@@ -94,13 +94,9 @@ namespace SampleUCDArchApp.Controllers
         [HttpPost]
         public ActionResult Edit(Order order)
         {
-            var orderToUpdate = _orderRepository.GetNullableById(order.Id);
-
-            Mapper.Map(order, orderToUpdate);
-            
             if (ModelState.IsValid)
             {
-                _orderRepository.EnsurePersistent(orderToUpdate);
+                _orderRepository.EnsurePersistent(order);
 
                 Message = "Order edited successfully";
 

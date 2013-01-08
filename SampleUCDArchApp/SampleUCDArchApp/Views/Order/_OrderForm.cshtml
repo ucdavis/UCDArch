@@ -1,0 +1,41 @@
+﻿@using SampleUCDArchApp.Helpers
+@model SampleUCDArchApp.Controllers.OrderViewModel
+
+<form method="POST" class="form-horizontal well-small" novalidate="novalidate">
+	@Html.AntiForgeryToken()
+	@Html.ValidationSummary(true)
+    @Html.HiddenFor(x=>x.Order.Id)
+
+    <fieldset>
+        <legend>OrderViewModel</legend>
+	    <div class="well">
+	        @*<p>Be specific so the user understands what exactly you are looking for.  Example: After Dinosaur 1 moves out of his/her parents' den what will Dinosaur 1 do?  We need to know his employment plan, feeding area, as well as living situation.  This information will not be sold or given to carnivores.</p>*@
+	        <p>All required fields are in <strong>bold</strong> and have a red <span class="required">*</span> next to the field label.</p>
+	    </div>
+        <div class="control-group">
+            <label class="control-label" for="Order_OrderedBy"><strong>OrderBy</strong><span class="required">*</span></label>
+            <div class="controls">
+                @this.Select("Order.OrderedBy").Options(Model.Customers, x=>x.Id, x=>x.CompanyName).Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : null).FirstOption("Select A Customer").IncludeUnobtrusiveValidationAttributes(Html)
+                @Html.ValidationMessageFor(model => model.Order.OrderedBy)
+            </div>
+        </div>
+	    <div class="control-group">
+		    <label class="control-label" for="Order_OrderDate"><strong>OrderDate</strong><span class="required">*</span></label>
+            <div class="controls">
+				@Html.EditorFor(model => model.Order.OrderDate)
+				@Html.ValidationMessageFor(model => model.Order.OrderDate)
+            </div>
+        </div>
+		<div class="control-group">
+			<label class="control-label" for="Order_ShipAddress"><strong>ShipAddress</strong><span class="required">*</span></label>
+            <div class="controls">
+				@Html.EditorFor(model => model.Order.ShipAddress)
+				@Html.ValidationMessageFor(model => model.Order.ShipAddress)
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            @Html.ActionLink("Cancel", "Index", null, new {@class="btn btn-link"})
+        </div>
+    </fieldset>
+</form>

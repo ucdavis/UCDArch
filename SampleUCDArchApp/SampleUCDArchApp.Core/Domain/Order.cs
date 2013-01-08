@@ -23,6 +23,7 @@ namespace SampleUCDArchApp.Core.Domain
 
         [JsonProperty]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public virtual DateTime OrderDate { get; set; }
 
         [Required]
