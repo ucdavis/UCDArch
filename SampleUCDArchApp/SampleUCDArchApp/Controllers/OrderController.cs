@@ -121,6 +121,28 @@ namespace SampleUCDArchApp.Controllers
                 return View(viewModel);
             }
         }
+
+        public ActionResult Delete(int id)
+        {
+            var order = _orderRepository.GetNullableById(id);
+
+            if (order == null)
+            {
+                ViewBag.ErrorMessage = string.Format("No order could be found with the ID {0}", id);
+                RedirectToAction("Index");
+            }
+
+            return View(order);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Order order)
+        {
+            _orderRepository.Remove(order);
+
+            Message = "Order removed successfully";
+            return RedirectToAction("Index");
+        }
     }
 
     public class OrderViewModel

@@ -1,0 +1,40 @@
+﻿@model SampleUCDArchApp.Core.Domain.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+
+@section SubNav
+{
+	<li>@Html.ActionLink("Back to List", "Index")</li>
+}
+
+<h3>Are you sure you want to delete this?</h3>
+
+<form method="POST" class="form-horizontal well-small" novalidate="novalidate">
+	@Html.AntiForgeryToken()
+
+	<fieldset>
+	    <legend>Order</legend>
+        <div class="control-group">
+			<label class="control-label">OrderedBy</label>
+			<div class="controls form-text">@Model.OrderedBy.Id</div>
+		</div>
+	    <div class="control-group">
+			<label class="control-label">OrderDate</label>
+			<div class="controls form-text">@String.Format("{0:d}", Model.OrderDate)</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">ShipAddress</label>
+			<div class="controls form-text">@Model.ShipAddress</div>
+		</div>
+		
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Delete</button>
+            @Html.ActionLink("Cancel", "Index", null, new {@class="btn btn-link"})
+        </div>
+	</fieldset>
+</form>

@@ -204,6 +204,7 @@
     <Content Include="Views\Order\Edit.cshtml" />
     <Content Include="Views\Order\_OrderForm.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
