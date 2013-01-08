@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using AutoMapper;
 using SampleUCDArchApp.Core.Domain;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Web.Attributes;
@@ -26,12 +25,24 @@ namespace SampleUCDArchApp.Controllers
 
         //
         // GET: /Order/
-        [HandleTransactionsManually] //Just for demonstration purposes
         public ActionResult Index()
         {
             var orders = _orderRepository.Queryable;
 
             return View(orders);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var order = _orderRepository.GetNullableById(id);
+
+            if (order == null)
+            {
+                ViewBag.ErrorMessage = string.Format("No order could be found with the ID {0}", id);
+                RedirectToAction("Index");
+            }
+
+            return View(order);
         }
 
         //

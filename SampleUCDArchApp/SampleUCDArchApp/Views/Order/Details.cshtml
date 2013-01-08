@@ -1,0 +1,32 @@
+﻿@model SampleUCDArchApp.Core.Domain.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+@section SubNav
+{
+	<li>@Html.ActionLink("Edit", "Edit", new { id=Model.Id }) </li>
+	<li>@Html.ActionLink("Back to List", "Index")</li>
+}
+
+<div class="form-horizontal well-small">
+    <fieldset>
+        <legend>Order</legend>
+        <div class="control-group">
+			<label class="control-label">Customer</label>
+			<div class="controls form-text">@Model.OrderedBy.Id</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">OrderDate</label>
+			<div class="controls form-text">@String.Format("{0:d}", Model.OrderDate)</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">ShipAddress</label>
+			<div class="controls form-text">@Model.ShipAddress</div>
+		</div>
+    </fieldset>
+</div>
