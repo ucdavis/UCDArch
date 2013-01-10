@@ -6,7 +6,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="@Url.Action("Index", "Home")">Sample UCDArch App</a>
+            <a class="brand" href="@Url.Action("Index", "Home")">
+                <img src="@Url.Content("~/Content/Img/ucdavis_logo.png")" alt="UC Davis Logo" class="navbar-logo" />
+                Sample UCDArch App
+            </a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li id="nav-home">@Html.ActionLink("Home", "Index", "Home")</li>

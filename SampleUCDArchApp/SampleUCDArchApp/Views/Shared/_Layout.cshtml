@@ -19,6 +19,13 @@
 
 <body>
     @Html.Partial("_Navigation")
+
+    <div class="jumbotron">
+        <div class="container">
+        @RenderSection("subhead", required: false)
+        </div>
+    </div>
+
     <div class="container">
         <header>
             @Html.Partial("_ServiceMessages")

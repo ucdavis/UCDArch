@@ -185,6 +185,10 @@
     <Content Include="CodeTemplates\AddView\CSHTML\CreateViewModel.tt" />
     <Content Include="CodeTemplates\AddView\CSHTML\Create.tt" />
     <Content Include="CodeTemplates\AddController\Controller.tt" />
+    <Content Include="Content\font\fontawesome-webfont.svg" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontawesome-webfont.eot" />
     <None Include="Controllers\SampleController.cs.pp" />
     <None Include="Controllers\ApplicationController.cs.pp" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -199,6 +203,11 @@
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="Helpers\FluentExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\font-awesome-ie7.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="Content\img\ucdavis_logo.png" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
@@ -294,8 +303,6 @@
     <Content Include="Content\DataTables-1.9.4\media\images\sort_desc.png" />
     <Content Include="Content\DataTables-1.9.4\media\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables-1.9.4\media\css\datatables-bootstrap.css" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\custom.css" />

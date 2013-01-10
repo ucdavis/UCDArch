@@ -3,14 +3,21 @@
     ViewBag.NavigationKey = "Home";
 }
 
-<h3>@ViewData["Message"]</h3>
-<br />
+@section subhead
+{
+    <h1>@ViewData["Message"]</h1>
+
+    <div class="jumbotron-content">
+
+    </div>
+}
+
 <p class="lead">Use these links and the top nav bar to explore this Sample UCDArch application.  
     The CRUD Order controller uses Northwind as a live example of how to list, create/edit and delete entities.</p>
 <p>
-    <ul class="nav nav-tabs nav-stacked">
-        <li>@Html.ActionLink("Sample pages using default styles", "Index", "Sample")</li>
-        <li>@Html.ActionLink("CRUD Order Controller", "Index", "Order")</li>
-        <li>@Html.ActionLink("Example of using Json with Orders", "Index", "Json")</li>
-    </ul>
-</p>
+
+<ul class="nav nav-tabs nav-stacked">
+    <li>@Html.ActionLink("Sample pages using default styles", "Index", "Sample")</li>
+    <li>@Html.ActionLink("CRUD Order Controller", "Index", "Order")</li>
+    <li>@Html.ActionLink("Example of using Json with Orders", "Index", "Json")</li>
+</ul>
