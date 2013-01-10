@@ -4,15 +4,22 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+
+
+@section subhead
+{
+    <h1>Delete</h1>
+
+    <div class="jumbotron-content">
+        <p>Are you sure you want to delete this?</p>
+    </div>
+}
 
 
 @section SubNav
 {
 	<li>@Html.ActionLink("Back to List", "Index")</li>
 }
-
-<h3>Are you sure you want to delete this?</h3>
 
 <form method="POST" class="form-horizontal well-small" novalidate="novalidate">
 	@Html.AntiForgeryToken()

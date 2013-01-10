@@ -23,6 +23,9 @@
     <div class="jumbotron">
         <div class="container">
             @RenderSection("subhead", required: false)
+            <ul class="nav nav-pills pull-right">
+                @RenderSection("SubNav", required: false)
+            </ul>
         </div>
     </div>
 
@@ -47,9 +50,7 @@
             }
         </header>
         
-        <ul class="nav nav-pills pull-right">
-            @RenderSection("SubNav", required: false)
-        </ul>
+
         
         <div class="container">
             @RenderBody()
