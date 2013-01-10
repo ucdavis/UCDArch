@@ -205,6 +205,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Content\font-awesome-ie7.css" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\img\debut_light.png" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
     <Content Include="Content\img\ucdavis_logo.png" />

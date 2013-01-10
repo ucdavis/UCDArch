@@ -1,4 +1,8 @@
-﻿/* Styles for navbar
+﻿body {
+    background-image: url('img/debut_light.png');
+}
+
+/* Styles for navbar
 -----------------------------------------------------------*/
 .nav i { margin-right: 7px; }
 .brand img { height: 20px; margin-right: 5px; }
@@ -6,8 +10,8 @@
 /* Styles for jumbotron header
 -----------------------------------------------------------*/
 .jumbotron {
-	padding: 10px 0;
-    color: #002855;
+	padding: 30px 0 10px;
+    /*color: #002855;*/
     margin-bottom: 1.5em;
     background: rgb(238,238,238); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(238,238,238,1) 10%, rgba(204,204,204,1) 100%); /* FF3.6+ */
@@ -17,12 +21,17 @@
     background: -ms-linear-gradient(top, rgba(238,238,238,1) 10%,rgba(204,204,204,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(238,238,238,1) 10%,rgba(204,204,204,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    background: rgba(215,215,215,.2);
+    border-bottom: 1px solid #ddd;
+
 }
 .jumbotron p
 {
-    margin-top: 1.5em;
+    margin-top: .75em;
     color: #004c85; /* Medium Blue */
     font-size: 1.25em;
+    width: 75%;
+    line-height: 1.75em;
 }
 .jumbotron h1 { color: #c99700; /* Gold */ }
 .jumbotron ul.nav { margin-bottom: 0px; }
