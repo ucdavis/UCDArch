@@ -13,16 +13,15 @@
     <div class="jumbotron-content">
         <p>This is an example of using Data Tables to create interactive client-side tables</p>
     </div>
+}
 
-    <div class="pull-right">
-        <ul class="nav nav-pills">
-            <li>@Html.ActionLink("Sample Index", "Index")</li>
-            <li>@Html.ActionLink("Form", "Form")</li>
-            <li>@Html.ActionLink("Table", "Table")</li>
-            <li class="active">@Html.ActionLink("Data Tables", "DataTable")</li>
-            <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
-        </ul>
-    </div>
+@section subnav
+{
+    <li>@Html.ActionLink("Sample Index", "Index")</li>
+    <li>@Html.ActionLink("Form", "Form")</li>
+    <li>@Html.ActionLink("Table", "Table")</li>
+    <li class="active">@Html.ActionLink("Data Tables", "DataTable")</li>
+    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
 }
 
 @section AdditionalScripts
