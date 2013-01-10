@@ -2,16 +2,25 @@
     ViewBag.Title = "Form Demo";
 }
 
-@section SubNav {
-    <li>@Html.ActionLink("Sample Index", "Index")</li>
-    <li class="active">@Html.ActionLink("Form", "Form")</li>
-    <li>@Html.ActionLink("Table", "Table")</li>
-    <li>@Html.ActionLink("Data Tables", "DataTable")</li>
-    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+@section subhead
+{
+    <h1>Form Example</h1>
+
+    <div class="jumbotron-content">
+        <p>This is an example of what a standard form would look like</p>
+    </div>
+
+    <div class="pull-right">
+        <ul class="nav nav-pills">
+            <li>@Html.ActionLink("Sample Index", "Index")</li>
+            <li class="active">@Html.ActionLink("Form", "Form")</li>
+            <li>@Html.ActionLink("Table", "Table")</li>
+            <li>@Html.ActionLink("Data Tables", "DataTable")</li>
+            <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+        </ul>
+    </div>
 }
 
-<h2>Form Example</h2>
-<p class="lead">This is an example of what a standard form would look like</p>
 <form class="well form-horizontal" action="@Url.Action("Form")" method="POST">
     @Html.AntiForgeryToken()
     <fieldset>

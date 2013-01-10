@@ -2,16 +2,24 @@
     ViewBag.Title = "Table Demo";
 }
 
-@section SubNav {
-    <li>@Html.ActionLink("Sample Index", "Index")</li>
-    <li>@Html.ActionLink("Form", "Form")</li>
-    <li class="active">@Html.ActionLink("Table", "Table")</li>
-    <li>@Html.ActionLink("Data Tables", "DataTable")</li>
-    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
-}
+@section subhead
+{
+    <h1>Table Example</h1>
 
-<h2>Table Example</h2>
-<p class="lead">This is an example of a good looking table without any paging/sorting</p>
+    <div class="jumbotron-content">
+        <p>This is an example of a good looking table without any paging/sorting</p>
+    </div>
+
+    <div class="pull-right">
+        <ul class="nav nav-pills">
+            <li>@Html.ActionLink("Sample Index", "Index")</li>
+            <li>@Html.ActionLink("Form", "Form")</li>
+            <li class="active">@Html.ActionLink("Table", "Table")</li>
+            <li>@Html.ActionLink("Data Tables", "DataTable")</li>
+            <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+        </ul>
+    </div>
+}
 
 <table class="table table-striped table-hover">
 	<thead>

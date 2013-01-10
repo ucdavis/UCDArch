@@ -2,14 +2,24 @@
     ViewBag.Title = "Page Sample Home";
 }
 
-@section SubNav {
-    <li class="active">@Html.ActionLink("Sample Index", "Index")</li>
-    <li>@Html.ActionLink("Form", "Form")</li>
-    <li>@Html.ActionLink("Table", "Table")</li>
-    <li>@Html.ActionLink("Data Tables", "DataTable")</li>
-    <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+@section subhead
+{
+    <h1>Page Samples</h1>
+
+    <div class="jumbotron-content">
+        <p>Check out the links for a sample of different standard pages you might encounter in the wild</p>
+    </div>
+
+    <div class="pull-right">
+        <ul class="nav nav-pills">
+            <li class="active">@Html.ActionLink("Sample Index", "Index")</li>
+            <li>@Html.ActionLink("Form", "Form")</li>
+            <li>@Html.ActionLink("Table", "Table")</li>
+            <li>@Html.ActionLink("Data Tables", "DataTable")</li>
+            <li>@Html.ActionLink("Display Form", "DisplayForm")</li>
+        </ul>
+    </div>
 }
 
-<h2>Page Samples</h2>
-<p class="lead">Check out the links for a sample of different standard pages you might encounter in the wild</p>
+
 
