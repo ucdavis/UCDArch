@@ -4,29 +4,33 @@
 
 @section AdditionalScripts
 {
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $("#getOrder").click(function () {
-            $.get('@Url.Action("Get", "Json")',
-                displayResult, 'html');
+            $("#getOrder").click(function () {
+                $.get('@Url.Action("Get", "Json")',
+                    displayResult, 'html');
+            });
+
+            $("#getOrders").click(function () {
+                $.get('@Url.Action("List", "Json")',
+                    displayResult, 'html');
+            });
         });
 
-        $("#getOrders").click(function () {
-            $.get('@Url.Action("List", "Json")',
-                displayResult, 'html');
-        });
-    });
+        function displayResult(result) {
+            $("#RawResults").hide().html(result.toString()).fadeIn('slow');
+        }
 
-    function displayResult(result) {
-        $("#RawResults").hide().html(result.toString()).fadeIn('slow');
-    }
-
-</script>
+    </script>
 }
-<h2>
-    Index</h2>
+
+@section subhead
+{
+    <h1>Index</h1>
+}
+
 <h4>
     You can change which properties are serialized by going to Order.cs and adding the
     JsonProperty attribute to the desired properties</h4>

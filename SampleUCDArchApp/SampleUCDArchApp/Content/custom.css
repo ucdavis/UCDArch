@@ -6,9 +6,9 @@
 /* Styles for jumbotron header
 -----------------------------------------------------------*/
 .jumbotron {
-	padding: 20px 0;
+	padding: 10px 0;
     color: #002855;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     background: rgb(238,238,238); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(238,238,238,1) 10%, rgba(204,204,204,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
