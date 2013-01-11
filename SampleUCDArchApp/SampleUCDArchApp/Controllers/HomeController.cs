@@ -9,7 +9,7 @@ namespace SampleUCDArchApp.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to the UCDArch Sample Application!";
+            ViewData["Message"] = "Complete seperate sample app dummy!";
 
             return View();
         }

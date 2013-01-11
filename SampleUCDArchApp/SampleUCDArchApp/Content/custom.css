@@ -21,8 +21,9 @@
     background: -ms-linear-gradient(top, rgba(238,238,238,1) 10%,rgba(204,204,204,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(238,238,238,1) 10%,rgba(204,204,204,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
-    background: rgba(215,215,215,.2);
+    background: rgba(215,215,215,.4);
     border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 8px rgba(33, 33, 33, 0.1) inset;
 
 }
 .jumbotron p
