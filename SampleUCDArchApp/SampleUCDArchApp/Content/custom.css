@@ -1,5 +1,6 @@
 ﻿body {
     background-image: url('img/debut_light.png');
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
 footer {
@@ -13,25 +14,21 @@ footer {
     font-weight: bold;
     padding-top: 10px;
     min-height: 35px;
-
-background: rgb(154,154,154); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(154,154,154,1) 0%, rgba(144,144,144,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(154,154,154,1)), color-stop(100%,rgba(144,144,144,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a9a9a', endColorstr='#909090',GradientType=0 ); /* IE6-9 */
-
-
-
+    background: rgb(154,154,154); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(154,154,154,1) 0%, rgba(144,144,144,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(154,154,154,1)), color-stop(100%,rgba(144,144,144,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(154,154,154,1) 0%,rgba(144,144,144,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a9a9a', endColorstr='#909090',GradientType=0 ); /* IE6-9 */
 }
 #critical-message i { margin-right: 5px;}
 
 
 /* Styles for navbar
 -----------------------------------------------------------*/
-.nav i { margin-right: 7px; }
+.nav i, a.btn i { margin-right: 7px; }
 .brand img { height: 20px; margin-right: 5px; }
 
 /* Styles for jumbotron header

@@ -602,8 +602,8 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-weight: bold;
+  font-family: "futura-pt", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 500;
   line-height: 20px;
   color: #002855;
   text-rendering: optimizelegibility;
@@ -937,7 +937,7 @@ table {
   line-height: 20px;
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #002855;
+  border-top: 1px solid #dddddd;
 }
 .table th {
   font-weight: bold;
@@ -954,7 +954,7 @@ table {
   border-top: 0;
 }
 .table tbody + tbody {
-  border-top: 2px solid #002855;
+  border-top: 2px solid #dddddd;
 }
 .table .table {
   background-color: #ffffff;
@@ -964,7 +964,7 @@ table {
   padding: 4px 5px;
 }
 .table-bordered {
-  border: 1px solid #002855;
+  border: 1px solid #dddddd;
   border-collapse: separate;
   *border-collapse: collapse;
   border-left: 0;
@@ -974,7 +974,7 @@ table {
 }
 .table-bordered th,
 .table-bordered td {
-  border-left: 1px solid #002855;
+  border-left: 1px solid #dddddd;
 }
 .table-bordered caption + thead tr:first-child th,
 .table-bordered caption + tbody tr:first-child th,
@@ -3483,7 +3483,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   margin-bottom: 0;
   padding: 4px 14px;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "futura-pt", Futura, "Trebuchet MS", Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
