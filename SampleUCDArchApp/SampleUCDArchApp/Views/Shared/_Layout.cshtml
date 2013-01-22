@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <!-- Must be at the top of head, loads fonts -->
+    <script type="text/javascript" src="//use.typekit.net/ykm7bho.js"></script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 
     <!-- Le styles -->
     @Styles.Render("~/Content/styles")
@@ -19,10 +23,18 @@
 
 <body>
     @Html.Partial("_Navigation")
+
+    <div class="jumbotron">
+        <div class="container">
+            @RenderSection("subhead", required: false)
+            <ul class="nav nav-pills pull-right">
+                @RenderSection("SubNav", required: false)
+            </ul>
+        </div>
+    </div>
+
     <div class="container">
         <header>
-            @Html.Partial("_ServiceMessages")
-
             @if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
             {
                 <div class="alert alert-error">
@@ -40,10 +52,6 @@
             }
         </header>
         
-        <ul class="nav nav-pills pull-right">
-            @RenderSection("SubNav", required: false)
-        </ul>
-        
         <div class="container">
             @RenderBody()
         </div>
@@ -54,7 +62,8 @@
             <p>&copy; College of Agricultural and Environmental Sciences, University of California at Davis</p>
         </footer>
     </div>
-
+    
+    @Html.Partial("_ServiceMessages")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")

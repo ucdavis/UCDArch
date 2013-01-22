@@ -6,7 +6,17 @@
 
 @Styles.Render("~/Content/DataTables-1.9.4/media/css/dataTables")
 
-@section SubNav {
+@section subhead
+{
+    <h1>Data Tables Example</h1>
+
+    <div class="jumbotron-content">
+        <p>This is an example of using Data Tables to create interactive client-side tables</p>
+    </div>
+}
+
+@section subnav
+{
     <li>@Html.ActionLink("Sample Index", "Index")</li>
     <li>@Html.ActionLink("Form", "Form")</li>
     <li>@Html.ActionLink("Table", "Table")</li>
@@ -30,9 +40,6 @@
     </script>
     
 }
-
-<h2>Data Tables Example</h2>
-<p class="lead">This is an example of using Data Tables to create interactive client-side tables</p>
 
 <table class="table table-striped table-bordered table-hover">
     <thead>

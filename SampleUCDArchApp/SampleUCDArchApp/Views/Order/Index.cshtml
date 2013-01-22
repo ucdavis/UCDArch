@@ -4,15 +4,18 @@
 	ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@section subhead
+{
+    <h1>Orders</h1>
+}
+
+@section subnav
+{
+    <li>@Html.ActionLink("Create New", "Create")</li>        
+}
 
 
 @Styles.Render("~/Content/DataTables-1.9.4/media/css/dataTables")
-
-@section SubNav
-{
-	<li>@Html.ActionLink("Create New", "Create")</li>
-}
 
 @section AdditionalScripts
 {
@@ -29,7 +32,6 @@
         });
     </script>    
 }
-
 
 <table class="table table-striped table-bordered table-hover">
 	<thead>

@@ -4,41 +4,62 @@
 
 @section AdditionalScripts
 {
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $("#getOrder").click(function () {
-            $.get('@Url.Action("Get", "Json")',
-                displayResult, 'html');
+            $("#getOrder").click(function () {
+
+                displayRefreshIcon(this);
+
+                $.get('@Url.Action("Get", "Json")',
+                    displayResult, 'html');
+            });
+
+            $("#getOrders").click(function () {
+                
+                displayRefreshIcon(this);
+
+                $.get('@Url.Action("List", "Json")',
+                    displayResult, 'html');
+            });
         });
 
-        $("#getOrders").click(function () {
-            $.get('@Url.Action("List", "Json")',
-                displayResult, 'html');
-        });
-    });
+        function displayResult(result) {
+            $("#RawResults").hide().html(result.toString()).fadeIn('slow');
+            removeRefreshIcon();
+        }
 
-    function displayResult(result) {
-        $("#RawResults").hide().html(result.toString()).fadeIn('slow');
-    }
+        function displayRefreshIcon(btn) {
+            var icon = $("<i>").addClass('icon-spin icon-refresh');
+            $(btn).prepend(icon);
+        }
 
-</script>
+        function removeRefreshIcon() {
+            $('a.btn').find('i').remove();
+        }
+
+    </script>
 }
-<h2>
-    Index</h2>
+
+
+@section subhead
+{
+    <h1>Index</h1>
+}
+
 <h4>
     You can change which properties are serialized by going to Order.cs and adding the
     JsonProperty attribute to the desired properties</h4>
 <p>
-    <a href="javascript:;" id="getOrder">Click Here to Retrieve An Order Via Json</a>
+    <a href="javascript:;" id="getOrder" class="btn btn-primary">Retrieve An Order Via Json</a>
 </p>
 <p>
-    <a href="javascript:;" id="getOrders">Click Here to Retrieve 100 Orders Via Json</a>
+    <a href="javascript:;" id="getOrders" class="btn btn-success">Retrieve 100 Orders Via Json</a>
 </p>
 <p>
-    <label>
+    <h4>
         Raw Results:
-    </label>
+    </h4>
     <span id="RawResults"></span>
 </p>
