@@ -4,12 +4,14 @@
 }        
 
 @if (hasMessages)
-{ 
-    <div class="alert">
-	    <h4>System-wide Message</h4>
-            @foreach(var message in messages.OrderByDescending(a => a.Critical).ThenBy(a => a.Global)){
-                var isCritical = message.Critical ? "critical" : "non-critical";
-                <div class="@isCritical" >@message.Message</div>                    
-            }
+{
+    <div id="service-message" class="navbar-fixed-bottom">
+        @foreach(var message in messages.OrderByDescending(a => a.Critical).ThenBy(a => a.Global)){
+            var importanceIcon = message.Critical ? "icon-exclamation-sign" : "icon-info-sign";
+            var messageType = message.Critical ? "critical-message" : "info-message";
+            <div class="container">
+                <p class="@messageType"><i class="@importanceIcon"></i>@message.Message</p>
+            </div>
+        }
     </div>
 }

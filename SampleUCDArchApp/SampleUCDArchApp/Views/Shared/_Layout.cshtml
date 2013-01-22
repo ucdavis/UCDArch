@@ -35,8 +35,6 @@
 
     <div class="container">
         <header>
-            @Html.Partial("_ServiceMessages")
-
             @if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
             {
                 <div class="alert alert-error">
@@ -65,12 +63,7 @@
         </footer>
     </div>
     
-    <div id="critical-message" class="navbar-fixed-bottom">
-        <div class="container">
-            <p><i class="icon-exclamation-sign"></i>The system will be offline from 6pm to 7pm.  This is critical.</p>
-        </div>
-    </div>
-
+    @Html.Partial("_ServiceMessages")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
