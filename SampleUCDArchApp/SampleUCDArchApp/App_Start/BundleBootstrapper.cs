@@ -26,7 +26,6 @@ namespace SampleUCDArchApp.App_Start
             bundles.Add(new StyleBundle("~/Content/styles")
                             .Include("~/Content/bootstrap.css")
                             .Include("~/Content/font-awesome.css")
-                            .Include("~/Content/bootstrap-custom.css")
                             .Include("~/Content/bootstrap-responsive.css")
                             .Include("~/Content/custom.css"));
 
