@@ -23,6 +23,7 @@ namespace $rootnamespace$.App_Start
                 .Include("~/Scripts/bootstrap.js"));
 
             // Note: Including bootstrap responsive-- comment it out if you don't need responsive css
+            //Also using custom theme build of bootstrap (bootstrap-custom).  Replace with bootstrap.css for default
             bundles.Add(new StyleBundle("~/Content/styles")
                             .Include("~/Content/bootstrap-custom.css")
                             .Include("~/Content/font-awesome.css")
