@@ -207,10 +207,10 @@
     <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\img\debut_light.png" />
-    <Content Include="Content\img\glyphicons-halflings-white.png" />
-    <Content Include="Content\img\glyphicons-halflings.png" />
-    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\images\debut_light.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
