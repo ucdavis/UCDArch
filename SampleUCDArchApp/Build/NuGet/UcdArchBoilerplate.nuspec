@@ -20,6 +20,8 @@
     <files>
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\bootstrap-custom.css" target="Content/Content/bootstrap-custom.css" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\custom.css" target="Content/Content/custom.css" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Content\img\debut_light.png" target="Content/Content/imag/debut_light.png" />
+      <file src="SampleUCDArchApp\SampleUCDArchApp\Content\img\logo.png" target="Content/Content/imag/logo.png" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Content/DataTables-1.9.4/" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Scripts\DataTables-1.9.4\**" target="Content/Scripts/DataTables-1.9.4/" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Scripts\datatables-bootstrap.js" target="Content/Scripts/datatables-bootstrap.js" />

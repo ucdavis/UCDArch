@@ -210,7 +210,7 @@
     <Content Include="Content\img\debut_light.png" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
-    <Content Include="Content\img\ucdavis_logo.png" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
