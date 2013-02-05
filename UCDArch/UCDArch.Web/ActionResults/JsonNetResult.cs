@@ -32,6 +32,9 @@ namespace UCDArch.Web.ActionResults
                 case JsonDateConversionStrategy.Iso:
                     SerializerSettings.Converters.Add(new IsoDateTimeConverter());
                     break;
+				case JsonDateConversionStrategy.Microsoft:
+            		SerializerSettings.DateFormatHandling = DateFormatHandling.MicrosoftDateFormat;
+            		break;
                 default:
                     throw new ArgumentOutOfRangeException("dateConversionStrategy");
             }
