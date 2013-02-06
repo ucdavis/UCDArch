@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvcContrib.TestHelper;
@@ -27,6 +28,11 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
 
             _controller = _builder.CreateController<SampleController>();
 
+            //Required by .NET4.5+ to invoke actions
+            System.Web.HttpContext.Current =
+                new System.Web.HttpContext(new System.Web.HttpRequest("foo", "http://tempuri.org/foo", ""),
+                                           new System.Web.HttpResponse(new StringWriter()));
+            
             ServiceLocatorInitializer.InitWithFakeDBContext();
 
             _dbContext = SmartServiceLocator<IDbContext>.GetService();
