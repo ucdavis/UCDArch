@@ -12,7 +12,7 @@ namespace UCDArch.Web.ActionResults
     {
         Default,
         JavaScript,
-		Microsoft,
+        Microsoft,
         Iso
     }
 }
