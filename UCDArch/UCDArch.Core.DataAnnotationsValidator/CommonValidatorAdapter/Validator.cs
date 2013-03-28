@@ -25,7 +25,7 @@ namespace UCDArch.Core.DataAnnotationsValidator.CommonValidatorAdapter
                                                           {
                                                               ClassContext = classContextType, 
                                                               Message = validationResult.ErrorMessage, 
-                                                              PropertyName = validationResult.MemberNames.First()
+                                                              PropertyName = validationResult.MemberNames.FirstOrDefault() ?? "UnknownField"
                                                           }).Cast<IValidationResult>().ToList();
         }
     }
