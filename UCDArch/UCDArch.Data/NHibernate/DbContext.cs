@@ -38,6 +38,11 @@ namespace UCDArch.Data.NHibernate
             Session.Transaction.Rollback();
         }
 
+        public void CloseSession()
+        {
+            NHibernateSessionManager.Instance.CloseSession();
+        }
+
         public bool IsActive
         {
             get { return Session.Transaction.IsActive; }

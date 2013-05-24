@@ -40,6 +40,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             _dbContext.Stub(x => x.IsActive).Repeat.Any().Return(true);
             _dbContext.Stub(x => x.BeginTransaction()).Repeat.Any().WhenCalled(x => _beginTransactionCount++);
             _dbContext.Stub(x => x.CommitTransaction()).Repeat.Any().WhenCalled(x => _commitTransactionCount++);
+            _dbContext.Stub(x => x.CloseSession()).Repeat.Any();
         }
 
         [TestCleanup]
@@ -47,6 +48,30 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         {
             _beginTransactionCount = 0;
             _commitTransactionCount = 0;
+        }
+
+        /// <summary>
+        /// Controller closes session when calling method without manual transaction attribute.
+        /// </summary>
+        [TestMethod]
+        public void ControllerCloseSessionWhenCallingMethodWithoutManualTransactionAttribute()
+        {
+            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
+                                                   "MethodWithoutManualTransactionAttribute");
+
+            _dbContext.AssertWasCalled(x => x.CloseSession(), x => x.Repeat.Once());
+        }
+
+        /// <summary>
+        /// Controller DOESN'T close session when calling method with manual transaction attribute.
+        /// </summary>
+        [TestMethod]
+        public void ControllerDoesNotCloseSessionWhenCallingMethodWithManualTransactionAttribute()
+        {
+            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
+                                                   "MethodWithManualTransactionAttribute");
+
+            _dbContext.AssertWasNotCalled(a => a.CloseSession());
         }
 
         /// <summary>

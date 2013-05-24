@@ -7,5 +7,6 @@ namespace UCDArch.Core.PersistanceSupport
         void CommitTransaction();
         void RollbackTransaction();
         bool IsActive { get; }
+        void CloseSession();
     }
 }
