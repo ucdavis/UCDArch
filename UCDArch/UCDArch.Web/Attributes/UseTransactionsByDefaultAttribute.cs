@@ -2,6 +2,7 @@ using System;
 using System.Web.Mvc;
 using UCDArch.Core;
 using UCDArch.Core.PersistanceSupport;
+using UCDArch.Data.NHibernate;
 
 namespace UCDArch.Web.Attributes
 {
@@ -46,6 +47,14 @@ namespace UCDArch.Web.Attributes
                     DbContext.RollbackTransaction();
                 }
             }
+        }
+
+        public override void OnResultExecuted(ResultExecutedContext filterContext)
+        {
+            //We might want to close sessions even if we aren't delegated transaction support
+            if (_delegateTransactionSupport) return;
+
+            NHibernateSessionManager.Instance.CloseSession();
         }
 
         /// <summary>
