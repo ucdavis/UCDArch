@@ -1,5 +1,7 @@
 using System.Security.Principal;
+using System.Web.Mvc;
 using UCDArch.Core.PersistanceSupport;
+using UCDArch.Data.NHibernate;
 using UCDArch.Web.Attributes;
 
 namespace UCDArch.Web.Controller
@@ -8,12 +10,14 @@ namespace UCDArch.Web.Controller
     [UseAntiForgeryTokenOnPostByDefault]
     public class SuperController : System.Web.Mvc.Controller
     {
-        public IRepository Repository { get; set; } //General repository set through DI
+        private const string TempDataMessageKey = "Message";
 
+        public IRepository Repository { get; set; } //General repository set through DI
+        
         public string Message
         {
-            get { return TempData[TEMP_DATA_MESSAGE_KEY] as string; }
-            set { TempData[TEMP_DATA_MESSAGE_KEY] = value; }
+            get { return TempData[TempDataMessageKey] as string; }
+            set { TempData[TempDataMessageKey] = value; }
         }
 
         public IPrincipal CurrentUser
@@ -24,6 +28,10 @@ namespace UCDArch.Web.Controller
             }
         }
 
-        private const string TEMP_DATA_MESSAGE_KEY = "Message";
+        protected override void OnResultExecuted(ResultExecutedContext filterContext)
+        {
+            NHibernateSessionManager.Instance.CloseSession();
+            base.OnResultExecuted(filterContext);
+        }
     }
 }
