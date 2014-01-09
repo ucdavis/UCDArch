@@ -1,7 +1,5 @@
 using System.Security.Principal;
-using System.Web.Mvc;
 using UCDArch.Core.PersistanceSupport;
-using UCDArch.Data.NHibernate;
 using UCDArch.Web.Attributes;
 
 namespace UCDArch.Web.Controller
@@ -26,12 +24,6 @@ namespace UCDArch.Web.Controller
             {
                 return ControllerContext.HttpContext.User;
             }
-        }
-
-        protected override void OnResultExecuted(ResultExecutedContext filterContext)
-        {
-            NHibernateSessionManager.Instance.CloseSession();
-            base.OnResultExecuted(filterContext);
         }
     }
 }

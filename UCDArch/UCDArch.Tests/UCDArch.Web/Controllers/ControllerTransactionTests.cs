@@ -19,6 +19,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         private SampleController _controller;
         private static int _beginTransactionCount;
         private static int _commitTransactionCount;
+        private static int _closeSessionCount;
 
 
         [TestInitialize]
@@ -40,7 +41,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             _dbContext.Stub(x => x.IsActive).Repeat.Any().Return(true);
             _dbContext.Stub(x => x.BeginTransaction()).Repeat.Any().WhenCalled(x => _beginTransactionCount++);
             _dbContext.Stub(x => x.CommitTransaction()).Repeat.Any().WhenCalled(x => _commitTransactionCount++);
-            _dbContext.Stub(x => x.CloseSession()).Repeat.Any();
+            _dbContext.Stub(x => x.CloseSession()).Repeat.Any().WhenCalled(x=> _closeSessionCount++);
         }
 
         [TestCleanup]
@@ -48,6 +49,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         {
             _beginTransactionCount = 0;
             _commitTransactionCount = 0;
+            _closeSessionCount = 0;
         }
 
         /// <summary>
@@ -59,7 +61,8 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
                                                    "MethodWithoutManualTransactionAttribute");
 
-            _dbContext.AssertWasCalled(x => x.CloseSession(), x => x.Repeat.Once());
+            Assert.AreEqual(1, _closeSessionCount);
+            //_dbContext.AssertWasCalled(x => x.CloseSession(), x => x.Repeat.Once());
         }
 
         /// <summary>
@@ -71,7 +74,8 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
                                                    "MethodWithManualTransactionAttribute");
 
-            _dbContext.AssertWasNotCalled(a => a.CloseSession());
+            Assert.AreEqual(0, _closeSessionCount);
+            //_dbContext.AssertWasNotCalled(a => a.CloseSession());
         }
 
         /// <summary>
