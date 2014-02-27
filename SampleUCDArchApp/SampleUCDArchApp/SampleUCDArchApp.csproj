@@ -215,7 +215,6 @@
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="Helpers\FluentExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\debut_light.png" />

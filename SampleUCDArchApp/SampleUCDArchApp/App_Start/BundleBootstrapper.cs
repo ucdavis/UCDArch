@@ -25,9 +25,8 @@ namespace SampleUCDArchApp.App_Start
             // Note: Including bootstrap responsive-- comment it out if you don't need responsive css
             //Also using custom theme build of bootstrap (bootstrap-custom).  Replace with bootstrap.css for default
             bundles.Add(new StyleBundle("~/Content/styles")
-                            .Include("~/Content/bootstrap-custom.css")
+                            .Include("~/Content/bootstrap.css")
                             .Include("~/Content/font-awesome.css")
-                            .Include("~/Content/bootstrap-responsive.css")
                             .Include("~/Content/custom.css"));
 
             // Note: Including datatables helper css for bootstrap (http://datatables.net/blog/Twitter_Bootstrap_2)
