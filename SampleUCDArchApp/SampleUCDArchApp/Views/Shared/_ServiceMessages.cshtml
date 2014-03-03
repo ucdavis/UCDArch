@@ -7,10 +7,10 @@
 {
     <div id="service-message" class="navbar-fixed-bottom">
         @foreach(var message in messages.OrderByDescending(a => a.Critical).ThenBy(a => a.Global)){
-            var importanceIcon = message.Critical ? "icon-exclamation-sign" : "icon-info-sign";
+            var importanceIcon = message.Critical ? "fa-exclamation-circle" : "fa-info-circle";
             var messageType = message.Critical ? "critical-message" : "info-message";
             <div class="container">
-                <p class="@messageType"><i class="@importanceIcon"></i>@message.Message</p>
+                <p class="@messageType"><i class="fa @importanceIcon"></i>@message.Message</p>
             </div>
         }
     </div>
