@@ -17,7 +17,7 @@ namespace SampleUCDArchApp.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/datatables")
                             .Include(string.Format("~/Scripts/DataTables-{0}/media/js/jquery.dataTables.js", dataTablesVersion))
-                            .Include("~/Scripts/datatables-bootstrap.3.0.js"));
+                            .Include("~/Scripts/datatables-bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap")
                 .Include("~/Scripts/bootstrap.js"));
@@ -32,7 +32,7 @@ namespace SampleUCDArchApp.App_Start
             // Note: Including datatables helper css for bootstrap (https://github.com/Jowin/Datatables-Bootstrap3)
             bundles.Add(new StyleBundle(string.Format("~/Content/DataTables-{0}/media/css/dataTables", dataTablesVersion))
                             .Include(string.Format("~/Content/DataTables-{0}/media/css/jquery.dataTables.css", dataTablesVersion))
-                            .Include(string.Format("~/Content/DataTables-{0}/media/css/datatables-bootstrap.3.0.css", dataTablesVersion)));
+                            .Include(string.Format("~/Content/DataTables-{0}/media/css/datatables-bootstrap.css", dataTablesVersion)));
         }
     }
 }
