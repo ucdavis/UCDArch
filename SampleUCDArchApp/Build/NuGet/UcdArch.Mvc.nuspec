@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>4.0.0</version>
+    <version>5.0.0</version>
     <authors>Scott Kirkland</authors>
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
     <dependencies>
-      <dependency id="UcdArch.NHibernate" version="4.0.0" />
+      <dependency id="UcdArch.NHibernate" version="5.0.0.118" />
       <dependency id="DataAnnotationsExtensions.MVC3" version="1.1.0.0" />
       <dependency id="elmah" version="1.2.2" />
-      <dependency id="WebActivator" version="1.5" />
+      <dependency id="WebActivator" version="1.5.2" />
       <dependency id="MvcContrib.Mvc3.FluentHtml-ci" version="3.0.100.0" />
     </dependencies>
     <id>UcdArch.Mvc</id>

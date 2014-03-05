@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>UcdArchBoilerplate</id>
-        <version>4.0.0</version>
+        <version>5.0.0</version>
         <authors>Scott Kirkland</authors>
         <owners>Scott Kirkland</owners>
         <licenseUrl>https://github.com/ucdavis/UCDArch/blob/master/LICENSE.txt</licenseUrl>
@@ -12,14 +12,13 @@
         <summary>Adds twitter bootstrap styling, datatables custom styling, style/script bundles, and a sample layout page website</summary>
         <language>en-US</language>
         <dependencies>
-            <dependency id="Twitter.Bootstrap" version="2.2.2" />
-            <dependency id="UcdArch.Mvc" version="4.0.95" />
+            <dependency id="Twitter.Bootstrap" version="3.0.1.1" />
+            <dependency id="FontAwesome" version="4.0.3.1" />
+            <dependency id="UcdArch.Mvc" version="5.0.0.118" />
         </dependencies>
     </metadata>
     <files>
-      <file src="SampleUCDArchApp\SampleUCDArchApp\Content\font-awesome*.css" target="Content/Content/" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\custom.css" target="Content/Content/custom.css" />
-      <file src="SampleUCDArchApp\SampleUCDArchApp\fonts\**" target="Content/fonts/" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\images\debut_light.png" target="Content/Content/images/debut_light.png" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\images\logo.png" target="Content/Content/images/logo.png" />
       <file src="SampleUCDArchApp\SampleUCDArchApp\Content\DataTables-1.9.4\**" target="Content/Content/DataTables-1.9.4/" />

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>4.0.0</version>
+    <version>5.0.0</version>
     <authors>Scott Kirkland</authors>
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
