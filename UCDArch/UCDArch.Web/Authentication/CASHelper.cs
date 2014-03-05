@@ -8,7 +8,7 @@ namespace UCDArch.Web.Authentication
 {
     public static class CASHelper
     {
-        private const string StrCasUrl = "https://cas.ucdavis.edu:8443/cas/";
+        private const string StrCasUrl = "https://cas.ucdavis.edu/cas/";
         private const string StrTicket = "ticket";
         private const string StrReturnUrl = "ReturnURL";
 
