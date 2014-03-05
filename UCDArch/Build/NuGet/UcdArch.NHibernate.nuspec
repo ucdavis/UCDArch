@@ -6,7 +6,7 @@
     <owners>Scott Kirkland</owners>
     <projectUrl>https://github.com/ucdavis/UCDArch</projectUrl>
     <dependencies>
-      <dependency id="UcdArch" version="5.0.0.118" />
+      <dependency id="UcdArch" version="5.1.0.120" />
       <dependency id="Castle.Windsor" version="3.2.1" />
       <dependency id="CommonServiceLocator" version="1.2" />
       <dependency id="FluentNHibernate" version="1.4.0.0" />

@@ -14,7 +14,7 @@
         <dependencies>
             <dependency id="Twitter.Bootstrap" version="3.0.1.1" />
             <dependency id="FontAwesome" version="4.0.3.1" />
-            <dependency id="UcdArch.Mvc" version="5.0.0.118" />
+            <dependency id="UcdArch.Mvc" version="5.1.0.120" />
         </dependencies>
     </metadata>
     <files>
