@@ -41,7 +41,7 @@
     
 }
 
-<table class="table table-striped table-bordered table-hover">
+<table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
         <tr>
             <th></th>
@@ -58,15 +58,15 @@
         {
             <tr>
                 <td>
-	    			<a href='#' class="btn" title="Details"><i class="icon-file"></i></a>
-				    <a href='#' class="btn" title="Edit"><i class="icon-edit"></i></a>
+	    			<a href='#' class="btn btn-default" title="Details"><i class="fa fa-file-o"></i></a>
+				    <a href='#' class="btn btn-default" title="Edit"><i class="fa fa-edit"></i></a>
     			</td>
-                <th>@i</th>
+                <td>@i</td>
                 <td>Person @i</td>
                 <td>@(i % 2 == 0 ? "Male" : "Female")</td>
                 <td>@(rand.Next(1000))</td>
 			    <td>
-				    <a href='#' class="btn" title="Remove"><i class="icon-remove"></i></a>
+				    <a href='#' class="btn btn-danger" title="Remove"><i class="fa fa-times"></i></a>
 			    </td>
             </tr>
         }

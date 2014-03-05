@@ -51,8 +51,8 @@
 @foreach (var item in Model) {
 		<tr>
 		    <td>
-		        <a href='@Url.Action("Details", new {id=item.Id})' class="btn" title="Details"><i class="icon-file"></i></a>
-		        <a href='@Url.Action("Edit", new {id=item.Id})' class="btn" title="Edit"><i class="icon-edit"></i></a>
+		        <a href='@Url.Action("Details", new {id=item.Id})' class="btn btn-default" title="Details"><i class="fa fa-file-o"></i></a>
+		        <a href='@Url.Action("Edit", new {id=item.Id})' class="btn btn-default" title="Edit"><i class="fa fa-edit"></i></a>
 		    </td>
 		    <td>
 		        @item.OrderedBy.Id
@@ -64,7 +64,7 @@
 				@item.ShipAddress
 			</td>
 			<td>
-				<a href='@Url.Action("Delete", new {id=item.Id})' class="btn" title="Remove"><i class="icon-remove"></i></a>
+				<a href='@Url.Action("Delete", new {id=item.Id})' class="btn btn-danger" title="Remove"><i class="fa fa-times"></i></a>
 			</td>
 		</tr>
 }

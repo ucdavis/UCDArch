@@ -1,34 +1,37 @@
-﻿<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+﻿<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="@Url.Action("Index", "Home")">
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                 <img src="@Url.Content("~/Content/images/logo.png")" alt="UC Davis Logo" class="navbar-logo" />
                 Sample UCDArch App
             </a>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li id="nav-home">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li id="nav-sample">@Html.ActionLink("Sample", "Index", "Sample")</li>
-                    <li id="nav-order">@Html.ActionLink("Order", "Index", "Order")</li>
-                    <li id="nav-json">@Html.ActionLink("Json", "Index", "Json")</li>
-                    <li id="nav-about">@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Welcome, User Person <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
-                            <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="icon-off"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
-    </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li id="nav-home">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li id="nav-sample">@Html.ActionLink("Sample", "Index", "Sample")</li>
+                <li id="nav-order">@Html.ActionLink("Order", "Index", "Order")</li>
+                <li id="nav-json">@Html.ActionLink("Json", "Index", "Json")</li>
+                <li id="nav-about">@Html.ActionLink("About", "About", "Home")</li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome, User Person <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-cog"></i> Preferences</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Contact Support</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!--/.nav-collapse -->
 </div>
