@@ -103,9 +103,8 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UCDArch, Version=4.0.113.0, Culture=neutral, PublicKeyToken=667f3cb07abadf4b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\UCDArch\artifacts\UCDArch.dll</HintPath>
+    <Reference Include="UCDArch">
+      <HintPath>..\packages\UcdArch.5.0.118\lib\net35\UCDArch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -154,9 +154,8 @@
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="UCDArch, Version=4.0.113.0, Culture=neutral, PublicKeyToken=667f3cb07abadf4b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\UCDArch\artifacts\UCDArch.dll</HintPath>
+    <Reference Include="UCDArch">
+      <HintPath>..\packages\UcdArch.5.0.118\lib\net35\UCDArch.dll</HintPath>
     </Reference>
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.5.2\lib\net40\WebActivator.dll</HintPath>
