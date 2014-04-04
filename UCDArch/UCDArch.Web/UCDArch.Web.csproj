@@ -150,6 +150,7 @@
     <Compile Include="Attributes\UseTransactionsByDefaultAttribute.cs" />
     <Compile Include="Attributes\VersionAttribute.cs" />
     <Compile Include="Authentication\CASHelper.cs" />
+    <Compile Include="Authentication\CasMvc.cs" />
     <Compile Include="Controller\SuperController.cs" />
     <Compile Include="Helpers\ImageLinkExtensions.cs" />
     <Compile Include="Helpers\UrlConventionExtentions.cs" />
