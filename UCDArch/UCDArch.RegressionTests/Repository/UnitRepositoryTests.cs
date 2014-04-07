@@ -57,7 +57,6 @@ namespace UCDArch.RegressionTests.Repository
         /// Units does not save with null full name.
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(ApplicationException))]
         public void UnitDoesNotSaveWithNullFullName()
         {
             Unit unit = null;
