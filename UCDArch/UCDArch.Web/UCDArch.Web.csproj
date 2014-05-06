@@ -142,6 +142,7 @@
     <Compile Include="ActionResults\JsonDateConversionStrategy.cs" />
     <Compile Include="ActionResults\JsonNetResult.cs" />
     <Compile Include="Attributes\BypassAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Attributes\ValidateAntiForgeryTokenHeaderOrFormAttribute.cs" />
     <Compile Include="Attributes\ServiceMessageAttribute.cs" />
     <Compile Include="Attributes\TransactionalActionBaseAttribute.cs" />
     <Compile Include="Attributes\HandleTransactionsManuallyAttribute.cs" />

@@ -24,6 +24,7 @@ namespace UCDArch.Web.Attributes
         /// We should validate the anti forgery token manually if the following criteria are met:
         /// 1. The http method must be POST
         /// 2. There is not an existing [ValidateAntiForgeryToken] attribute on the action
+        /// 3. There is not an existing [ValidateAntiForgeryTokenHeaderOrForm] attribute on the action
         /// 3. There is no [IgnoreAntiForgeryToken] attribute on the action
         /// </summary>
         private static bool ShouldValidateAntiForgeryTokenManually(ActionExecutingContext filterContext)
@@ -37,6 +38,11 @@ namespace UCDArch.Web.Attributes
             var antiForgeryAttributes = filterContext.ActionDescriptor.GetCustomAttributes(typeof(ValidateAntiForgeryTokenAttribute), false);
 
             if (antiForgeryAttributes.Length > 0) return false;
+
+            // 2. There is not an existing anti forgery token attribute on the action
+            var antiForgeryHeaderAttributes = filterContext.ActionDescriptor.GetCustomAttributes(typeof(ValidateAntiForgeryTokenHeaderOrFormAttribute), false);
+
+            if (antiForgeryHeaderAttributes.Length > 0) return false;
 
             // 3. There is no [IgnoreAntiForgeryToken] attribute on the action
             var ignoreAntiForgeryAttributes = filterContext.ActionDescriptor.GetCustomAttributes(typeof(BypassAntiForgeryTokenAttribute), false);
