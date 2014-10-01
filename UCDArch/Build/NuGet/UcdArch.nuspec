@@ -15,6 +15,6 @@
     <tags>ASPNETMVC</tags>
   </metadata>
   <files>
-    <file src="..\..\UCDArch\artifacts\UCDArch.dll" target="lib\net451\UCDArch.dll" />
+    <file src="..\..\artifacts\UCDArch.dll" target="lib\net451\UCDArch.dll" />
   </files>
 </package>
