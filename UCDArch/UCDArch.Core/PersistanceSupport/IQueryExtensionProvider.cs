@@ -11,7 +11,7 @@ namespace UCDArch.Core.PersistanceSupport
 
         IQueryable<TOriginal> Fetch<TOriginal, TRelated>(IQueryable<TOriginal> queryable,
                                                           Expression<Func<TOriginal, TRelated>> relationshipProperty,
-                                                          params Expression<Func<TRelated, TRelated>>[] thenFetchRelationship);
+                                                          params Expression<Func<TRelated, object>>[] thenFetchRelationship);
 
         IQueryable<TOriginal> FetchMany<TOriginal, TRelated>(IQueryable<TOriginal> queryable,
                                                               Expression<Func<TOriginal, IEnumerable<TRelated>>>

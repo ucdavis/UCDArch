@@ -11,7 +11,7 @@ namespace UCDArch.Core.PersistanceSupport
 
         public static IQueryable<TOriginal> Fetch<TOriginal, TRelated>(this IQueryable<TOriginal> queryable,
                                                                         Expression<Func<TOriginal, TRelated>> relationshipProperty,
-                                                                        params Expression<Func<TRelated, TRelated>>[] thenFetchRelationship)
+                                                                        params Expression<Func<TRelated, object>>[] thenFetchRelationship)
         {
             return QueryExtensionProvider.Fetch(queryable, relationshipProperty, thenFetchRelationship);
         }

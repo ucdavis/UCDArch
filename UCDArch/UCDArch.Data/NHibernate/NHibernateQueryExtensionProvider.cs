@@ -18,11 +18,16 @@ namespace UCDArch.Data.NHibernate
             return query;
         }
 
-        public IQueryable<TOriginal> Fetch<TOriginal, TRelated>(IQueryable<TOriginal> queryable, Expression<Func<TOriginal, TRelated>> relationshipProperty, params Expression<Func<TRelated, TRelated>>[] thenFetchRelationship)
+        public IQueryable<TOriginal> Fetch<TOriginal, TRelated>(IQueryable<TOriginal> queryable, Expression<Func<TOriginal, TRelated>> relationshipProperty, params Expression<Func<TRelated, object>>[] thenFetchRelationship)
         {
             var ret = queryable.Fetch(relationshipProperty);
 
-            return thenFetchRelationship.Aggregate(ret, (current, fetchExpression) => current.ThenFetch(fetchExpression));
+            foreach (var thenFetch in thenFetchRelationship)
+            {
+                ret.ThenFetch(thenFetch);
+            }
+
+            return ret;
         }
 
         public IQueryable<TOriginal> FetchMany<TOriginal, TRelated>(IQueryable<TOriginal> queryable, Expression<Func<TOriginal, IEnumerable<TRelated>>> relationshipCollection, params Expression<Func<TRelated, IEnumerable<TRelated>>>[] thenFetchManyRelationship)
