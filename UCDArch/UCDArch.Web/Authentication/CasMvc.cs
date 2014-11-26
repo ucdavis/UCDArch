@@ -19,23 +19,18 @@ namespace UCDArch.Web.Authentication
             return HttpContext.Current.Request.QueryString[StrReturnUrl];
         }
 
-        public static ActionResult LoginAndRedirect()
+        public static ActionResult LoginAndRedirect(Action<string> handleUserId = null)
         {
-            var actionResult = Login(); //Do the CAS Login
+            var actionResult = Login(handleUserId); //Do the CAS Login
 
-            if (actionResult != null)
-            {
-                return actionResult;
-            }
-
-            return new ViewResult();
+            return actionResult ?? new ViewResult();
         }
 
         /// <summary>
         /// Login to the campus CAS system and integrate with MVC results
         /// </summary>
         /// <returns></returns>
-        public static ActionResult Login()
+        public static ActionResult Login(Action<string> handleUserId = null)
         {
             // get the context from the source
             var context = HttpContext.Current;
@@ -88,8 +83,15 @@ namespace UCDArch.Web.Authentication
                         // get kerberos id
                         string kerberos = sr.ReadLine();
 
-                        // set forms authentication ticket
-                        FormsAuthentication.SetAuthCookie(kerberos, false);
+                        if (handleUserId != null)
+                        {
+                            handleUserId(kerberos);
+                        }
+                        else
+                        {
+                            // set forms authentication ticket
+                            FormsAuthentication.SetAuthCookie(kerberos, false);
+                        }
 
                         string returnUrl = GetReturnUrl();
 

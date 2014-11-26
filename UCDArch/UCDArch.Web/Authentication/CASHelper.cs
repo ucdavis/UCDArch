@@ -21,9 +21,9 @@ namespace UCDArch.Web.Authentication
         /// Performs the CAS Login and automatically redirects to the desired page, if possible.
         /// Will do nothing if the user is already authenticated
         /// </summary>
-        public static void LoginAndRedirect()
+        public static void LoginAndRedirect(Action<string> handleUserId = null)
         {
-            string returnUrl = Login();
+            string returnUrl = Login(handleUserId);
 
             if (returnUrl != null) HttpContext.Current.Response.Redirect(returnUrl);
         }
@@ -31,7 +31,7 @@ namespace UCDArch.Web.Authentication
         /// <summary>
         /// Login to the campus DistAuth system using CAS        
         /// </summary>
-        public static string Login()
+        public static string Login(Action<string> handleUserId = null)
         {
             // get the context from the source
             var context = HttpContext.Current;
@@ -89,8 +89,15 @@ namespace UCDArch.Web.Authentication
                         // get kerberos id
                         string kerberos = sr.ReadLine();
 
-                        // set forms authentication ticket
-                        FormsAuthentication.SetAuthCookie(kerberos, false);
+                        if (handleUserId != null)
+                        {
+                            handleUserId(kerberos);
+                        }
+                        else
+                        {
+                            // set forms authentication ticket
+                            FormsAuthentication.SetAuthCookie(kerberos, false);
+                        }
 
                         string returnUrl = GetReturnUrl();
 
