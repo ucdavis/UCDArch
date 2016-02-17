@@ -89,8 +89,7 @@ namespace UCDArch.Web.ModelBinder
                 propertyType.IsGenericType &&
                 (propertyType.GetGenericTypeDefinition() == typeof(IList<>) ||
                  propertyType.GetGenericTypeDefinition() == typeof(ICollection<>) ||
-                 propertyType.GetGenericTypeDefinition() == typeof(Iesi.Collections.Generic.ISet<>) ||
-                 propertyType.GetGenericTypeDefinition() == typeof(System.Collections.Generic.ISet<>) ||
+                 propertyType.GetGenericTypeDefinition() == typeof(ISet<>) ||
                  propertyType.GetGenericTypeDefinition() == typeof(IEnumerable<>));
 
             bool isSimpleGenericBindableEntityCollection =
