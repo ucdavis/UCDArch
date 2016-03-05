@@ -148,6 +148,8 @@
     <Compile Include="Extensions\RouteTestingExtensions.cs" />
     <Compile Include="Extensions\ValidationExtensions.cs" />
     <Compile Include="Fakes\ControllerRecordFakes.cs" />
+    <Compile Include="Fakes\ControllerRecordFakesGuids.cs" />
+    <Compile Include="Fakes\ControllerRecordFakesStrings.cs" />
     <Compile Include="Fakes\FakeHttpPostedFileBase.cs" />
     <Compile Include="Fakes\FakeIdentityAndFiles.cs" />
     <Compile Include="FluentRepositoryTestBase.cs" />
