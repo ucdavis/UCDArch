@@ -1,13 +1,13 @@
 using System;
 using System.IO;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MvcContrib.TestHelper;
 using Rhino.Mocks;
 using UCDArch.Core;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Testing;
 using UCDArch.Web.Attributes;
+using UCDArch.Tests;
 
 namespace UCDArch.Tests.UCDArch.Web.Controllers
 {
@@ -15,7 +15,6 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
     public class ControllerTransactionTests
     {
         private IDbContext _dbContext;
-        private TestControllerBuilder _builder;
         private SampleController _controller;
         private static int _beginTransactionCount;
         private static int _commitTransactionCount;
@@ -25,15 +24,9 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestInitialize]
         public void Setup()
         {
-            _builder = new TestControllerBuilder();
+            _controller = new SampleController();
+            _controller.ControllerContext = new ControllerContext();
 
-            _controller = _builder.CreateController<SampleController>();
-
-            //Required by .NET4.5+ to invoke actions
-            System.Web.HttpContext.Current =
-                new System.Web.HttpContext(new System.Web.HttpRequest("foo", "http://tempuri.org/foo", ""),
-                                           new System.Web.HttpResponse(new StringWriter()));
-            
             ServiceLocatorInitializer.InitWithFakeDBContext();
 
             _dbContext = SmartServiceLocator<IDbContext>.GetService();
@@ -58,8 +51,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCloseSessionWhenCallingMethodWithoutManualTransactionAttribute()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithoutManualTransactionAttribute");
+            _controller.MethodWithoutManualTransactionAttribute();
 
             Assert.AreEqual(1, _closeSessionCount);
             //_dbContext.AssertWasCalled(x => x.CloseSession(), x => x.Repeat.Once());
@@ -71,8 +63,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerDoesNotCloseSessionWhenCallingMethodWithManualTransactionAttribute()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithManualTransactionAttribute");
+            _controller.MethodWithManualTransactionAttribute();
 
             Assert.AreEqual(0, _closeSessionCount);
             //_dbContext.AssertWasNotCalled(a => a.CloseSession());
@@ -84,8 +75,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerBeginsTransactionWhenCallingMethodWithoutManualTransactionAttribute()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithoutManualTransactionAttribute");
+            _controller.MethodWithoutManualTransactionAttribute();
 
             Assert.AreEqual(1, _beginTransactionCount);
             //_dbContext.AssertWasCalled(a=>a.BeginTransaction(), a=>a.Repeat.Once());
@@ -100,8 +90,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             //Assume the transaction has been opened correctly
             _dbContext.Stub(a => a.IsActive).Return(true);
 
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithoutManualTransactionAttribute");
+            _controller.MethodWithoutManualTransactionAttribute();
 
             Assert.AreEqual(1, _commitTransactionCount);
             //_dbContext.AssertWasCalled(a => a.CommitTransaction(), a => a.Repeat.Once());
@@ -114,8 +103,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerDoesNotBeginTransactionWhenCallingMethodWithManualTransactionAttribute()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithManualTransactionAttribute");
+            _controller.MethodWithManualTransactionAttribute();
 
             Assert.AreEqual(0, _beginTransactionCount);
             //_dbContext.AssertWasNotCalled(a => a.BeginTransaction());
@@ -131,8 +119,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             //Assume the transaction has been opened correctly
             _dbContext.Expect(a => a.IsActive).Return(true);
 
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithManualTransactionAttribute");
+            _controller.MethodWithManualTransactionAttribute();
 
             Assert.AreEqual(0, _commitTransactionCount);
             //_dbContext.AssertWasNotCalled(a=>a.CommitTransaction());
@@ -145,8 +132,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCallsBeginTransactionOnlyOnceWhenCallingMethodWithTransactionAttribute()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithTransactionAttribute");
+            _controller.MethodWithTransactionAttribute();
 
             Assert.AreEqual(1, _beginTransactionCount);
             //_dbContext.AssertWasCalled(a => a.BeginTransaction(), a=>a.Repeat.Once());
@@ -162,8 +148,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
             //Assume the transaction has been opened correctly
             _dbContext.Expect(a => a.IsActive).Return(true);
 
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithTransactionAttribute");
+            _controller.MethodWithTransactionAttribute();
 
             Assert.AreEqual(1, _commitTransactionCount);
             //_dbContext.AssertWasCalled(a => a.CommitTransaction(), a=>a.Repeat.Once());
@@ -175,8 +160,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCallsBeginTransactionOnlyOnceWhenCallingMethodWithManualTransactionAttributeAndTransactionScope()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithManualTransactionAttributeAndTransactionScope");
+            _controller.MethodWithManualTransactionAttributeAndTransactionScope();
 
             Assert.AreEqual(1, _beginTransactionCount);
             //_dbContext.AssertWasCalled(a => a.BeginTransaction(), a => a.Repeat.Once());
@@ -188,8 +172,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCallsCommitTransactionOnlyOnceWhenCallingMethodWithManualTransactionAttributeAndTransactionScope()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithManualTransactionAttributeAndTransactionScope");
+            _controller.MethodWithManualTransactionAttributeAndTransactionScope();
 
             Assert.AreEqual(1, _commitTransactionCount);
             //_dbContext.AssertWasCalled(a => a.CommitTransaction(), a => a.Repeat.Once());
@@ -203,8 +186,7 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCallsBeginTransactionTwiceWhenCallingMethodWithoutManualTransactionAttributeAndTransactionScope()
         {
-            _controller.ActionInvoker.InvokeAction(_controller.ControllerContext,
-                                                   "MethodWithoutManualTransactionAttributeAndTransactionScope");
+            _controller.MethodWithoutManualTransactionAttributeAndTransactionScope();
 
             Assert.AreEqual(2, _beginTransactionCount);
             //_dbContext.AssertWasCalled(a => a.BeginTransaction(), a => a.Repeat.Twice());

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using UCDArch.Core;
 using UCDArch.Core.CommonValidator;
 using UCDArch.Core.Utils;
@@ -46,7 +46,7 @@ namespace UCDArch.Web.Validator
                         : "");
 
                 modelStateDictionary.AddModelError(key, validationResult.Message);
-                modelStateDictionary.SetModelValue(key, new ValueProviderResult(null, null, null));
+                modelStateDictionary.SetModelValue(key, new ValueProviderResult());
             }
 
             return modelStateDictionary;

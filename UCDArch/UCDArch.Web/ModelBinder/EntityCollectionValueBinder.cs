@@ -1,11 +1,12 @@
 using System;
 using System.Linq;
-using System.Web.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using UCDArch.Core.DomainModel;
 
 namespace UCDArch.Web.ModelBinder
 {
-    class EntityCollectionValueBinder : DefaultModelBinder
+    class EntityCollectionValueBinder : IModelBinder
     {
         #region Implementation of IModelBinder
 
@@ -16,7 +17,7 @@ namespace UCDArch.Web.ModelBinder
         /// The bound value.
         /// </returns>
         /// <param name="controllerContext">The controller context.</param><param name="bindingContext">The binding context.</param>
-        public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             Type collectionType = bindingContext.ModelType;
             Type collectionEntityType = collectionType.GetGenericArguments().First();
@@ -25,7 +26,7 @@ namespace UCDArch.Web.ModelBinder
 
             if (valueProviderResult != null)
             {
-                int countOfEntityIds = (valueProviderResult.RawValue as string[]).Length;
+                int countOfEntityIds = valueProviderResult.Count();
                 Array entities = Array.CreateInstance(collectionEntityType, countOfEntityIds);
 
                 Type entityInterfaceType = collectionEntityType.GetInterfaces()
@@ -34,12 +35,14 @@ namespace UCDArch.Web.ModelBinder
 
                 Type idType = entityInterfaceType.GetGenericArguments().First();
 
-                for (int i = 0; i < countOfEntityIds; i++)
+                var i = 0;
+                foreach (var rawId in valueProviderResult)
                 {
-                    string rawId = (valueProviderResult.RawValue as string[])[i];
-
                     if (string.IsNullOrEmpty(rawId))
-                        return null;
+                    {
+                        bindingContext.ModelState.SetModelValue(bindingContext.ModelName, ValueProviderResult.None);
+                        return Task.CompletedTask;
+                    }
 
                     object typedId =
                         (idType == typeof(Guid))
@@ -48,12 +51,12 @@ namespace UCDArch.Web.ModelBinder
 
                     object entity = ValueBinderHelper.GetEntityFor(collectionEntityType, typedId, idType);
                     entities.SetValue(entity, i);
+                    i++;
                 }
 
-                //base.BindModel(controllerContext, bindingContext);
-                return entities;
+                bindingContext.ModelState.SetModelValue(bindingContext.ModelName, valueProviderResult);
             }
-            return base.BindModel(controllerContext, bindingContext);
+                return Task.CompletedTask;
         }
 
         #endregion

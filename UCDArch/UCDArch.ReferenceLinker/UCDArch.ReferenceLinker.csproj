@@ -1,17 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E96AA00D-2EB3-498F-8BAB-A00B449A7903}</ProjectGuid>
+    <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UCDArch.ReferenceLinker</RootNamespace>
-    <AssemblyName>UCDArch.ReferenceLinker</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -20,11 +10,6 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
-    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -42,73 +27,29 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\UCDArch\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
+    <Reference Update="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Xml.Linq">
+    <Reference Update="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Build\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UCDArch.Core.DataAnnotationsValidator\UCDArch.Core.DataAnnotationsValidator.csproj">
-      <Project>{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}</Project>
-      <Name>UCDArch.Core.DataAnnotationsValidator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UCDArch.Core\UCDArch.Core.csproj">
-      <Project>{5D518D9F-6249-4676-99DF-2893A1C2BDAF}</Project>
-      <Name>UCDArch.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UCDArch.Data\UCDArch.Data.csproj">
-      <Project>{59D6FA42-C4BA-4F49-81F1-BC36B641E7CB}</Project>
-      <Name>UCDArch.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UCDArch.Testing\UCDArch.Testing.csproj">
-      <Project>{5C40250D-E958-47BC-B8FE-4241744E5BE6}</Project>
-      <Name>UCDArch.Testing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UCDArch.Web.Providers\UCDArch.Web.Providers.csproj">
-      <Project>{57768AA4-10DF-471C-A59E-3CF4D22AF61B}</Project>
-      <Name>UCDArch.Web.Providers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UCDArch.Web\UCDArch.Web.csproj">
-      <Project>{CDEA60DF-144D-41C5-81F1-EADF33FF9FA9}</Project>
-      <Name>UCDArch.Web</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\UCDArch.Core.DataAnnotationsValidator\UCDArch.Core.DataAnnotationsValidator.csproj" />
+    <ProjectReference Include="..\UCDArch.Core\UCDArch.Core.csproj" />
+    <ProjectReference Include="..\UCDArch.Data\UCDArch.Data.csproj" />
+    <ProjectReference Include="..\UCDArch.Testing\UCDArch.Testing.csproj" />
+    <ProjectReference Include="..\UCDArch.Web.Providers\UCDArch.Web.Providers.csproj" />
+    <ProjectReference Include="..\UCDArch.Web\UCDArch.Web.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -127,13 +68,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.261602">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>

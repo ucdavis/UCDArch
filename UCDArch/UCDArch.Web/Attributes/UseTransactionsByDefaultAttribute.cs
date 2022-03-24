@@ -1,8 +1,9 @@
 using System;
-using System.Web.Mvc;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.Filters;
 using UCDArch.Core;
 using UCDArch.Core.PersistanceSupport;
-using UCDArch.Data.NHibernate;
+using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace UCDArch.Web.Attributes
 {
@@ -63,12 +64,14 @@ namespace UCDArch.Web.Attributes
         /// </summary>
         private static bool ShouldDelegateTransactionSupport(ActionExecutingContext context)
         {
-            var hasTransactionalControllerAttrs =
-                context.ActionDescriptor.ControllerDescriptor.IsDefined(typeof (TransactionalActionBaseAttribute), false);
-            
-            var hasTransactionalMethodAttrs = context.ActionDescriptor.IsDefined(typeof (TransactionalActionBaseAttribute), false);
+            if (context.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
+            {
+                return controllerActionDescriptor.MethodInfo.GetCustomAttributes(inherit: true)
+                .Any(a => a.GetType().Equals(typeof(TransactionalActionBaseAttribute)));
 
-            return hasTransactionalControllerAttrs || hasTransactionalMethodAttrs;
+            }
+
+            return false;
         }
     }
 }

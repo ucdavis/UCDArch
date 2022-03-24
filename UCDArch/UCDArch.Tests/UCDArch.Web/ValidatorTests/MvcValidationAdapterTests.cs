@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UCDArch.Testing;
 using UCDArch.Web.Validator;
@@ -65,10 +66,10 @@ namespace UCDArch.Tests.UCDArch.Web.ValidatorTests
 
             ModelStateDictionary modelState = new ModelStateDictionary();
             Assert.IsNotNull(modelState);
-            Assert.AreEqual(0, modelState.Values.Count);
+            Assert.AreEqual(0, modelState.Values.Count());
             MvcValidationAdapter.TransferValidationMessagesTo(modelState, validator.ValidationResultsFor(invalidObject));
 
-            Assert.AreEqual(3, modelState.Values.Count);
+            Assert.AreEqual(3, modelState.Values.Count());
 
             var resultsList = new List<string>();
             foreach (var result in modelState.Values)

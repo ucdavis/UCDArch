@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using System.Web.Mvc;
 using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -33,7 +32,7 @@ namespace UCDArch.Web.IoC
                     });
         }
 
-        public static IWindsorContainer RegisterController<T>(this IWindsorContainer container) where T : IController
+        public static IWindsorContainer RegisterController<T>(this IWindsorContainer container) where T : Microsoft.AspNetCore.Mvc.Controller 
         {
             container.RegisterControllers(typeof(T));
             return container;
@@ -72,7 +71,7 @@ namespace UCDArch.Web.IoC
             return type != null
                    && type.Name.EndsWith("Controller", StringComparison.OrdinalIgnoreCase)
                    && !type.IsAbstract
-                   && typeof(IController).IsAssignableFrom(type);
+                   && typeof(Microsoft.AspNetCore.Mvc.Controller).IsAssignableFrom(type);
         }
     }
 }

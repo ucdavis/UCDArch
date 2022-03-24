@@ -1,12 +1,13 @@
 using System.Security.Principal;
+using Microsoft.AspNetCore.Mvc;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Web.Attributes;
 
 namespace UCDArch.Web.Controller
 {
     [UseTransactionsByDefault]
-    [UseAntiForgeryTokenOnPostByDefault]
-    public class SuperController : System.Web.Mvc.Controller
+    [AutoValidateAntiforgeryToken]
+    public class SuperController : Microsoft.AspNetCore.Mvc.Controller
     {
         private const string TempDataMessageKey = "Message";
 

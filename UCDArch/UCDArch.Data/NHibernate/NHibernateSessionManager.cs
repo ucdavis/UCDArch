@@ -1,8 +1,9 @@
-using System.Runtime.Remoting.Messaging;
-using System.Web;
 using NHibernate;
 using NHibernate.Stat;
 using UCDArch.Core.Utils;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace UCDArch.Data.NHibernate
 {
@@ -15,6 +16,10 @@ namespace UCDArch.Data.NHibernate
     public sealed class NHibernateSessionManager
     {
         #region Thread-safe, lazy Singleton
+
+        private static AsyncLocal<Dictionary<object, object>> _threadSessionMap = new();
+
+        private static Dictionary<object, object> ThreadSessionMap => _threadSessionMap.Value ??= new Dictionary<object, object>();
 
         /// <summary>
         /// This is a thread-safe, lazy singleton.  See http://www.yoda.arachsys.com/csharp/singleton.html
@@ -213,22 +218,22 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    return (ITransaction)HttpContext.Current.Items[TRANSACTION_KEY];
+                    return (ITransaction)HttpContextHelper.Current.Items[TRANSACTION_KEY];
                 }
                 else
                 {
-                    return (ITransaction)CallContext.GetData(TRANSACTION_KEY);
+                    return (ITransaction)ThreadSessionMap[TRANSACTION_KEY];
                 }
             }
             set
             {
                 if (IsInWebContext())
                 {
-                    HttpContext.Current.Items[TRANSACTION_KEY] = value;
+                    HttpContextHelper.Current.Items[TRANSACTION_KEY] = value;
                 }
                 else
                 {
-                    CallContext.SetData(TRANSACTION_KEY, value);
+                    ThreadSessionMap[TRANSACTION_KEY] = value;
                 }
             }
         }
@@ -244,29 +249,29 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    return (ISession)HttpContext.Current.Items[SESSION_KEY];
+                    return (ISession)HttpContextHelper.Current.Items[SESSION_KEY];
                 }
                 else
                 {
-                    return (ISession)CallContext.GetData(SESSION_KEY);
+                    return (ISession)ThreadSessionMap[SESSION_KEY];
                 }
             }
             set
             {
                 if (IsInWebContext())
                 {
-                    HttpContext.Current.Items[SESSION_KEY] = value;
+                    HttpContextHelper.Current.Items[SESSION_KEY] = value;
                 }
                 else
                 {
-                    CallContext.SetData(SESSION_KEY, value);
+                    ThreadSessionMap[SESSION_KEY] = value;
                 }
             }
         }
 
         private bool IsInWebContext()
         {
-            return HttpContext.Current != null;
+            return HttpContextHelper.Current != null;
         }
 
         private const string TRANSACTION_KEY = "CONTEXT_TRANSACTION";

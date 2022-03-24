@@ -1,10 +1,10 @@
 using System;
+using Microsoft.Net.Http.Headers;
 using System.Text;
-using System.Web;
-using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Converters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace UCDArch.Web.ActionResults
 {
@@ -44,26 +44,29 @@ namespace UCDArch.Web.ActionResults
             ContentEncoding = encoding;
         }
 
-        public override void ExecuteResult(ControllerContext context)
+        public override void ExecuteResult(ActionContext context)
         {
             if (context == null)
                 throw new ArgumentNullException("context");
 
-            HttpResponseBase response = context.HttpContext.Response;
+            var response = context.HttpContext.Response;
 
-            response.ContentType = !string.IsNullOrEmpty(ContentType)
+            var mediaType = new MediaTypeHeaderValue(!string.IsNullOrEmpty(ContentType)
               ? ContentType
-              : "application/json";
+              : "application/json");
 
-            if (ContentEncoding != null)
-                response.ContentEncoding = ContentEncoding;
+            mediaType.Encoding = ContentEncoding ?? Encoding.UTF8;
+            response.ContentType = mediaType.ToString();
 
             if (Data != null)
             {
-                var writer = new JsonTextWriter(response.Output) { Formatting = Formatting };
-                JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
-                serializer.Serialize(writer, Data);
-                writer.Flush();
+                using (var streamWriter = new StreamWriter(response.BodyWriter.AsStream()))
+                using (var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting })
+                {
+                    JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
+                    serializer.Serialize(writer, Data);
+                    writer.Flush();
+                }
             }
         }
 
@@ -77,7 +80,7 @@ namespace UCDArch.Web.ActionResults
                 }
 
                 var stringWriter = new StringWriter();
-                var writer = new JsonTextWriter(stringWriter) {Formatting = Formatting};
+                var writer = new JsonTextWriter(stringWriter) { Formatting = Formatting };
                 JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
                 serializer.Serialize(writer, Data);
                 writer.Flush();

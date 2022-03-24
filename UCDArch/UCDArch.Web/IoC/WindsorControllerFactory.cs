@@ -2,9 +2,8 @@
 // http://mvccontrib.codeplex.com/SourceControl/changeset/view/b7039b7291cf#src%2fMvcContrib.Castle%2fWindsorControllerFactory.cs
 
 using System;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Castle.Windsor;
 
 namespace UCDArch.Web.IoC
@@ -12,7 +11,7 @@ namespace UCDArch.Web.IoC
     /// <summary>
     /// Controller Factory class for instantiating controllers using the Windsor IoC container.
     /// </summary>
-    public class WindsorControllerFactory : DefaultControllerFactory
+    public class WindsorControllerFactory : IControllerFactory
     {
         private readonly IWindsorContainer _container;
 
@@ -29,17 +28,29 @@ namespace UCDArch.Web.IoC
             this._container = container;
         }
 
-        protected override IController GetControllerInstance(RequestContext context, Type controllerType)
+        public object CreateController(ControllerContext context)
         {
-            if (controllerType == null)
+            if (context == null)
             {
-                throw new HttpException(404, string.Format("The controller for path '{0}' could not be found or it does not implement IController.", context.HttpContext.Request.Path));
+                throw new ArgumentNullException(nameof(context));
             }
 
-            return (IController)this._container.Resolve(controllerType);
+            if (context.ActionDescriptor == null)
+            {
+                throw new InvalidOperationException("No ActionDescriptor found");
+            }
+
+            var controllerType = Type.GetType(context.ActionDescriptor.ControllerTypeInfo.AssemblyQualifiedName);
+
+            if (controllerType == null)
+            {
+                throw new InvalidOperationException(string.Format("The controller for path '{0}' could not be found or it does not inherit Microsoft.AspNetCore.Mvc.Controller.", context.HttpContext.Request.Path));
+            }
+
+            return (Microsoft.AspNetCore.Mvc.Controller)this._container.Resolve(controllerType);
         }
 
-        public override void ReleaseController(IController controller)
+        public void ReleaseController(ControllerContext context, object controller)
         {
             var disposable = controller as IDisposable;
 
