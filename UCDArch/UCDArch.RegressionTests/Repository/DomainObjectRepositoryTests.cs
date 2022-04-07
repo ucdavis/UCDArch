@@ -4,6 +4,7 @@ using UCDArch.Core.PersistanceSupport;
 using UCDArch.Data.NHibernate;
 using UCDArch.RegressionTests.SampleMappings;
 using UCDArch.Testing;
+using UCDArch.Testing.Extensions;
 
 namespace UCDArch.RegressionTests.Repository
 {

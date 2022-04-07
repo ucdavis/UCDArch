@@ -1,473 +1,73 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F20BC5A0-6EC7-4F2A-B18F-946590F01220}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleUCDArchApp</RootNamespace>
-    <AssemblyName>SampleUCDArchApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <OutputType>Exe</OutputType>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
-    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>12.0</OldToolsVersion>
-    <UseGlobalApplicationHostFile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="AutoMapper, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="AutoMapper.Net4">
-      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
-    </Reference>
-    <Reference Include="DataAnnotationsExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="DataAnnotationsExtensions.ClientValidation, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\DataAnnotationsExtensions.MVC3.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
-    </Reference>
-    <Reference Include="Elmah">
-      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="MvcContrib.FluentHtml">
-      <HintPath>..\packages\MvcContrib.Mvc3.FluentHtml-ci.3.0.100.0\lib\MvcContrib.FluentHtml.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.6.8.3\lib\net45\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.1\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.1\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Net.Http">
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest">
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="UCDArch">
-      <HintPath>..\packages\UcdArch.5.0.118\lib\net35\UCDArch.dll</HintPath>
-    </Reference>
-    <Reference Include="WebActivator">
-      <HintPath>..\packages\WebActivator.1.5.2\lib\net40\WebActivator.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\BundleBootstrapper.cs" />
     <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
       <Link>AutoMapper.Net4.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="App_Start\BundleBootstrapper.cs.pp" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RegisterClientValidationExtensions.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\UCDArchBootstrapper.cs" />
-    <Compile Include="ComponentRegistrar.cs" />
-    <Compile Include="Controllers\ApplicationController.cs" />
-    <Content Include="CodeTemplates\AddView\CSHTML\ListDatatables.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\List.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\Empty.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\EditViewModel.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\Details.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\CreateViewModel.tt" />
-    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt" />
-    <Content Include="CodeTemplates\AddController\Controller.tt" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\DataTables-1.9.4\media\css\datatables-bootstrap.css" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <None Include="Controllers\SampleController.cs.pp" />
-    <None Include="Controllers\ApplicationController.cs.pp" />
-    <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JsonController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\RoleProviderController.cs" />
-    <Compile Include="Controllers\SampleController.cs" />
-    <Compile Include="Global.asax.cs">
+    <Compile Update="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\AutomapperConfig.cs" />
-    <Compile Include="Helpers\FluentExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\images\debut_light.png" />
-    <Content Include="Content\images\logo.png" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\datatables-bootstrap.js" />
-    <Content Include="Scripts\jquery-2.1.0.js" />
-    <Content Include="Scripts\jquery-2.1.0.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery-2.1.0.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-3.0.0.debug.js" />
-    <Content Include="Scripts\knockout-3.0.0.js" />
-    <Content Include="Scripts\modernizr-2.7.1.js" />
-    <Content Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\Order\Create.cshtml" />
-    <Content Include="Views\Order\Edit.cshtml" />
-    <Content Include="Views\Order\_OrderForm.cshtml" />
-    <Content Include="Views\Order\Details.cshtml" />
-    <Content Include="Views\Order\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Readme\Elmah.txt" />
-    <Content Include="Content\DataTables-1.9.4\docs\media\css\doc.css" />
-    <Content Include="Content\DataTables-1.9.4\docs\media\css\shCore.css" />
-    <Content Include="Content\DataTables-1.9.4\docs\media\css\shThemeDataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.jpg" />
-    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.png" />
-    <Content Include="Content\DataTables-1.9.4\docs\media\images\extended.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\css\AutoFill.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\doc.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shCore.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shThemeDataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.jpg" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\extended.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\images\filler.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\css\ColReorder.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\doc.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shCore.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shThemeDataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.jpg" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\extended.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\images\insert.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVis.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVisAlt.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\doc.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shCore.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shThemeDataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.jpg" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\extended.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\images\button.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\doc.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shCore.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shThemeDataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.jpg" />
-    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\extended.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\css\dataTables.scroller.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\doc.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shCore.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shThemeDataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.jpg" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\extended.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\images\loading-background.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools_JUI.css" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\background.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls.swf" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls_pdf.swf" />
-    <Content Include="Content\DataTables-1.9.4\media\css\demo_page.css" />
-    <Content Include="Content\DataTables-1.9.4\media\css\demo_table.css" />
-    <Content Include="Content\DataTables-1.9.4\media\css\demo_table_jui.css" />
-    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables.css" />
-    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables_themeroller.css" />
-    <Content Include="Content\DataTables-1.9.4\media\images\back_disabled.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\favicon.ico" />
-    <Content Include="Content\DataTables-1.9.4\media\images\forward_disabled.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled_hover.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc_disabled.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\sort_both.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc.png" />
-    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc_disabled.png" />
-    <Content Include="favicon.ico" />
-    <Content Include="Global.asax" />
-    <Content Include="Content\custom.css" />
-    <Content Include="App_Start\UCDArchBootstrapper.cs.pp" />
-    <Content Include="ComponentRegistrar.cs.pp" />
-    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\doc.js" />
-    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\jquery.js" />
-    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shBrushJScript.js" />
-    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shCore.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\doc.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\jquery.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shBrushJScript.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shCore.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\doc.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\jquery.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shBrushJScript.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shCore.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\doc.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\jquery.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shBrushJScript.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shCore.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\doc.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\jquery.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shBrushJScript.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shCore.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\doc.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\jquery.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shBrushJScript.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shCore.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.min.js.gz" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js.gz" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js.gz" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js.gz" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js.gz" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js.gz" />
-    <Content Include="Content\DataTables-1.9.4\media\images\Sorting icons.psd" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\printer.psd" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\file_types.psd" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\copy document.psd" />
-    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\collection.psd" />
-    <None Include="Properties\PublishProfiles\caessecuredemo - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\caessecuredemo - Web Deploy.pubxml" />
-    <Content Include="robots.txt" />
-    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\ZeroClipboard.js" />
-    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.dataTables.js" />
-    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.dataTables.min.js" />
-    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.js" />
-    <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config">
+    <Content Update="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Debug.config">
+    <Content Update="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Web.Release.config">
+    <Content Update="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Web.config.transform">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Sample\DisplayForm.cshtml" />
-    <Content Include="Views\Sample\Form.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Sample\Index.cshtml" />
-    <Content Include="Views\Sample\Table.cshtml" />
-    <Content Include="Views\Json\Index.cshtml" />
-    <Content Include="Views\Shared\_ServiceMessages.cshtml" />
-    <Content Include="Views\Sample\DataTable.cshtml" />
-    <Content Include="Views\Shared\_Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.310801">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Antlr4" Version="4.6.6" />
+    <PackageReference Include="AutoMapper" Version="3.3.1" />
+    <PackageReference Include="Castle.Core" Version="3.3.3" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Iesi.Collections" Version="3.4.1.4000" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="MySql.Data" Version="6.10.9" />
+    <PackageReference Include="NHibernate" Version="3.4.1.4000" />
+    <PackageReference Include="UcdArch" Version="5.1.1.167" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SampleUCDArchApp.Core\SampleUCDArchApp.Core.csproj">
-      <Project>{8fd3c894-6ff0-4c94-9e85-e838b210d38b}</Project>
-      <Name>SampleUCDArchApp.Core</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\SampleUCDArchApp.Core\SampleUCDArchApp.Core.csproj" />
   </ItemGroup>
-  <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
-    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
-  </Target>
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
-        <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>13632</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:13003/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-        </WebProjectProperties>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target> -->
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="3.1.1" />
+    <PackageReference Include="FontAwesome" Version="4.0.3.1" />
+    <PackageReference Include="jQuery" Version="2.1.0" />
+    <PackageReference Include="jquery.datatables" Version="1.9.4" />
+    <PackageReference Include="jQuery.Validation" Version="1.11.1" />
+    <PackageReference Include="knockoutjs" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNet.Providers.LocalDb" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.1.1" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.1.1" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="3.1.1" />
+    <PackageReference Include="Modernizr" Version="2.7.1" />
+    <PackageReference Include="Twitter.Bootstrap" Version="3.0.1.1" />
+    <PackageReference Include="UcdArch.Mvc" Version="5.1.1.167" />
+    <PackageReference Include="UcdArch.Templates.Mvc" Version="4.0.43" />
+  </ItemGroup>
 </Project>

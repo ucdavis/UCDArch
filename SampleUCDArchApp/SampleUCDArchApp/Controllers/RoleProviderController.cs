@@ -1,12 +1,11 @@
-﻿using System.Web.Mvc;
-using System.Web.Security;
+﻿using System.Web.Security;
 
 namespace SampleUCDArchApp.Controllers
 {
     /// <summary>
     /// Controller for testing out the service role provider
     /// </summary>
-    public class RoleProviderController : Controller
+    public class RoleProviderController : Microsoft.AspNetCore.Mvc.Controller
     {
         //
         // GET: /RoleProvider/
@@ -14,7 +13,7 @@ namespace SampleUCDArchApp.Controllers
         /// This shows some examples of using the Role provider directly.  Of course, most of the time
         /// you will use the [Authorize()] attribute for security
         /// </summary>
-        public ActionResult Index()
+        public Microsoft.AspNetCore.Mvc.ActionResult Index()
         {
             var isUserInRole = Roles.IsUserInRole("user", "role");
             var roles = Roles.GetAllRoles();

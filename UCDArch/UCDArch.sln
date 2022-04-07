@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bin", "Bin", "{7AA5B14E-F6D2-4574-B65C-96E1781F2000}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Web", "UCDArch.Web\UCDArch.Web.csproj", "{CDEA60DF-144D-41C5-81F1-EADF33FF9FA9}"
@@ -16,8 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.Tests", "UCDArch.Tests\UCDArch.Tests.csproj", "{7DDB95E3-4BF7-49A9-BFAE-DFBDB0F8F3B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.RegressionTests", "UCDArch.RegressionTests\UCDArch.RegressionTests.csproj", "{9BEB0306-FE27-41CA-B966-667358312176}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCDArch.ReferenceLinker", "UCDArch.ReferenceLinker\UCDArch.ReferenceLinker.csproj", "{E96AA00D-2EB3-498F-8BAB-A00B449A7903}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,6 @@ Global
 		{9BEB0306-FE27-41CA-B966-667358312176}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BEB0306-FE27-41CA-B966-667358312176}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BEB0306-FE27-41CA-B966-667358312176}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E96AA00D-2EB3-498F-8BAB-A00B449A7903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E96AA00D-2EB3-498F-8BAB-A00B449A7903}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E96AA00D-2EB3-498F-8BAB-A00B449A7903}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E96AA00D-2EB3-498F-8BAB-A00B449A7903}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CB85C53-2429-422C-BA79-8C90EDE4EC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU

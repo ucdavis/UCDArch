@@ -4,6 +4,7 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UCDArch.Core.DomainModel;
 using UCDArch.Testing;
+using UCDArch.Testing.Extensions;
 
 namespace UCDArch.Tests.UCDArch.Core.DomainModel
 {

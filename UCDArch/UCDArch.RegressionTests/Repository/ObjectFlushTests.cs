@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UCDArch.Testing;
+using UCDArch.Testing.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UCDArch.RegressionTests.SampleMappings;
 using UCDArch.Data.NHibernate;

@@ -1,14 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName/>
+    <SccLocalPath/>
+    <SccAuxPath/>
+    <SccProvider/>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,7 +29,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"/>
     <Reference Update="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -47,10 +43,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UCDArch.Core.DataAnnotationsValidator\UCDArch.Core.DataAnnotationsValidator.csproj" />
-    <ProjectReference Include="..\UCDArch.Core\UCDArch.Core.csproj" />
-    <ProjectReference Include="..\UCDArch.Testing\UCDArch.Testing.csproj" />
-    <ProjectReference Include="..\UCDArch.Web\UCDArch.Web.csproj" />
+    <ProjectReference Include="..\UCDArch.Core.DataAnnotationsValidator\UCDArch.Core.DataAnnotationsValidator.csproj"/>
+    <ProjectReference Include="..\UCDArch.Core\UCDArch.Core.csproj"/>
+    <ProjectReference Include="..\UCDArch.Testing\UCDArch.Testing.csproj"/>
+    <ProjectReference Include="..\UCDArch.Web\UCDArch.Web.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -70,14 +66,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.261602">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App"/>
   </ItemGroup>
 </Project>

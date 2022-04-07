@@ -1,7 +1,6 @@
-﻿using System.Web.Mvc;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using SampleUCDArchApp.App_Start;
 using SampleUCDArchApp.Controllers;
 using SampleUCDArchApp.Core.Domain;

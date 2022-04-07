@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 
 namespace UCDArch.Web.IoC
 {

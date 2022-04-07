@@ -2,10 +2,10 @@ using System;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Rhino.Mocks;
 using UCDArch.Core;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Testing;
+using UCDArch.Testing.Extensions;
 using UCDArch.Web.Attributes;
 using UCDArch.Tests;
 
@@ -31,10 +31,12 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
 
             _dbContext = SmartServiceLocator<IDbContext>.GetService();
 
-            _dbContext.Stub(x => x.IsActive).Repeat.Any().Return(true);
-            _dbContext.Stub(x => x.BeginTransaction()).Repeat.Any().WhenCalled(x => _beginTransactionCount++);
-            _dbContext.Stub(x => x.CommitTransaction()).Repeat.Any().WhenCalled(x => _commitTransactionCount++);
-            _dbContext.Stub(x => x.CloseSession()).Repeat.Any().WhenCalled(x=> _closeSessionCount++);
+            throw new System.NotImplementedException();
+
+            // _dbContext.Stub(x => x.IsActive).Repeat.Any().Return(true);
+            // _dbContext.Stub(x => x.BeginTransaction()).Repeat.Any().WhenCalled(x => _beginTransactionCount++);
+            // _dbContext.Stub(x => x.CommitTransaction()).Repeat.Any().WhenCalled(x => _commitTransactionCount++);
+            // _dbContext.Stub(x => x.CloseSession()).Repeat.Any().WhenCalled(x=> _closeSessionCount++);
         }
 
         [TestCleanup]
@@ -87,8 +89,9 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCommitsTransactionWhenCallingMethodWithoutManualTransactionAttribute()
         {
+            throw new System.NotImplementedException();
             //Assume the transaction has been opened correctly
-            _dbContext.Stub(a => a.IsActive).Return(true);
+            // _dbContext.Stub(a => a.IsActive).Return(true);
 
             _controller.MethodWithoutManualTransactionAttribute();
 
@@ -116,8 +119,9 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerDoesNotCommitTransactionWhenCallingMethodWithManualTransactionAttribute()
         {
+            throw new System.NotImplementedException();
             //Assume the transaction has been opened correctly
-            _dbContext.Expect(a => a.IsActive).Return(true);
+            // _dbContext.Expect(a => a.IsActive).Return(true);
 
             _controller.MethodWithManualTransactionAttribute();
 
@@ -145,8 +149,9 @@ namespace UCDArch.Tests.UCDArch.Web.Controllers
         [TestMethod]
         public void ControllerCallsCommitTransactionOnlyOnceWhenCallingMethodWithTransactionAttribute()
         {
+            throw new System.NotImplementedException();
             //Assume the transaction has been opened correctly
-            _dbContext.Expect(a => a.IsActive).Return(true);
+            // _dbContext.Expect(a => a.IsActive).Return(true);
 
             _controller.MethodWithTransactionAttribute();
 

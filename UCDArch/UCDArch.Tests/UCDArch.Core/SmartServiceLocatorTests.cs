@@ -1,5 +1,5 @@
 using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using UCDArch.Core;

@@ -1,7 +1,6 @@
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
-using Rhino.Mocks;
+using CommonServiceLocator;
 using UCDArch.Core.CommonValidator;
 //using UCDArch.Core.NHibernateValidator.CommonValidatorAdapter;
 using UCDArch.Core.DataAnnotationsValidator.CommonValidatorAdapter;
@@ -27,17 +26,18 @@ namespace UCDArch.Testing
 
         public static IWindsorContainer InitWithFakeDBContext()
         {
-            IWindsorContainer container = new WindsorContainer();
+            throw new System.NotImplementedException();
+            // IWindsorContainer container = new WindsorContainer();
 
-            container.Register(Component.For<IValidator>().ImplementedBy<Validator>().Named("validator"));
+            // container.Register(Component.For<IValidator>().ImplementedBy<Validator>().Named("validator"));
 
-            var dbContext = MockRepository.GenerateMock<IDbContext>();
+            // var dbContext = MockRepository.GenerateMock<IDbContext>();
 
-            container.Register(Component.For<IDbContext>().Instance(dbContext));
+            // container.Register(Component.For<IDbContext>().Instance(dbContext));
             
-            ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
+            // ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 
-            return container;
+            // return container;
         }
     }
 }

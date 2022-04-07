@@ -1,5 +1,4 @@
 using Castle.Windsor;
-using Rhino.Mocks;
 using UCDArch.Core.DomainModel;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Web.Controller;
@@ -18,7 +17,8 @@ namespace UCDArch.Testing
 
             SetupController();
 
-            Controller.Repository = MockRepository.GenerateStub<IRepository>();
+            throw new System.NotImplementedException();
+            //Controller.Repository = MockRepository.GenerateStub<IRepository>();
         }
 
         /// <summary>
@@ -51,7 +51,8 @@ namespace UCDArch.Testing
 
         protected IRepository<T> FakeRepository<T>() where T : ValidatableObject
         {
-            return MockRepository.GenerateStub<IRepository<T>>();
+            throw new System.NotImplementedException();
+            // return MockRepository.GenerateStub<IRepository<T>>();
         }
     }
 }

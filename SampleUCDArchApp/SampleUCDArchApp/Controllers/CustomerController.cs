@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Web.Mvc;
 using UCDArch.Web.Controller;
 using SampleUCDArchApp.Core.Domain;
 using UCDArch.Core.PersistanceSupport;
@@ -15,7 +14,7 @@ namespace SampleUCDArchApp.Controllers
             _customers = customers;
         }
 
-        public ActionResult Index()
+        public Microsoft.AspNetCore.Mvc.ActionResult Index()
         {
             var customers = _customers.Queryable;
 

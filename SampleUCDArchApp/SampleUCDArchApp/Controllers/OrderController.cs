@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 using SampleUCDArchApp.Core.Domain;
 using UCDArch.Core.PersistanceSupport;
 using UCDArch.Web.Attributes;
@@ -25,14 +24,14 @@ namespace SampleUCDArchApp.Controllers
 
         //
         // GET: /Order/
-        public ActionResult Index()
+        public Microsoft.AspNetCore.Mvc.ActionResult Index()
         {
             var orders = _orderRepository.Queryable;
 
             return View(orders);
         }
 
-        public ActionResult Details(int id)
+        public Microsoft.AspNetCore.Mvc.ActionResult Details(int id)
         {
             var order = _orderRepository.GetNullableById(id);
 
@@ -48,7 +47,7 @@ namespace SampleUCDArchApp.Controllers
         //
         // GET: /Order/Create
 
-        public ActionResult Create()
+        public Microsoft.AspNetCore.Mvc.ActionResult Create()
         {
             var viewModel = OrderViewModel.Create(Repository.OfType<Customer>());
             viewModel.Order = new Order {OrderDate = DateTime.Now};
@@ -60,7 +59,7 @@ namespace SampleUCDArchApp.Controllers
         // POST: /Order/Create
 
         [HttpPost]
-        public ActionResult Create(Order order)
+        public Microsoft.AspNetCore.Mvc.ActionResult Create(Order order)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +85,7 @@ namespace SampleUCDArchApp.Controllers
         //
         // GET: /Order/Edit/5
  
-        public ActionResult Edit(int id)
+        public Microsoft.AspNetCore.Mvc.ActionResult Edit(int id)
         {
             var existingOrder = _orderRepository.GetNullableById(id);
 
@@ -103,7 +102,7 @@ namespace SampleUCDArchApp.Controllers
         // POST: /Order/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Order order)
+        public Microsoft.AspNetCore.Mvc.ActionResult Edit(Order order)
         {
             if (ModelState.IsValid)
             {
@@ -122,7 +121,7 @@ namespace SampleUCDArchApp.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
+        public Microsoft.AspNetCore.Mvc.ActionResult Delete(int id)
         {
             var order = _orderRepository.GetNullableById(id);
 
@@ -136,7 +135,7 @@ namespace SampleUCDArchApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(Order order)
+        public Microsoft.AspNetCore.Mvc.ActionResult Delete(Order order)
         {
             _orderRepository.Remove(order);
 

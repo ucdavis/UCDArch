@@ -1,5 +1,4 @@
-﻿using System.Web.Mvc;
-using UCDArch.Web.Attributes;
+﻿using UCDArch.Web.Attributes;
 
 namespace SampleUCDArchApp.Controllers
 {
@@ -7,14 +6,14 @@ namespace SampleUCDArchApp.Controllers
     [HandleTransactionsManually]
     public class HomeController : ApplicationController
     {
-        public ActionResult Index()
+        public Microsoft.AspNetCore.Mvc.ActionResult Index()
         {
             ViewData["Message"] = "Welcome to the UCDArch Sample Application!";
 
             return View();
         }
         
-        public ActionResult About()
+        public Microsoft.AspNetCore.Mvc.ActionResult About()
         {
             return View();
         }

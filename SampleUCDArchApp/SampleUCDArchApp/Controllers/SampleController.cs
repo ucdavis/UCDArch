@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using UCDArch.Web.Attributes;
 
 namespace SampleUCDArchApp.Controllers
@@ -11,7 +10,7 @@ namespace SampleUCDArchApp.Controllers
     [HandleTransactionsManually]
     public class SampleController : ApplicationController
     {
-        public ActionResult Index()
+        public Microsoft.AspNetCore.Mvc.ActionResult Index()
         {
             ViewBag.ErrorMessage = "Houston we have a problem... just kidding, this is only a test";
             Message = "Sample Message from the Controller";
@@ -19,30 +18,30 @@ namespace SampleUCDArchApp.Controllers
             return View();
         }
 
-        public ActionResult Form()
+        public Microsoft.AspNetCore.Mvc.ActionResult Form()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Form(string data)
+        public Microsoft.AspNetCore.Mvc.ActionResult Form(string data)
         {
             Message = "The form was submitted successfully";
 
             return View();
         }
 
-        public ActionResult Table()
+        public Microsoft.AspNetCore.Mvc.ActionResult Table()
         {
             return View();
         }
 
-        public ActionResult DataTable()
+        public Microsoft.AspNetCore.Mvc.ActionResult DataTable()
         {
             return View();
         }
 
-        public ActionResult DisplayForm()
+        public Microsoft.AspNetCore.Mvc.ActionResult DisplayForm()
         {
             return View();
         }

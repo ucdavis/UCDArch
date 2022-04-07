@@ -1,5 +1,5 @@
 using System;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using UCDArch.Core.PersistanceSupport;
 
 namespace UCDArch.Web.ModelBinder

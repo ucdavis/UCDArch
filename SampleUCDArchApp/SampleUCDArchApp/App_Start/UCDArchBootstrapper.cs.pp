@@ -1,6 +1,5 @@
-﻿using System.Web.Mvc;
-using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
+﻿using Castle.Windsor;
+using CommonServiceLocator;
 using $rootnamespace$.App_Start;
 using $rootnamespace$.Controllers;
 using UCDArch.Data.NHibernate;
