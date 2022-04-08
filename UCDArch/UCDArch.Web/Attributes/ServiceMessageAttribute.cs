@@ -65,7 +65,7 @@
 //                     throw new InvalidOperationException(
 //                         "Either MessageServiceAppSettingsKey or MessageServiceUrl must be set, but not both.");
 
-//                 return MessageServiceUrl ?? WebConfigurationManager.AppSettings[MessageServiceAppSettingsKey];
+//                 return MessageServiceUrl ?? configuration.GetValue<string>(MessageServiceAppSettingsKey);
 //             }
 //         }
 
