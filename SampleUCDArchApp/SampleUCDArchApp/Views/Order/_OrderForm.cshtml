@@ -15,7 +15,7 @@
         <div class="control-group">
             <label class="control-label" for="Order_OrderedBy"><strong>OrderBy</strong><span class="required">*</span></label>
             <div class="controls">
-                @this.Select("Order.OrderedBy").Options(Model.Customers, x=>x.Id, x=>x.CompanyName).Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : null).FirstOption("Select A Customer").IncludeUnobtrusiveValidationAttributes(Html)
+                @Html.Select("Order.OrderedBy", o => o.Options(Model.Customers, x=>x.Id, x=>x.CompanyName).Selected(Model.Order.OrderedBy != null ? Model.Order.OrderedBy.Id : null).FirstOption("Select A Customer").IncludeUnobtrusiveValidationAttributes(Html))
                 @Html.ValidationMessageFor(model => model.Order.OrderedBy)
             </div>
         </div>

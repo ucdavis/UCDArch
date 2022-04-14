@@ -49,7 +49,7 @@ namespace UCDArch.Core.DomainModel
         /// </summary>
         [XmlIgnore]
         [JsonProperty]
-        public virtual IdT Id { get; protected set; }
+        public virtual IdT Id { get; set; }
 
         /// <summary>
         /// Transient objects are not associated with an item already in storage.  For instance,
