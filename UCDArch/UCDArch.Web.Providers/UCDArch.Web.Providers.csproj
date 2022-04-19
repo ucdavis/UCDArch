@@ -28,7 +28,6 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 	<ItemGroup>
 		<Reference Update="System.Core">

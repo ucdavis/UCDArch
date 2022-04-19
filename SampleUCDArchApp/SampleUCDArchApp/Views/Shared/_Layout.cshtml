@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    @Html.Partial("_Navigation")
+    @await Html.PartialAsync("_Navigation")
 
     <div class="jumbotron">
         <div class="container">
@@ -63,7 +63,7 @@
         </footer>
     </div>
     
-    @Html.Partial("_ServiceMessages")
+    @await Html.PartialAsync("_ServiceMessages")
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
