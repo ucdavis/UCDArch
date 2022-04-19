@@ -4,6 +4,7 @@ using UCDArch.Core.Utils;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using UCDArch.Core;
 
 namespace UCDArch.Data.NHibernate
 {
@@ -44,7 +45,7 @@ namespace UCDArch.Data.NHibernate
         /// <remarks>
         /// FlushMode.Never means Session.Flush needs to be called to flush changes
         /// </remarks>
-        private static FlushMode _flushMode = FlushMode.Never;
+        private static FlushMode _flushMode = FlushMode.Manual;
 
         /// <summary>
         /// Initializes the NHibernate session factory upon instantiation.
@@ -109,7 +110,7 @@ namespace UCDArch.Data.NHibernate
 
             if (session == null)
             {
-                session = interceptor != null ? sessionFactory.OpenSession(interceptor) : sessionFactory.OpenSession();
+                session = interceptor != null ? sessionFactory.WithOptions().Interceptor(interceptor).OpenSession() : sessionFactory.OpenSession();
 
                 session.FlushMode = _flushMode;
 
@@ -218,7 +219,7 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    return (ITransaction)HttpContextHelper.Current.Items[TRANSACTION_KEY];
+                    return (ITransaction)SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext.Items[TRANSACTION_KEY];
                 }
                 else
                 {
@@ -229,7 +230,7 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    HttpContextHelper.Current.Items[TRANSACTION_KEY] = value;
+                    SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext.Items[TRANSACTION_KEY] = value;
                 }
                 else
                 {
@@ -249,7 +250,7 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    return (ISession)HttpContextHelper.Current.Items[SESSION_KEY];
+                    return (ISession)SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext.Items[SESSION_KEY];
                 }
                 else
                 {
@@ -260,7 +261,7 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    HttpContextHelper.Current.Items[SESSION_KEY] = value;
+                    SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext.Items[SESSION_KEY] = value;
                 }
                 else
                 {
@@ -271,7 +272,7 @@ namespace UCDArch.Data.NHibernate
 
         private bool IsInWebContext()
         {
-            return HttpContextHelper.Current != null;
+            return SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext != null;
         }
 
         private const string TRANSACTION_KEY = "CONTEXT_TRANSACTION";

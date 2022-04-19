@@ -30,12 +30,12 @@ namespace UCDArch.Data.NHibernate
 
         public void CommitTransaction()
         {
-            Session.Transaction.Commit();
+            Session.GetCurrentTransaction().Commit();
         }
 
         public void RollbackTransaction()
         {
-            Session.Transaction.Rollback();
+            Session.GetCurrentTransaction().Rollback();
         }
 
         public void CloseSession()
@@ -45,7 +45,7 @@ namespace UCDArch.Data.NHibernate
 
         public bool IsActive
         {
-            get { return Session.Transaction.IsActive; }
+            get { return Session.GetCurrentTransaction().IsActive; }
         }
     }
 }

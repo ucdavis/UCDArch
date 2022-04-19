@@ -11,9 +11,9 @@ namespace UCDArch.Data.NHibernate
     {
         public IQueryable<T> Cache<T>(IQueryable<T> queryable, string region)
         {
-            var query = queryable.Cacheable();
+            var query = queryable.WithOptions(o => o.SetCacheable(true));
 
-            if (region != null) query = query.CacheRegion(region);
+            if (region != null) query = query.WithOptions(o => o.SetCacheRegion(region));
 
             return query;
         }
