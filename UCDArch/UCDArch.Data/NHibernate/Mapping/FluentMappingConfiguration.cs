@@ -1,6 +1,9 @@
 using System.Reflection;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
+using Microsoft.Extensions.Configuration;
 using NHibernate;
+using UCDArch.Core;
 using UCDArch.Data.NHibernate.Fluent;
 
 namespace UCDArch.Data.NHibernate.Mapping
@@ -16,12 +19,16 @@ namespace UCDArch.Data.NHibernate.Mapping
 
         public static IMappingConfiguration Create(Assembly mappingAssembly, Assembly conventionAssembly)
         {
-            var configuration = Fluently
-                .Configure()
+            var configuration = SmartServiceLocator<IConfiguration>.GetService();
+            var fluentConfiguration = Fluently.Configure()
+                .Database(MsSqlConfiguration.MsSql2008
+                    .DefaultSchema(configuration["MainDB:Schema"])
+                    .ConnectionString(configuration["ConnectionStrings:MainDB"])
+                    .AdoNetBatchSize(configuration.GetValue<int>("MainDB:BatchSize", 25)))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(mappingAssembly)
                        .Conventions.AddAssembly(conventionAssembly));
 
-            return new FluentMappingConfiguration {_fluentConfiguration = configuration};
+            return new FluentMappingConfiguration {_fluentConfiguration = fluentConfiguration};
         }
 
         public ISessionFactory BuildSessionFactory()

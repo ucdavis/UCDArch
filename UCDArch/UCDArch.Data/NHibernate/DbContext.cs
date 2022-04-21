@@ -45,7 +45,7 @@ namespace UCDArch.Data.NHibernate
 
         public bool IsActive
         {
-            get { return Session.GetCurrentTransaction().IsActive; }
+            get { return Session.GetCurrentTransaction()?.IsActive ?? false; }
         }
     }
 }

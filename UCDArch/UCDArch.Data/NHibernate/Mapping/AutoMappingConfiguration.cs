@@ -1,7 +1,10 @@
 using System.Reflection;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
+using Microsoft.Extensions.Configuration;
 using NHibernate;
+using UCDArch.Core;
 using UCDArch.Data.NHibernate.Fluent;
 
 namespace UCDArch.Data.NHibernate.Mapping
@@ -23,10 +26,15 @@ namespace UCDArch.Data.NHibernate.Mapping
 
         public static IMappingConfiguration CreateWithOverrides(AutoPersistenceModel autoPersistenceModel)
         {
-            var configuration = Fluently.Configure()
+            var configuration = SmartServiceLocator<IConfiguration>.GetService();
+            var fluentConfiguration = Fluently.Configure()
+                .Database(MsSqlConfiguration.MsSql2008
+                    .DefaultSchema(configuration["MainDB:Schema"])
+                    .ConnectionString(configuration["ConnectionStrings:MainDB"])
+                    .AdoNetBatchSize(configuration.GetValue<int>("MainDB:BatchSize", 25)))
                 .Mappings(m => m.AutoMappings.Add(autoPersistenceModel));
 
-            return new AutoMappingConfiguration { _fluentConfiguration = configuration };
+            return new AutoMappingConfiguration { _fluentConfiguration = fluentConfiguration };
         }
 
         public static IMappingConfiguration CreateWithOverrides<TClassInDomainObjectAssembly, TClassInMappingAssembly>()
@@ -35,10 +43,15 @@ namespace UCDArch.Data.NHibernate.Mapping
                 new AutoPersistenceModelGenerator().GenerateFromAssembly
                     <TClassInDomainObjectAssembly, TClassInMappingAssembly>();
 
-            var configuration = Fluently.Configure()
+            var configuration = SmartServiceLocator<IConfiguration>.GetService();
+            var fluentConfiguration = Fluently.Configure()
+                .Database(MsSqlConfiguration.MsSql2008
+                    .DefaultSchema(configuration["MainDB:Schema"])
+                    .ConnectionString(configuration["ConnectionStrings:MainDB"])
+                    .AdoNetBatchSize(configuration.GetValue<int>("MainDB:BatchSize", 25)))
                 .Mappings(m => m.AutoMappings.Add(autoPersistenceModel));
 
-            return new AutoMappingConfiguration { _fluentConfiguration = configuration };
+            return new AutoMappingConfiguration { _fluentConfiguration = fluentConfiguration };
         }
 
         public ISessionFactory BuildSessionFactory()
