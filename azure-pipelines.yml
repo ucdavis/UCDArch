@@ -1,0 +1,109 @@
+# Azure DevOps Pipeline for UCDArch.Consolidated
+# This pipeline builds and deploys only the UCDArch.Consolidated .NET 6.0 project to NuGet
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - UCDArch/UCDArch.Consolidated/**
+    exclude:
+    - UCDArch/UCDArch.Consolidated/bin/**
+    - UCDArch/UCDArch.Consolidated/obj/**
+
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - UCDArch/UCDArch.Consolidated/**
+    exclude:
+    - UCDArch/UCDArch.Consolidated/bin/**
+    - UCDArch/UCDArch.Consolidated/obj/**
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  projectPath: 'UCDArch/UCDArch.Consolidated/UCDArch.Consolidated.csproj'
+  majorVersion: 1
+  minorVersion: 0
+  patchVersion: $[counter(format('{0}.{1}', variables['majorVersion'], variables['minorVersion']), 0)]
+  version: $(majorVersion).$(minorVersion).$(patchVersion)
+  
+stages:
+- stage: Build
+  displayName: 'Build Stage'
+  jobs:
+  - job: Build
+    displayName: 'Build UCDArch.Consolidated'
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET 6.0 SDK'
+      inputs:
+        packageType: 'sdk'
+        version: '6.0.x'
+        includePreviewVersions: false
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore NuGet packages'
+      inputs:
+        command: 'restore'
+        projects: '$(projectPath)'
+        feedsToUse: 'select'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build project'
+      inputs:
+        command: 'build'
+        projects: '$(projectPath)'
+        arguments: '--configuration $(buildConfiguration) --no-restore'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Create NuGet package'
+      inputs:
+        command: 'pack'
+        packagesToPack: '$(projectPath)'
+        configuration: '$(buildConfiguration)'
+        packDirectory: '$(Build.ArtifactStagingDirectory)'
+        versioningScheme: 'byBuildNumber'
+        buildProperties: 'PackageVersion=$(version)'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish build artifacts'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'nuget-packages'
+        publishLocation: 'Container'
+
+- stage: Deploy
+  displayName: 'Deploy to NuGet'
+  dependsOn: Build
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  jobs:
+  - deployment: DeployToNuGet
+    displayName: 'Deploy to NuGet.org'
+    environment: 'nuget-production'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: DownloadBuildArtifacts@0
+            displayName: 'Download build artifacts'
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'nuget-packages'
+              downloadPath: '$(System.ArtifactsDirectory)'
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Push to NuGet.org'
+            inputs:
+              command: 'custom'
+              custom: 'nuget'
+              arguments: 'push $(System.ArtifactsDirectory)/nuget-packages/*.nupkg --api-key $(NUGET_API_KEY) --source https://api.nuget.org/v3/index.json --skip-duplicate'
+            env:
+              NUGET_API_KEY: $(NUGET_API_KEY)

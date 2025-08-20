@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>UCDArch.Consolidated</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>UC Davis</Authors>
+    <Company>UC Davis</Company>
+    <Product>UCDArch</Product>
+    <Description>UCDArch consolidated library for .NET 6.0 - A comprehensive architecture framework</Description>
+    <PackageTags>architecture;framework;ucdavis;aspnetcore</PackageTags>
+    <RepositoryUrl>https://github.com/ucdavis/UCDArch</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App"/>
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.7"/>
+    <PackageReference Include="FluentNHibernate" Version="3.4.1"/>
+    <PackageReference Include="NHibernate" Version="5.5.2"/>
+    <PackageReference Include="Castle.Windsor" Version="5.1.2"/>
+  </ItemGroup>
+
+</Project>
