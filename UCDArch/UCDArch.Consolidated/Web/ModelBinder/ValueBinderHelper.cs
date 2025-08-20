@@ -89,7 +89,7 @@ namespace UCDArch.Web.ModelBinder
             {
                 if (string.IsNullOrEmpty(rawId))
                 {
-                    return null;
+                    continue;
                 }
 
                 object typedId =
