@@ -1,5 +1,6 @@
 using System.Reflection;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -97,17 +98,7 @@ namespace UCDArch.Core.DomainModel
         /// </summary>
         public virtual IEnumerable<PropertyInfo> GetSignatureProperties()
         {
-            IEnumerable<PropertyInfo> properties;
-
-            // Init the _signaturePropertiesDictionary here due to reasons described at 
-            // http://blogs.msdn.com/jfoscoding/archive/2006/07/18/670497.aspx
-            if (_signaturePropertiesDictionary == null)
-                _signaturePropertiesDictionary = new Dictionary<Type, IEnumerable<PropertyInfo>>();
-
-            if (_signaturePropertiesDictionary.TryGetValue(GetType(), out properties))
-                return properties;
-
-            return (_signaturePropertiesDictionary[GetType()] = GetTypeSpecificSignatureProperties());
+            return _signaturePropertiesDictionary.GetOrAdd(GetType(), type => GetTypeSpecificSignatureProperties());
         }
 
         /// <summary>
@@ -136,11 +127,11 @@ namespace UCDArch.Core.DomainModel
         /// This static member caches the domain signature properties to avoid looking them up for 
         /// each instance of the same type.
         /// 
-        /// A description of the very slick ThreadStatic attribute may be found at 
-        /// http://www.dotnetjunkies.com/WebLog/chris.taylor/archive/2005/08/18/132026.aspx
+        /// Uses ConcurrentDictionary to provide thread-safe caching that is shared across all
+        /// execution contexts, which is more efficient than per-thread or per-async-context caching.
         /// </summary>
-        [ThreadStatic]
-        private static Dictionary<Type, IEnumerable<PropertyInfo>> _signaturePropertiesDictionary;
+        private static readonly ConcurrentDictionary<Type, IEnumerable<PropertyInfo>> _signaturePropertiesDictionary 
+            = new ConcurrentDictionary<Type, IEnumerable<PropertyInfo>>();
 
         /// <summary>
         /// To help ensure hashcode uniqueness, a carefully selected random number multiplier 
