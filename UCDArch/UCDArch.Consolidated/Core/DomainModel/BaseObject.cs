@@ -98,7 +98,7 @@ namespace UCDArch.Core.DomainModel
         /// </summary>
         public virtual IEnumerable<PropertyInfo> GetSignatureProperties()
         {
-            return _signaturePropertiesDictionary.GetOrAdd(GetType(), _ => GetTypeSpecificSignatureProperties());
+            return _signaturePropertiesDictionary.GetOrAdd(GetType(), type => GetTypeSpecificSignatureProperties());
         }
 
         /// <summary>
@@ -127,10 +127,11 @@ namespace UCDArch.Core.DomainModel
         /// This static member caches the domain signature properties to avoid looking them up for 
         /// each instance of the same type.
         /// 
-        /// Uses ConcurrentDictionary for thread-safe caching across multiple threads.
+        /// Uses ConcurrentDictionary to provide thread-safe caching that is shared across all
+        /// execution contexts, which is more efficient than per-thread or per-async-context caching.
         /// </summary>
-        private static readonly ConcurrentDictionary<Type, IEnumerable<PropertyInfo>> _signaturePropertiesDictionary = 
-            new ConcurrentDictionary<Type, IEnumerable<PropertyInfo>>();
+        private static readonly ConcurrentDictionary<Type, IEnumerable<PropertyInfo>> _signaturePropertiesDictionary 
+            = new ConcurrentDictionary<Type, IEnumerable<PropertyInfo>>();
 
         /// <summary>
         /// To help ensure hashcode uniqueness, a carefully selected random number multiplier 
