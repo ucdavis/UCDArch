@@ -14,6 +14,8 @@ namespace UCDArch.Data.NHibernate
             }
         }
 
+        private ITransaction _currentTransaction;
+
         /// <summary>
         /// This isn't specific to any one DAO and flushes everything that has been 
         /// changed since the last commit.
@@ -25,17 +27,48 @@ namespace UCDArch.Data.NHibernate
 
         public void BeginTransaction()
         {
-            Session.BeginTransaction();
+            if (_currentTransaction != null && _currentTransaction.IsActive)
+            {
+                // Handle nested transaction or throw exception
+                throw new InvalidOperationException("A transaction is already active.");
+            }
+            _currentTransaction = Session.BeginTransaction();
         }
 
         public void CommitTransaction()
         {
-            Session.GetCurrentTransaction().Commit();
+            if (_currentTransaction != null && _currentTransaction.IsActive)
+            {
+                _currentTransaction.Commit();
+                _currentTransaction.Dispose();
+                _currentTransaction = null;
+            }
+            else
+            {
+                var tx = Session.GetCurrentTransaction();
+                if (tx != null && tx.IsActive)
+                {
+                    tx.Commit();
+                }
+            }
         }
 
         public void RollbackTransaction()
         {
-            Session.GetCurrentTransaction().Rollback();
+            if (_currentTransaction != null && _currentTransaction.IsActive)
+            {
+                _currentTransaction.Rollback();
+                _currentTransaction.Dispose();
+                _currentTransaction = null;
+            }
+            else
+            {
+                var tx = Session.GetCurrentTransaction();
+                if (tx != null && tx.IsActive)
+                {
+                    tx.Rollback();
+                }
+            }
         }
 
         public void CloseSession()
@@ -45,7 +78,11 @@ namespace UCDArch.Data.NHibernate
 
         public bool IsActive
         {
-            get { return Session.GetCurrentTransaction()?.IsActive ?? false; }
+            get 
+            { 
+                return (_currentTransaction?.IsActive ?? false) || 
+                       (Session.GetCurrentTransaction()?.IsActive ?? false); 
+            }
         }
     }
 }
