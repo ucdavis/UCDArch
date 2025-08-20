@@ -60,7 +60,7 @@ namespace UCDArch.Web.ActionResults
 
             if (Data != null)
             {
-                using (var streamWriter = new StreamWriter(response.BodyWriter.AsStream()))
+                using (var streamWriter = new StreamWriter(response.Body))
                 using (var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting })
                 {
                     JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
