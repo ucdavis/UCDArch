@@ -69,7 +69,7 @@ stages:
         packagesToPack: '$(projectPath)'
         configuration: '$(buildConfiguration)'
         packDirectory: '$(Build.ArtifactStagingDirectory)'
-        versioningScheme: 'byBuildNumber'
+        versioningScheme: 'off'
         buildProperties: 'PackageVersion=$(version)'
 
     - task: PublishBuildArtifacts@1
