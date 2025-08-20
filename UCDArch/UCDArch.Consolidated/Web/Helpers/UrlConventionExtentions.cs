@@ -1,7 +1,7 @@
 ///Placing in Microsoft.AspNetCore.Mvc to augment UrlHelper and avoid having to chase references
 namespace Microsoft.AspNetCore.Mvc
 {
-    public static class UrlConventionExtentions
+    public static class UrlConventionExtensions
     {
         public static string Image(this IUrlHelper urlHelper, string imageName)
         {
