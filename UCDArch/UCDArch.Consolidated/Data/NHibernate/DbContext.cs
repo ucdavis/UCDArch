@@ -29,9 +29,16 @@ namespace UCDArch.Data.NHibernate
         {
             if (_currentTransaction != null && _currentTransaction.IsActive)
             {
-                // Handle nested transaction or throw exception
-                throw new InvalidOperationException("A transaction is already active.");
+                throw new InvalidOperationException("A transaction is already active. Nested transactions are not supported.");
             }
+            
+            // Check if there's already an active session-level transaction
+            var sessionTx = Session.GetCurrentTransaction();
+            if (sessionTx != null && sessionTx.IsActive)
+            {
+                throw new InvalidOperationException("A session-level transaction is already active. Cannot start a new transaction.");
+            }
+            
             _currentTransaction = Session.BeginTransaction();
         }
 
@@ -45,11 +52,7 @@ namespace UCDArch.Data.NHibernate
             }
             else
             {
-                var tx = Session.GetCurrentTransaction();
-                if (tx != null && tx.IsActive)
-                {
-                    tx.Commit();
-                }
+                throw new InvalidOperationException("No active transaction to commit. Call BeginTransaction() first.");
             }
         }
 
@@ -63,11 +66,7 @@ namespace UCDArch.Data.NHibernate
             }
             else
             {
-                var tx = Session.GetCurrentTransaction();
-                if (tx != null && tx.IsActive)
-                {
-                    tx.Rollback();
-                }
+                throw new InvalidOperationException("No active transaction to rollback. Call BeginTransaction() first.");
             }
         }
 
@@ -80,8 +79,7 @@ namespace UCDArch.Data.NHibernate
         {
             get 
             { 
-                return (_currentTransaction?.IsActive ?? false) || 
-                       (Session.GetCurrentTransaction()?.IsActive ?? false); 
+                return _currentTransaction?.IsActive ?? false; 
             }
         }
     }
