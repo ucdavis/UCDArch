@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Microsoft.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
@@ -44,7 +45,7 @@ namespace UCDArch.Web.ActionResults
             ContentEncoding = encoding;
         }
 
-        public override void ExecuteResult(ActionContext context)
+        public override async Task ExecuteResultAsync(ActionContext context)
         {
             if (context == null)
                 throw new ArgumentNullException("context");
@@ -60,12 +61,13 @@ namespace UCDArch.Web.ActionResults
 
             if (Data != null)
             {
-                using (var streamWriter = new StreamWriter(response.Body))
-                using (var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting })
+                await using (var streamWriter = new StreamWriter(response.Body))
+                await using (var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting })
                 {
                     JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
                     serializer.Serialize(writer, Data);
-                    writer.Flush();
+                    await writer.FlushAsync();
+                    await streamWriter.FlushAsync();
                 }
             }
         }
@@ -80,10 +82,12 @@ namespace UCDArch.Web.ActionResults
                 }
 
                 var stringWriter = new StringWriter();
-                var writer = new JsonTextWriter(stringWriter) { Formatting = Formatting };
-                JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
-                serializer.Serialize(writer, Data);
-                writer.Flush();
+                using (var writer = new JsonTextWriter(stringWriter) { Formatting = Formatting })
+                {
+                    JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
+                    serializer.Serialize(writer, Data);
+                    writer.Flush();
+                }
 
                 return stringWriter.GetStringBuilder().ToString();
             }
