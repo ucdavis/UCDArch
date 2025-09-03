@@ -62,14 +62,10 @@ namespace UCDArch.Web.ActionResults
 
             if (Data != null)
             {
-                // 1. Synchronously convert the object to a JToken using the configured serializer settings.
-                //    This step is still synchronous but avoids unnecessary buffering for large objects.
                 JToken jToken = JToken.FromObject(Data, JsonSerializer.Create(SerializerSettings));
                 await using var streamWriter = new StreamWriter(response.Body);
                 await using var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting };
-                // 2. Asynchronously write the JToken to the response stream.
                 await jToken.WriteToAsync(writer);
-                await writer.FlushAsync();
             }
         }
 
