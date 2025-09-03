@@ -53,22 +53,18 @@ namespace UCDArch.Web.ActionResults
             var response = context.HttpContext.Response;
 
             var mediaType = new MediaTypeHeaderValue(!string.IsNullOrEmpty(ContentType)
-              ? ContentType
-              : "application/json");
+                ? ContentType
+                : "application/json");
 
             mediaType.Encoding = ContentEncoding ?? Encoding.UTF8;
             response.ContentType = mediaType.ToString();
 
             if (Data != null)
             {
-                await using (var streamWriter = new StreamWriter(response.Body))
-                await using (var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting })
-                {
-                    JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
-                    serializer.Serialize(writer, Data);
-                    await writer.FlushAsync();
-                    await streamWriter.FlushAsync();
-                }
+                await using var streamWriter = new StreamWriter(response.Body);
+                await using var writer = new JsonTextWriter(streamWriter) { Formatting = Formatting };
+                JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
+                serializer.Serialize(writer, Data);
             }
         }
 
@@ -81,14 +77,10 @@ namespace UCDArch.Web.ActionResults
                     return "[Data was Null]";
                 }
 
-                var stringWriter = new StringWriter();
-                using (var writer = new JsonTextWriter(stringWriter) { Formatting = Formatting })
-                {
-                    JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
-                    serializer.Serialize(writer, Data);
-                    writer.Flush();
-                }
-
+                using var stringWriter = new StringWriter();
+                using var writer = new JsonTextWriter(stringWriter) { Formatting = Formatting };                
+                JsonSerializer serializer = JsonSerializer.Create(SerializerSettings);
+                serializer.Serialize(writer, Data);
                 return stringWriter.GetStringBuilder().ToString();
             }
         }
