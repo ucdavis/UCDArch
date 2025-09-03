@@ -2,6 +2,7 @@ using System;
 using FluentNHibernate.Cfg.Db;
 using UCDArch.Core;
 using Microsoft.Extensions.Configuration;
+using NHibernate.Driver;
 
 namespace UCDArch.Data.NHibernate.Mapping
 {
@@ -23,6 +24,7 @@ namespace UCDArch.Data.NHibernate.Mapping
             else
             {
                 return MsSqlConfiguration.MsSql2008
+                    .Driver<MicrosoftDataSqlClientDriver>()
                     .DefaultSchema(configuration["MainDB:Schema"])
                     .ConnectionString(configuration["ConnectionStrings:MainDB"])
                     .AdoNetBatchSize(configuration.GetValue<int>("MainDB:BatchSize", 25));
