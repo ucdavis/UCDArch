@@ -18,9 +18,8 @@ namespace UCDArch.Data.NHibernate
     {
         #region Thread-safe, lazy Singleton
 
-        private static AsyncLocal<Dictionary<object, object>> _threadSessionMap = new();
-
-        private static Dictionary<object, object> ThreadSessionMap => _threadSessionMap.Value ??= new Dictionary<object, object>();
+        private static readonly AsyncLocal<ISession> _threadSession = new();
+        private static readonly AsyncLocal<ITransaction> _threadTransaction = new();
 
         /// <summary>
         /// This is a thread-safe, lazy singleton.  See http://www.yoda.arachsys.com/csharp/singleton.html
@@ -219,11 +218,12 @@ namespace UCDArch.Data.NHibernate
             {
                 if (IsInWebContext())
                 {
-                    return (ITransaction)SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext.Items[TRANSACTION_KEY];
+                    SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext.Items.TryGetValue(TRANSACTION_KEY, out var transaction);
+                    return (ITransaction)transaction;
                 }
                 else
                 {
-                    return (ITransaction)ThreadSessionMap[TRANSACTION_KEY];
+                    return _threadTransaction.Value;
                 }
             }
             set
@@ -234,7 +234,7 @@ namespace UCDArch.Data.NHibernate
                 }
                 else
                 {
-                    ThreadSessionMap[TRANSACTION_KEY] = value;
+                    _threadTransaction.Value = value;
                 }
             }
         }
@@ -255,7 +255,7 @@ namespace UCDArch.Data.NHibernate
                 }
                 else
                 {
-                    return (ISession)ThreadSessionMap[SESSION_KEY];
+                    return _threadSession.Value;
                 }
             }
             set
@@ -266,7 +266,7 @@ namespace UCDArch.Data.NHibernate
                 }
                 else
                 {
-                    ThreadSessionMap[SESSION_KEY] = value;
+                    _threadSession.Value = value;
                 }
             }
         }
