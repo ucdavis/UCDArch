@@ -273,7 +273,7 @@ namespace UCDArch.Data.NHibernate
 
         private bool IsInWebContext()
         {
-            return SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.GetService().HttpContext != null;
+            return (SmartServiceLocator<Microsoft.AspNetCore.Http.IHttpContextAccessor>.TryGetService()?.HttpContext) != null;
         }
 
         private const string TRANSACTION_KEY = "CONTEXT_TRANSACTION";

@@ -1,6 +1,8 @@
 using System;
 using CommonServiceLocator;
 
+#nullable enable
+
 namespace UCDArch.Core
 {
     public static class SmartServiceLocator<DependencyT>
@@ -11,7 +13,13 @@ namespace UCDArch.Core
 
             try
             {
-                service = (DependencyT) ServiceLocator.Current.GetService(typeof (DependencyT));
+                object? resolved = ServiceLocator.Current.GetService(typeof(DependencyT));
+                if (resolved is null)
+                {
+                    throw new NullReferenceException("ServiceLocator returned null; " +
+                                                     "I was trying to retrieve " + typeof(DependencyT));
+                }
+                service = (DependencyT)resolved;
             }
             catch (NullReferenceException)
             {
@@ -31,6 +39,18 @@ namespace UCDArch.Core
             }
 
             return service;
+        }
+
+        public static DependencyT? TryGetService()
+        {
+            try
+            {
+                return (DependencyT?) ServiceLocator.Current.GetService(typeof(DependencyT));
+            }
+            catch
+            {
+                return default;
+            }
         }
     }
 }
